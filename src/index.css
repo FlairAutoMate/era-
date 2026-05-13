@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Inter+Tight:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter Tight", sans-serif;
+  
+  --color-era-ivory: #F3EFE8;
+  --color-era-beige: #ECE7DF;
+  --color-era-navy: #0E2341;
+  --color-era-midnight: #081426;
+  --color-era-gold: #C8A96B;
+}
+
+@layer base {
+  body {
+    @apply bg-era-ivory text-era-navy font-sans antialiased selection:bg-era-gold/30 selection:text-era-navy;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight leading-[1.1];
+  }
+}
+
+.glass {
+  @apply bg-white/20 backdrop-blur-xl border border-white/30;
+}
+
+.glass-dark {
+  @apply bg-era-navy/40 backdrop-blur-2xl border border-white/10;
+}
+
+.square-button {
+  @apply rounded-none px-8 py-3.5 transition-all duration-500 font-medium active:scale-95;
+}
+
+.square-button-navy {
+  @apply rounded-none px-8 py-3.5 transition-all duration-500 font-medium bg-era-navy text-white hover:bg-era-midnight active:scale-95 shadow-lg shadow-era-navy/20;
+}
+
+.square-button-gold {
+  @apply rounded-none px-8 py-3.5 transition-all duration-500 font-medium bg-era-gold text-era-navy hover:bg-era-gold/90 active:scale-95 shadow-lg shadow-era-gold/20;
+}
+
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.1), transparent);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-era-ivory;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-era-navy hover:bg-era-midnight;
+}
