@@ -1,38 +1,41 @@
 import { motion } from 'motion/react';
-import { CheckCircle2, Clock, Camera, FileText, Share2, History, ClipboardList, PenTool, MessageSquare, Shield, TrendingUp } from 'lucide-react';
+import { Cog, Zap, UserCheck, TrendingUp, RefreshCcw, Activity } from 'lucide-react';
 
 export default function ContractorDetails() {
   return (
     <>
-      {/* DETTE ER ERA */}
+      {/* KI AGENTS & AUTOMATISERT SALGSFLYT */}
       <section className="py-32 px-6 bg-era-ivory">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-24 items-center mb-32">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">Håndverkerens verktøy</span>
+              <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">Autonome Agenter</span>
               <h2 className="text-4xl md:text-6xl font-medium mb-10 leading-[1.05]">
-                Dette er ERA <br /> for håndverkere.
+                Din nye KI-salgsavdeling.
               </h2>
               <p className="text-era-navy/60 text-lg font-light leading-relaxed mb-12">
-                ERA gjør det enklere å dokumentere arbeid, følge opp kunder, lage raskere tilbud og bygge langsiktige kundeforhold ved å samle historikk på eiendommen over tid.
+                ERA gjør oppsøkende salg unødvendig. Våre spesialiserte agenter analyserer kundenes boligdata, oppdager vedlikeholdsbehov før de blir akutte, og presenterer ferdige tilbudsutkast direkte i ditt dashboard.
               </p>
               
-              <div className="grid sm:grid-cols-2 gap-8">
+              <div className="space-y-8">
                 {[
-                  "Dokumentere arbeid",
-                  "Følge opp kunder",
-                  "Lage raskere tilbud",
-                  "Bygge langsiktige forhold",
-                  "Samle eiendomshistorikk"
+                  { icon: <Cog className="w-5 h-5" />, title: "Vision Agent", desc: "Overvåker boligbilder og oppdager avvik (f.eks. slitasje på tak, fuktproblemer)." },
+                  { icon: <Zap className="w-5 h-5" />, title: "Pricing Agent", desc: "Genererer nøyaktige overslag automatisk basert på historiske priser og materialvalg." },
+                  { icon: <UserCheck className="w-5 h-5" />, title: "Matching Agent", desc: "Sikrer at riktig oppdrag går til riktig ERA-partner basert på kapasitet og rating." },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4">
-                    <CheckCircle2 className="w-5 h-5 text-era-gold" />
-                    <span className="text-sm font-medium text-era-navy/80">{item}</span>
+                  <div key={i} className="flex items-start gap-4">
+                    <div className="w-10 h-10 mt-1 rounded bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-era-navy border border-era-navy/5">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-sm text-era-navy mb-1">{item.title}</h4>
+                      <p className="text-sm text-era-navy/60 font-light">{item.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -43,62 +46,65 @@ export default function ContractorDetails() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              className="relative"
             >
-              <div className="bg-white p-12 border border-era-navy/5 shadow-2xl relative">
+              <div className="bg-white p-12 shadow-2xl relative border border-era-navy/5">
                 <div className="absolute top-0 right-0 p-8">
                   <div className="w-12 h-12 bg-era-gold/10 flex items-center justify-center text-era-gold">
-                    <History className="w-6 h-6" />
+                    <Activity className="w-6 h-6" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-medium mb-6">Eiendommens historikk</h3>
-                <p className="text-era-navy/60 font-light leading-relaxed">
-                  ERA hjelper eiendomsbesittere å ta vare på eiendom — og gjør det enklere for håndverkere å levere en bedre tjeneste.
-                </p>
-              </div>
-
-              <div className="bg-era-navy p-12 text-white shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity">
-                  <TrendingUp className="w-6 h-6 text-era-gold" />
+                <h3 className="text-2xl font-medium mb-6">Fra oppdagelse til ordre</h3>
+                <div className="space-y-6">
+                  <div className="pl-6 border-l-2 border-era-gold relative">
+                    <div className="absolute w-3 h-3 bg-era-gold rounded-full -left-[7px] top-1" />
+                    <p className="text-xs font-bold uppercase tracking-widest text-era-navy/40">Trinn 1</p>
+                    <p className="text-sm font-medium mt-1">ERA oppdager behov hos boligeier</p>
+                  </div>
+                  <div className="pl-6 border-l-2 border-era-gold relative">
+                    <div className="absolute w-3 h-3 bg-era-gold rounded-full -left-[7px] top-1" />
+                    <p className="text-xs font-bold uppercase tracking-widest text-era-navy/40">Trinn 2</p>
+                    <p className="text-sm font-medium mt-1">KI priser og strukturerer jobben</p>
+                  </div>
+                  <div className="pl-6 border-l-2 border-era-navy/10 relative">
+                    <div className="absolute w-3 h-3 bg-white border-2 border-era-gold rounded-full -left-[7px] top-1" />
+                    <p className="text-xs font-bold uppercase tracking-widest text-era-navy/40">Trinn 3</p>
+                    <p className="text-sm font-medium mt-1">Du godkjenner og utfører</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-medium mb-4">Øk verdien på din bedrift</h3>
-                <p className="text-white/60 font-light leading-relaxed text-sm">
-                  Ved å bygge en digital kundeportefølje med full historikk, skaper du en dokumentert verdi i din egen bedrift som gir forutsigbarhet for fremtiden.
-                </p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* HVA ERA LØSER */}
-      <section className="py-32 px-6 bg-white border-y border-era-navy/5">
-        <div className="max-w-4xl mx-auto text-center mb-20">
-          <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">Problemstilling</span>
-          <h2 className="text-3xl md:text-5xl font-medium mb-8">Mye tid går bort til administrasjon</h2>
-          <p className="text-era-navy/60 text-lg font-light">
-            ERA samler alt i én flyt. Fra første bilde til ferdig dokumentasjon.
+      {/* GJENKJØP OG LIVSTIDSVERDI */}
+      <section className="py-32 px-6 bg-era-navy text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558227691-41ea78d1f631?auto=format&fit=crop&q=80&w=2000')] opacity-5 object-cover" />
+        <div className="max-w-4xl mx-auto relative z-10">
+          <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">Langsiktig Verdi</span>
+          <h2 className="text-4xl md:text-6xl font-medium mb-8 leading-tight">
+            Fra kalde leads til livstidsverdi.
+          </h2>
+          <p className="text-white/60 text-lg font-light leading-relaxed mb-16 max-w-2xl mx-auto">
+            Glem jaget etter neste anbud. ERA forvandler engangsjobber til abonnement-lignende relasjoner. Vi varsler deg når det er tid for årlig vedlikehold eller inspeksjon, slik at kunden alltid returnerer til deg.
           </p>
-        </div>
-
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { icon: <Camera className="w-5 h-5" />, label: "Befaringer & Bilder" },
-            { icon: <FileText className="w-5 h-5" />, label: "Dokumentasjon" },
-            { icon: <Share2 className="w-5 h-5" />, label: "Oppfølging" },
-            { icon: <MessageSquare className="w-5 h-5" />, label: "Glemte meldinger" },
-            { icon: <ClipboardList className="w-5 h-5" />, label: "Spredte systemer" },
-            { icon: <PenTool className="w-5 h-5" />, label: "Manuelle tilbud" },
-            { icon: <Clock className="w-5 h-5" />, label: "Manglende historikk" },
-            { icon: <Shield className="w-5 h-5" />, label: "Kvalitetssikring" },
-          ].map((item, i) => (
-            <div key={i} className="p-8 border border-era-navy/5 bg-era-ivory/30 flex flex-col items-center text-center group hover:bg-white hover:shadow-xl transition-all duration-500">
-              <div className="w-12 h-12 bg-white flex items-center justify-center text-era-navy/30 group-hover:text-era-gold transition-colors mb-6 shadow-sm">
-                {item.icon}
+          
+          <div className="grid md:grid-cols-3 gap-8 text-left">
+            {[
+              { title: "Gjenkjøp", desc: "Automatiske påminnelser for årlig VVS-sjekk, takinspeksjon eller malingsvedlikehold.", icon: <RefreshCcw /> },
+              { title: "Prediktivt", desc: "Vit hva kunden trenger før de vet det selv, basert på produktlevetid i boligjournalen.", icon: <Activity /> },
+              { title: "Verdiøkning", desc: "Bygg en solid, dokumentert kundeportefølje som øker verdien på håndverkerbedriften din.", icon: <TrendingUp /> }
+            ].map((item, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 p-8 hover:bg-white/10 transition-colors">
+                <div className="w-10 h-10 bg-era-gold/20 text-era-gold flex items-center justify-center mb-6">
+                  {item.icon}
+                </div>
+                <h4 className="font-bold text-lg mb-2">{item.title}</h4>
+                <p className="text-sm text-white/50">{item.desc}</p>
               </div>
-              <span className="text-sm font-bold uppercase tracking-widest text-era-navy/60 group-hover:text-era-navy transition-colors">{item.label}</span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     </>

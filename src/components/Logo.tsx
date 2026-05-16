@@ -26,8 +26,8 @@ export default function Logo({ className = "h-8", dotColor = "#C8A96B" }: LogoPr
       </g>
       
       {/* The 'Living Data' Pulse Dot - now square */}
-      <rect x="134" cy="36" width="8" height="8" fill={dotColor} className="animate-pulse" />
-      <rect x="130" cy="32" width="16" height="16" stroke={dotColor} strokeWidth="1.5" fill="none" className="animate-ping opacity-30" />
+      <rect x="134" y="34" width="8" height="8" fill={dotColor} className="animate-pulse" />
+      <rect x="130" y="30" width="16" height="16" stroke={dotColor} strokeWidth="1.5" fill="none" className="animate-ping opacity-30" />
       
       {/* Subtle Horizon Line - representing 'over time' value */}
       <rect x="15" y="47" width="130" height="1" fill="currentColor" opacity="0.1" />

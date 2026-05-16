@@ -13,7 +13,7 @@ const trustItems = [
     icon: Lock 
   },
   { 
-    title: "AI med kontroll", 
+    title: "KI med kontroll", 
     desc: "Kunstig intelligens som støtter, ikke erstatter, menneskelig vurdering.",
     icon: Eye 
   },

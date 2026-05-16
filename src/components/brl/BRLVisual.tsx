@@ -85,7 +85,7 @@ export default function BRLVisual() {
                   </div>
                 </div>
 
-                {/* AI Insights & Alerts */}
+                {/* KI Insights & Alerts */}
                 <div className="space-y-4">
                   <div className="bg-era-gold/10 border border-era-gold/20 p-6 rounded-xl relative">
                     <Sparkles className="w-4 h-4 text-era-gold mb-3" />

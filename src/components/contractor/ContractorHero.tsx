@@ -1,60 +1,82 @@
+import React from 'react';
 import { motion } from 'motion/react';
+import { Sparkles, Home, ShieldCheck, TrendingUp } from 'lucide-react';
 
 export default function ContractorHero() {
   return (
-    <section className="pt-52 pb-20 px-6 bg-era-midnight text-white relative overflow-hidden">
-      {/* Background Image with Cinematic Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2000" 
-          alt="Arkitektur og håndverk" 
-          className="w-full h-full object-cover opacity-60"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-era-midnight/80 via-era-midnight/40 to-era-midnight" />
+    <section className="pt-40 pb-32 px-6 bg-[#0B0F19] text-white relative overflow-hidden min-h-[80vh] flex flex-col justify-center">
+      {/* Background Subtle Gradient Glows */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute top-[20%] left-[20%] w-[600px] h-[600px] bg-era-gold/10 rounded-full blur-[150px] mix-blend-screen opacity-50" />
+        <div className="absolute bottom-[10%] right-[10%] w-[800px] h-[800px] bg-blue-900/20 rounded-full blur-[150px] mix-blend-screen opacity-40" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10 text-center">
+      <div className="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+        
+        {/* Left Side: Headlines */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
+          className="lg:pr-10"
         >
-          <span className="text-era-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-8 block">ERA for Håndverkere</span>
-          <h1 className="text-5xl md:text-8xl font-bold mb-8 leading-[0.95] tracking-tight">
-            Bygg bedre kunder <br /> over tid.
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full mb-8">
+            <Sparkles className="w-3 h-3 text-era-gold" />
+            <span className="text-[10px] text-white/70 uppercase tracking-widest font-mono">ERA for Pro</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.05] tracking-tight">
+            Fra boligdata til <br />
+            <span className="text-era-gold">utført oppdrag.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/60 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-            ERA hjelper deg å bygge en kundeportefølje som gir forutsigbare inntekter og oppdrag i fremtiden – og øker verdien på din bedrift.
+          
+          <p className="text-lg md:text-xl text-white/60 font-light mb-12 max-w-xl leading-relaxed">
+            Vi overvåker boligens tilstand og kobler deg på prosjekter før konkurrentene dine. En ferdig pipeline direkte i din hverdag.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-            <button className="square-button-gold px-12 py-5 text-lg w-full sm:w-auto">Bli partner</button>
-            <button className="text-white/80 hover:text-white font-medium flex items-center gap-2 group transition-colors">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <button className="bg-white text-era-navy px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] rounded-none hover:bg-era-ivory transition-all shadow-xl shadow-white/5">
+              Bli ERA Partner
+            </button>
+            <button className="text-white/60 hover:text-white text-xs font-semibold uppercase tracking-widest flex items-center gap-2 group transition-colors">
               Se hvordan det fungerer
-              <motion.span 
-                animate={{ x: [0, 5, 0] }} 
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                →
-              </motion.span>
+              <motion.span animate={{ x: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>→</motion.span>
             </button>
           </div>
-
-          <div className="flex flex-col items-center gap-4">
-            <div className="px-4 py-2 bg-white/5 border border-white/10 text-white/60 text-xs font-bold uppercase tracking-widest">
-              Vedlikehold skal være like enkelt som Vipps.
-            </div>
-            <p className="text-sm text-white/40 max-w-md">
-              Ingen markedsplass-støy. Bare bedre samarbeid mellom håndverker og eiendomsbesitter.
-            </p>
-          </div>
         </motion.div>
-      </div>
 
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute -top-1/4 -right-1/4 w-[800px] h-[800px] bg-era-gold/5 rounded-full blur-[120px]" />
-        <div className="absolute -bottom-1/4 -left-1/4 w-[800px] h-[800px] bg-era-gold/5 rounded-full blur-[120px]" />
+        {/* Right Side: Abstract Trust Illustration */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="relative h-[500px] w-full hidden md:flex items-center justify-center p-12"
+        >
+          {/* Pulsing Core representing Trust/Agreement */}
+          <motion.div 
+            animate={{ rotate: 360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="relative w-80 h-80 rounded-full border border-white/5 flex items-center justify-center"
+          >
+            {[0, 120, 240].map((rot, i) => (
+              <motion.div 
+                key={i}
+                style={{ rotate: rot }}
+                className="absolute w-full h-full flex justify-center"
+              >
+                <div className="w-16 h-16 bg-[#0B0F19] border border-era-gold/20 rounded-2xl flex items-center justify-center shadow-lg transform -rotate-[rot]">
+                   {i === 0 && <Home className="w-6 h-6 text-white/50" />}
+                   {i === 120 && <ShieldCheck className="w-6 h-6 text-era-gold" />}
+                   {i === 240 && <TrendingUp className="w-6 h-6 text-blue-500" />}
+                </div>
+              </motion.div>
+            ))}
+            
+            <div className="w-24 h-24 bg-era-gold/5 rounded-full flex items-center justify-center animate-pulse">
+                <div className="w-16 h-16 bg-era-gold/10 rounded-full" />
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

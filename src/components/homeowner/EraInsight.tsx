@@ -34,7 +34,7 @@ export default function EraInsight() {
             </div>
           </div>
 
-          {/* Ambient AI Decoration */}
+          {/* Ambient KI Decoration */}
           <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-era-gold/5 rounded-full blur-3xl pointer-events-none" />
         </motion.div>
       </div>

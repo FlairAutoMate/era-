@@ -1,10 +1,10 @@
 import { motion } from 'motion/react';
-import { Sparkles, Shield, ClipboardCheck, ArrowRight } from 'lucide-react';
+import { Sparkles, Shield, ClipboardCheck, ArrowRight, MessageSquare } from 'lucide-react';
 
 const features = [
   {
     title: 'Scan',
-    description: 'Ta bilder og kjør AI-analyse. Identifiser risikoer og forstå boligens tilstand umiddelbart gjennom intelligent bildebehandling.',
+    description: 'Ta bilder og kjør KI-analyse. Identifiser risikoer og forstå boligens tilstand umiddelbart gjennom intelligent bildebehandling.',
     icon: Sparkles,
     color: 'bg-era-gold/10 text-era-gold'
   },

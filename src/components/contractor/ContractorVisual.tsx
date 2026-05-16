@@ -56,17 +56,17 @@ export default function ContractorVisual() {
                 {/* Active Projects List */}
                 <div className="md:col-span-2 space-y-4 overflow-y-auto pr-2 custom-scrollbar">
                   {[
-                    { address: 'Myrerveien 46A', client: 'Lars Sand', status: 'KI-kalkyle klar', amount: '11 500 000 kr', progress: 75 },
-                    { address: 'Thorvald Meiers gt 5', client: 'Anne Holte', status: 'Befaring utført', amount: '8 200 000 kr', progress: 40 },
-                    { address: 'Skovveien 12', client: 'Erik Berg', status: 'Tilbud sendt', amount: '15 400 000 kr', progress: 60 },
+                    { address: 'KI-generert oppdrag: Bad, Myrerveien', status: 'KI-kalkyle 150k', progress: 10, type: 'new' },
+                    { address: 'Tilbud: Taktekking', status: 'Utkast klart', progress: 40, type: 'offer' },
+                    { address: 'Produktanbefaling: Isolasjon', status: 'Klar for bestilling', progress: 80, type: 'product' },
+                    { address: 'Fremdrift: Renovering Stue', status: 'Pågår', progress: 65, type: 'progress' },
+                    { address: 'Betaling: Snekkerarbeid', status: 'Forfalt', progress: 100, type: 'payment' },
+                    { address: 'Gjenkjøp: Årlig sjekk VVS', status: 'Påminnelse sendt', progress: 0, type: 'renewal' },
                   ].map((job, i) => (
-                    <div key={i} className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/[0.07] transition-colors group cursor-pointer">
-                      <div className="flex justify-between items-start mb-4">
-                        <div>
-                          <h4 className="text-white font-medium mb-1">{job.address}</h4>
-                          <p className="text-white/40 text-xs">{job.client}</p>
-                        </div>
-                        <span className="text-[10px] bg-era-gold/20 text-era-gold px-2 py-1 rounded font-bold uppercase tracking-widest">{job.status}</span>
+                    <div key={i} className="bg-white/5 border border-white/10 p-5 rounded-xl hover:bg-white/[0.07] transition-colors group cursor-pointer flex flex-col justify-between">
+                      <div className="flex justify-between items-start mb-3">
+                        <h4 className="text-white text-sm font-medium">{job.address}</h4>
+                        <span className="text-[9px] bg-era-gold/20 text-era-gold px-2 py-1 rounded font-bold uppercase tracking-widest whitespace-nowrap ml-4">{job.status}</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <div className="flex-1 mr-8">
@@ -74,8 +74,8 @@ export default function ContractorVisual() {
                             <motion.div 
                               initial={{ width: 0 }}
                               whileInView={{ width: `${job.progress}%` }}
-                              transition={{ duration: 1.5, delay: 0.5 }}
-                              className="h-full bg-era-gold"
+                              transition={{ duration: 1.5, delay: 0.1 * i }}
+                              className="h-full bg-blue-400"
                             />
                           </div>
                         </div>
@@ -85,33 +85,33 @@ export default function ContractorVisual() {
                   ))}
                 </div>
 
-                {/* AI Insights Sidebar */}
+                {/* KI Insights Sidebar */}
                 <div className="space-y-6">
-                  <div className="bg-era-gold/10 border border-era-gold/20 p-6 rounded-xl relative overflow-hidden">
-                    <Sparkles className="absolute -right-4 -top-4 w-24 h-24 text-era-gold/10" />
+                  <div className="bg-emerald-900/20 border border-emerald-500/20 p-6 rounded-xl relative overflow-hidden">
+                    <Sparkles className="absolute -right-4 -top-4 w-24 h-24 text-emerald-500/10" />
                     <div className="flex items-center gap-2 mb-4">
-                      <Sparkles className="w-4 h-4 text-era-gold" />
-                      <span className="text-era-gold text-[10px] font-bold uppercase tracking-widest">ERA Oppdaget</span>
+                      <Sparkles className="w-4 h-4 text-emerald-400" />
+                      <span className="text-emerald-400 text-[10px] font-bold uppercase tracking-widest">Matching Agent</span>
                     </div>
-                    <p className="text-white text-sm leading-relaxed font-light mb-4">
-                      AI har analysert bildene fra Myrerveien 46A og identifisert begynnende fuktskade bak kledning.
+                    <p className="text-white/90 text-sm leading-relaxed font-light mb-4">
+                      Nytt oppdrag i ditt dekningsområde: <strong className="font-semibold text-white">Renovering pipe, Thorvald Meiers gate.</strong> KI har generert et utkast til tilbud basert på dine tidligere priser.
                     </p>
-                    <button className="text-era-gold text-xs font-bold hover:underline">Se detaljer</button>
+                    <button className="text-emerald-400 text-xs font-bold hover:underline">Se detaljer</button>
                   </div>
 
-                  <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
+                  <div className="bg-blue-900/20 border border-blue-500/20 p-6 rounded-xl relative overflow-hidden">
                     <div className="flex items-center gap-2 mb-4">
-                      <TrendingUp className="w-4 h-4 text-white/40" />
-                      <span className="text-white/40 text-[10px] font-bold uppercase tracking-widest">KI-kalkyle</span>
+                      <TrendingUp className="w-4 h-4 text-blue-400" />
+                      <span className="text-blue-400 text-[10px] font-bold uppercase tracking-widest">Pricing Agent</span>
                     </div>
                     <div className="space-y-4">
                       <div className="flex justify-between text-xs">
                         <span className="text-white/60">Estimert omfang</span>
-                        <span className="text-white">45.000 - 60.000 kr</span>
+                        <span className="text-white font-medium">45.000 - 60.000 kr</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-white/60">Tidbruk estimat</span>
-                        <span className="text-white">12-16 timer</span>
+                        <span className="text-white/60">Materialer foreslått</span>
+                        <span className="text-white font-medium">Leca Pipe Rehab</span>
                       </div>
                     </div>
                   </div>
@@ -145,7 +145,7 @@ export default function ContractorVisual() {
                       <Camera className="w-12 h-12" />
                     </div>
                     <div className="bg-era-gold p-4 rounded-xl">
-                      <p className="text-era-midnight text-[10px] font-bold uppercase tracking-widest mb-1">KI Lesing...</p>
+                      <p className="text-era-midnight text-[10px] font-bold uppercase tracking-widest mb-1">KI-lesing...</p>
                       <p className="text-era-midnight text-sm font-medium">Sprekk i grunnmur identifisert. Dokumentasjon foreslått.</p>
                     </div>
                   </div>

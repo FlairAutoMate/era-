@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import { Camera, ArrowRight, ShieldCheck, MapPin, TrendingUp, Sparkles } from 'lucide-react';
 
@@ -16,11 +17,60 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center pt-52 pb-32">
+        {/* Subtle KI Infrastructure Lines connecting text to mockup */}
+        <div className="absolute inset-0 z-0 pointer-events-none hidden lg:block overflow-hidden">
+          {/* Main flow line */}
+          <svg className="absolute w-full h-full" style={{ left: 0, top: 0 }}>
+             {/* Data flow from Homeowner to ERA Core */}
+            <motion.path
+              d="M 400 400 C 600 400, 700 500, 900 450"
+              stroke="#081426"
+              strokeWidth="1"
+              strokeOpacity="0.1"
+              fill="none"
+              strokeDasharray="4 4"
+            />
+            {/* Animated particle along path */}
+            <motion.circle
+              r="2"
+              fill="#D4AF37"
+              initial={{ offsetDistance: "0%" }}
+              animate={{ offsetDistance: "100%" }}
+              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+              style={{ offsetPath: 'path("M 400 400 C 600 400, 700 500, 900 450")' } as React.CSSProperties}
+            />
+            
+            {/* ERA Core Node */}
+            <circle cx="900" cy="450" r="4" fill="#081426" opacity="0.3" />
+            <circle cx="900" cy="450" r="16" fill="#081426" opacity="0.05" />
+
+            {/* ERA Core to Contractor */}
+            <motion.path
+              d="M 900 450 C 1100 400, 1200 600, 1400 550"
+              stroke="#081426"
+              strokeWidth="1"
+              strokeOpacity="0.1"
+              fill="none"
+              strokeDasharray="4 4"
+            />
+             <motion.circle
+              r="2"
+              fill="#D4AF37"
+              initial={{ offsetDistance: "0%" }}
+              animate={{ offsetDistance: "100%" }}
+              transition={{ duration: 4, delay: 1, repeat: Infinity, ease: "linear" }}
+              style={{ offsetPath: 'path("M 900 450 C 1100 400, 1200 600, 1400 550")' } as React.CSSProperties}
+            />
+            <circle cx="1400" cy="550" r="4" fill="#081426" opacity="0.3" />
+            <circle cx="1400" cy="550" r="16" fill="#081426" opacity="0.05" />
+          </svg>
+        </div>
+
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-era-navy"
+          className="text-era-navy relative z-10"
         >
           <span className="text-era-gold font-bold uppercase tracking-[0.2em] text-[10px] mb-6 block drop-shadow-sm">
             Sikre boligens verdi for fremtiden
@@ -29,7 +79,7 @@ export default function Hero() {
             ERA hjelper deg å forstå og følge opp eiendom over tid.
           </h1>
           <p className="text-xl md:text-2xl text-era-navy/60 font-light mb-12 max-w-xl leading-relaxed">
-            ERA lærer eiendommen din å kjenne over tid. Ved å kombinere bilder, dokumentasjon og AI gjør vi vedlikehold intelligent og enkelt – <span className="text-era-navy font-medium italic">like enkelt som Vipps.</span>
+            ERA lærer eiendommen din å kjenne over tid. Ved å kombinere bilder, dokumentasjon og KI gjør vi vedlikehold intelligent og enkelt – <span className="text-era-navy font-medium italic">like enkelt som Vipps.</span>
           </p>
           
           <div className="flex flex-wrap gap-4 items-center">

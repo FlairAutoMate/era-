@@ -1,10 +1,11 @@
 import { motion } from 'motion/react';
 
 const partners = [
-  { name: "Mestergruppen", logo: "MESTERGRUPPEN" },
   { name: "Malorama", logo: "MALORAMA" },
   { name: "Mal Proff", logo: "MAL PROFF" },
   { name: "Mesterfarge", logo: "MESTERFARGE" },
+  { name: "Jotun", logo: "JOTUN" },
+  { name: "Kartverket", logo: "KARTVERKET" },
 ];
 
 export default function Partners() {

@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
+import { CONTENT } from '../../content';
 
 export default function BRLHero() {
+  const c = CONTENT.brl.hero;
   return (
     <section className="pt-52 pb-20 px-6 bg-era-midnight text-white relative overflow-hidden">
       {/* Background Image with Cinematic Overlay */}
@@ -19,18 +21,20 @@ export default function BRLHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-era-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-8 block">ERA for Sameier & BRL</span>
+          <span className="text-era-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-8 block">{c.subLabel}</span>
           <h1 className="text-5xl md:text-8xl font-bold mb-8 leading-[0.95] tracking-tight">
-            Full kontroll på <br /> fellesverdien.
+            {c.title.split('<br />')[0]}
+            <br />
+            {c.title.split('<br />')[1]}
           </h1>
           <p className="text-xl md:text-2xl text-white/60 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-            ERA samler vedlikeholdsplaner, dokumentasjon og historikk for hele bygningsmassen i én intelligent flyt for styret og beboere.
+            {c.subtitle}
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-            <button className="square-button-gold px-12 py-5 text-lg w-full sm:w-auto">Start for vårt sameie</button>
+            <button className="square-button-gold px-12 py-5 text-lg w-full sm:w-auto">{c.cta1}</button>
             <button className="text-white/80 hover:text-white font-medium flex items-center gap-2 group transition-colors">
-              Bestill gratis befaring
+              {c.cta2}
               <motion.span 
                 animate={{ x: [0, 5, 0] }} 
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -42,7 +46,7 @@ export default function BRLHero() {
 
           <div className="flex flex-col items-center gap-4">
             <div className="px-4 py-2 bg-white/5 border border-white/10 text-white/60 text-xs font-bold uppercase tracking-widest">
-              Gjør styrearbeidet enklere og mer verdifullt.
+              {c.footer}
             </div>
           </div>
         </motion.div>
