@@ -213,7 +213,7 @@ export default function AIAgentPage({ onOpenWaitlist }: AIAgentPageProps) {
                   <div className="mt-1 w-6 h-6 rounded-full bg-era-navy/5 flex items-center justify-center flex-shrink-0 text-era-navy">
                     <FileSearch className="w-3 h-3" />
                   </div>
-                  <span><strong className="font-medium text-era-navy">Smart dokumentforståelse:</strong> Laster du opp en bruksanvisning, forstår AI nøyaktig hvilke vedlikeholdsrutiner som kreves.</span>
+                  <span><strong className="font-medium text-era-navy">Smart dokumentforståelse:</strong> Laster du opp en bruksanvisning, forstår KI nøyaktig hvilke vedlikeholdsrutiner som kreves.</span>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="mt-1 w-6 h-6 rounded-full bg-era-navy/5 flex items-center justify-center flex-shrink-0 text-era-navy">

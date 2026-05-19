@@ -12,7 +12,7 @@ export default function Contractors() {
               Bestill håndverkere direkte i ERA.
             </h2>
             <p className="text-era-navy/60 text-xl font-light leading-relaxed mb-10 pr-12">
-              Fra AI-analyse til utført arbeid i én samlet flyt.
+              Fra KI-analyse til utført arbeid i én samlet flyt.
             </p>
             
             <div className="flex flex-col gap-6 mb-12">

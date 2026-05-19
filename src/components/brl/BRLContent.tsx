@@ -82,7 +82,7 @@ export default function BRLContent() {
                 <ul className="space-y-4 mb-12">
                   {[
                     "oversikt over eiendommen",
-                    "AI-anbefalinger",
+                    "KI-anbefalinger",
                     "vedlikeholdsplan",
                     "FDV og historikk",
                     "tilbud og håndverkerdialog"

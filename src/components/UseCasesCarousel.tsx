@@ -6,13 +6,13 @@ const cases = [
     icon: Droplets,
     title: "Slik forhindret ERA vannskaden før den skjedde",
     description: "Ved å analysere alder på rør-i-rør systemet og kryssjekke mot gjeldende SINTEF-anbefalinger, varslet ERA eieren 6 måneder før estimert levetid utløp. Arbeidet ble utført preventivt med 40% lavere kostnad enn en reell skade.",
-    tags: ["Boligeier", "Prediktiv AI"],
+    tags: ["Boligeier", "Prediktiv KI"],
     color: "bg-blue-500/10 text-blue-600"
   },
   {
     icon: Building,
     title: "Automatiserte hele FDV-håndteringen på én dag",
-    description: "Et nyopprettet sameie lastet opp 4GB med usortert boligdokumentasjon fra utbygger. ERA AI sorterte, kategoriserte og genererte en komplett vedlikeholdsplan for alle 12 enheter automatisk.",
+    description: "Et nyopprettet sameie lastet opp 4GB med usortert boligdokumentasjon fra utbygger. ERA KI sorterte, kategoriserte og genererte en komplett vedlikeholdsplan for alle 12 enheter automatisk.",
     tags: ["Sameie & BRL", "Dokumentasjon"],
     color: "bg-era-navy/10 text-era-navy"
   },

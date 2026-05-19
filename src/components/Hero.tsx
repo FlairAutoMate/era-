@@ -136,9 +136,9 @@ export default function Hero({ onOpenWaitlist, onOpenProductAI }: HeroProps) {
               <div className="bg-white p-5 shadow-sm border border-era-navy/5 mb-6">
                 <p className="text-[10px] uppercase tracking-widest text-era-navy/60 font-semibold mb-1">Estimert verdi</p>
                 <p className="text-2xl font-bold">11 500 000 kr</p>
-                <div className="mt-4 flex items-center gap-2 text-[10px] text-green-600 font-bold bg-green-50 w-fit px-2 py-1">
+                <div className="mt-4 flex items-center gap-2 text-[10px] text-era-navy/60 font-bold bg-era-navy/5 w-fit px-2 py-1">
                   <TrendingUp className="w-3 h-3" />
-                  +2.4% POTENSIAL
+                  + POTENSIELL VERDI VED OPPUSSING
                 </div>
               </div>
 
@@ -181,13 +181,13 @@ export default function Hero({ onOpenWaitlist, onOpenProductAI }: HeroProps) {
             
             <div className="space-y-4">
               <div>
-                <p className="text-white/60 text-[9px] uppercase tracking-widest">Estimert verdi</p>
+                <p className="text-white/60 text-[9px] uppercase tracking-widest">Eiendomsverdi</p>
                 <p className="text-lg font-display font-medium text-white">11 500 000 kr</p>
               </div>
               
               <div className="bg-white/5 p-4 border border-white/10">
                 <p className="text-[11px] text-white/90 leading-snug">
-                  ERA ser potensial for høyere verdi dersom anbefalte tiltak fullføres.
+                  Verdien kan sikres og potensielt økes gjennom anbefalte utbedringer og komplett historikk.
                 </p>
               </div>
               
@@ -201,3 +201,4 @@ export default function Hero({ onOpenWaitlist, onOpenProductAI }: HeroProps) {
     </section>
   );
 }
+

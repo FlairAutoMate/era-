@@ -31,7 +31,7 @@ export default function AboutPage() {
               <span className="text-white/60">Likevel drives bygg i stor grad via PDF-er og intuisjon.</span>
             </h1>
             <p className="text-lg md:text-xl text-white/70 font-light mb-16 max-w-3xl mx-auto leading-relaxed">
-              Vårt oppdrag er å bygge den intelligente infrastrukturen for eiendom. Vi kobler AI, strukturerte data og autonome workflows sammen for å skape bygg som forstår sine egne vedlikeholdsbehov.
+              Vårt oppdrag er å bygge den intelligente infrastrukturen for eiendom. Vi kobler KI, strukturerte data og autonome workflows sammen for å skape bygg som forstår sine egne vedlikeholdsbehov.
             </p>
           </motion.div>
         </div>
@@ -63,7 +63,7 @@ export default function AboutPage() {
               <div className="bg-white p-10 border border-era-navy/5 group hover:border-era-navy/20 transition-colors">
                 <BrainCircuit className="w-8 h-8 text-era-gold mb-8 opacity-70 group-hover:opacity-100 transition-opacity" />
                 <h3 className="font-bold text-sm tracking-widest uppercase mb-4">Statisk til Intelligent</h3>
-                <p className="text-era-navy/60 font-light text-sm leading-relaxed">En AI-agent overvåker bygget døgnet rundt, finner avvik og oppretter forslag til forbedringer proaktivt.</p>
+                <p className="text-era-navy/60 font-light text-sm leading-relaxed">En KI-agent overvåker bygget døgnet rundt, finner avvik og oppretter forslag til forbedringer proaktivt.</p>
               </div>
               <div className="bg-white p-10 border border-era-navy/5 group hover:border-era-navy/20 transition-colors">
                 <Zap className="w-8 h-8 text-era-gold mb-8 opacity-70 group-hover:opacity-100 transition-opacity" />
@@ -102,7 +102,7 @@ export default function AboutPage() {
                 <Sparkles className="w-10 h-10 text-era-midnight" />
               </div>
               <h4 className="font-bold text-sm uppercase tracking-widest mb-2 text-era-gold">ERA Intelligence</h4>
-              <p className="text-xs text-white/60 font-light">AI-analyse, prediksjon, og hendelseshåndtering.</p>
+              <p className="text-xs text-white/60 font-light">KI-analyse, prediksjon, og hendelseshåndtering.</p>
             </div>
 
             <div className="relative z-10 bg-era-midnight p-6 flex flex-col items-center w-full max-w-[200px]">
@@ -135,7 +135,7 @@ export default function AboutPage() {
              {/* Example placeholders for team concepts */}
              <div className="bg-white border border-era-navy/5 p-10 flex flex-col justify-end h-[350px]">
                <h3 className="font-bold text-lg mb-1">Produkt & Tech</h3>
-               <p className="text-sm font-light text-era-navy/60">Utvikler fremtidens AI-native platform.</p>
+               <p className="text-sm font-light text-era-navy/60">Utvikler fremtidens KI-drevet platform.</p>
              </div>
              <div className="bg-white border border-era-navy/5 p-10 flex flex-col justify-end h-[350px]">
                <h3 className="font-bold text-lg mb-1">Ledelse & Strategi</h3>
