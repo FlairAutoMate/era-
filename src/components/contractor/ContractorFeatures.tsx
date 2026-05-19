@@ -67,11 +67,11 @@ export default function ContractorFeatures() {
           </div>
 
           <div className="max-w-xl mx-auto pt-16 border-t border-white/5">
-            <div className="flex items-center justify-center gap-3 mb-6 text-white/30">
+            <div className="flex items-center justify-center gap-3 mb-6 text-white/70">
               <Shield className="w-4 h-4" />
               <span className="text-[10px] uppercase font-bold tracking-widest">Sikkerhet & Personvern</span>
             </div>
-            <p className="text-[11px] text-white/40 leading-relaxed px-8">
+            <p className="text-[11px] text-white/60 leading-relaxed px-8">
               All data behandles med ende-til-ende kryptering i henhold til GDPR. Entreprenører og ERA-partnere får kun tilgang til nødvendig data godkjent av boligeier for det spesifikke oppdraget.
             </p>
           </div>

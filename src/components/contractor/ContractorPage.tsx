@@ -1,17 +1,15 @@
 import ContractorHero from './ContractorHero';
-import ContractorVisual from './ContractorVisual';
 import ContractorDetails from './ContractorDetails';
-import ContractorSteps from './ContractorSteps';
-import ContractorFeatures from './ContractorFeatures';
 
-export default function ContractorPage() {
+interface ContractorPageProps {
+  onOpenWaitlist?: () => void;
+}
+
+export default function ContractorPage({ onOpenWaitlist }: ContractorPageProps) {
   return (
     <div className="bg-era-ivory min-h-screen">
-      <ContractorHero />
-      <ContractorVisual />
-      <ContractorDetails />
-      <ContractorSteps />
-      <ContractorFeatures />
+      <ContractorHero onOpenWaitlist={onOpenWaitlist} />
+      <ContractorDetails onOpenWaitlist={onOpenWaitlist} />
     </div>
   );
 }

@@ -17,7 +17,7 @@ export default function Insights() {
           <h2 className="text-4xl md:text-6xl font-medium mb-8 max-w-2xl leading-[1.05]">
             Forstå hva som kan påvirke verdien.
           </h2>
-          <p className="text-era-navy/50 max-w-lg text-lg font-light">
+          <p className="text-era-navy/70 max-w-lg text-lg font-light">
             ERA ser sammenhenger mellom vedlikehold, dokumentasjon og tilstand — og gir deg en enklere oversikt over ting som kan være viktige over tid.
           </p>
         </div>
@@ -33,17 +33,17 @@ export default function Insights() {
               className="bg-white p-8 shadow-[0_10px_40px_-15px_rgba(14,35,65,0.05)] border border-era-navy/5 group cursor-default hover:shadow-2xl hover:shadow-era-navy/10 transition-all duration-500"
             >
               <div className="flex items-center justify-between mb-10">
-                <div className="text-era-navy/20 group-hover:text-era-gold transition-colors duration-500">
+                <div className="text-era-navy/60 group-hover:text-era-gold transition-colors duration-500">
                   {card.icon}
                 </div>
                 <div className="w-8 h-8 bg-era-navy/5 flex items-center justify-center">
-                  <TrendingUp className="w-3 h-3 text-era-navy/30" />
+                  <TrendingUp className="w-3 h-3 text-era-navy/70" />
                 </div>
               </div>
-              <h4 className="text-era-navy/40 text-[10px] font-bold uppercase tracking-widest mb-2">{card.label}</h4>
+              <h4 className="text-era-navy/60 text-[10px] font-bold uppercase tracking-widest mb-2">{card.label}</h4>
               <div className="flex items-baseline gap-2">
                 <span className={`text-4xl font-display font-medium leading-none ${card.color}`}>{card.value}</span>
-                <span className="text-[10px] font-bold text-era-navy/30 uppercase tracking-widest">{card.status}</span>
+                <span className="text-[10px] font-bold text-era-navy/70 uppercase tracking-widest">{card.status}</span>
               </div>
             </motion.div>
           ))}
@@ -66,7 +66,7 @@ export default function Insights() {
             </p>
             <div className="flex items-center gap-6">
               <button className="square-button-navy">Se tiltak</button>
-              <span className="text-xs font-bold text-era-navy/30 uppercase tracking-widest">Siste vurdering</span>
+              <span className="text-xs font-bold text-era-navy/70 uppercase tracking-widest">Siste vurdering</span>
             </div>
           </div>
           <div className="flex-1 w-full flex justify-center md:justify-end">

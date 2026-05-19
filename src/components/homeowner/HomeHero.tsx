@@ -28,7 +28,7 @@ export default function HomeHero() {
 
           <div className="grid md:grid-cols-2 gap-12 items-end">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold mb-2">Estimert verdi</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-white/60 font-bold mb-2">Estimert verdi</p>
               <p className="text-5xl md:text-6xl font-bold tracking-tighter mb-4">11 500 000 kr</p>
               <div className="flex items-center gap-3 text-green-400 bg-white/5 border border-white/10 w-fit px-3 py-1.5 rounded-full">
                 <TrendingUp className="w-4 h-4" />
@@ -40,7 +40,7 @@ export default function HomeHero() {
               <p className="text-white/60 font-light leading-relaxed max-w-xs">
                 ERA ser potensial for høyere verdi over tid ved anbefalte tiltak.
               </p>
-              <div className="mt-6 flex gap-6 text-[11px] font-bold uppercase tracking-widest text-white/40">
+              <div className="mt-6 flex gap-6 text-[11px] font-bold uppercase tracking-widest text-white/60">
                 <span>Rekkehus</span>
                 <span>135 m²</span>
               </div>

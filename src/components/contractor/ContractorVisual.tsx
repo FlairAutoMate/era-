@@ -31,7 +31,7 @@ export default function ContractorVisual() {
                   <div 
                     key={i} 
                     className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                      item.active ? 'bg-white/10 text-white' : 'text-white/40 hover:text-white/60 hover:bg-white/5'
+                      item.active ? 'bg-white/10 text-white' : 'text-white/60 hover:text-white/60 hover:bg-white/5'
                     }`}
                   >
                     {item.icon}
@@ -47,7 +47,7 @@ export default function ContractorVisual() {
                 <h2 className="text-xl font-medium text-white">Aktive Oppdrag</h2>
                 <div className="flex items-center gap-4">
                   <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-                    <span className="text-[10px] text-white/40 font-bold">JD</span>
+                    <span className="text-[10px] text-white/60 font-bold">JD</span>
                   </div>
                 </div>
               </div>
@@ -134,7 +134,7 @@ export default function ContractorVisual() {
                 <div className="p-6 pt-12 flex-1">
                   <div className="flex items-center justify-between mb-8">
                     <div>
-                      <p className="text-white/40 text-[10px] font-bold">BEFARING</p>
+                      <p className="text-white/60 text-[10px] font-bold">BEFARING</p>
                       <h3 className="text-white font-medium">Myrerveien 46A</h3>
                     </div>
                     <Camera className="w-5 h-5 text-white/60" />

@@ -19,7 +19,7 @@ export default function PrimaryAction() {
             </div>
 
             <h2 className="text-3xl md:text-5xl font-medium mb-6">Hva vil du gjøre?</h2>
-            <p className="text-white/40 text-lg font-light mb-12 max-w-md mx-auto">
+            <p className="text-white/60 text-lg font-light mb-12 max-w-md mx-auto">
               Beskriv arbeidet, problemet eller prosjektet du tenker på.
             </p>
 

@@ -33,7 +33,7 @@ export default function BRLVisual() {
                   <div 
                     key={i} 
                     className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                      item.active ? 'bg-white/10 text-white' : 'text-white/40 hover:text-white/60 hover:bg-white/5'
+                      item.active ? 'bg-white/10 text-white' : 'text-white/60 hover:text-white/60 hover:bg-white/5'
                     }`}
                   >
                     {item.icon}
@@ -58,11 +58,11 @@ export default function BRLVisual() {
                 <div className="md:col-span-2 space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
-                      <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-2">Tilstandsscore</p>
+                      <p className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-2">Tilstandsscore</p>
                       <p className="text-3xl font-bold text-white">8.4<span className="text-white/20 text-sm font-light">/10</span></p>
                     </div>
                     <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
-                      <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-2">Planlagt vedlikehold</p>
+                      <p className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-2">Planlagt vedlikehold</p>
                       <p className="text-3xl font-bold text-white">3<span className="text-white/20 text-sm font-light"> prosjekter</span></p>
                     </div>
                   </div>
@@ -78,7 +78,7 @@ export default function BRLVisual() {
                              transition={{ duration: 1, delay: i * 0.1 }}
                              className={`w-full ${i === 2 ? 'bg-era-gold' : 'bg-white/10'} rounded-t-sm`} 
                            />
-                           <span className="text-[9px] text-white/30">{2026 + i}</span>
+                           <span className="text-[9px] text-white/70">{2026 + i}</span>
                          </div>
                        ))}
                     </div>
@@ -97,12 +97,12 @@ export default function BRLVisual() {
 
                   <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
                     <div className="flex items-center gap-2 mb-4">
-                      <AlertTriangle className="w-4 h-4 text-white/40" />
-                      <span className="text-white/40 text-[10px] font-bold uppercase tracking-widest">Neste frist</span>
+                      <AlertTriangle className="w-4 h-4 text-white/60" />
+                      <span className="text-white/60 text-[10px] font-bold uppercase tracking-widest">Neste frist</span>
                     </div>
                     <div className="p-4 bg-white/5 rounded-lg">
                       <p className="text-white text-sm mb-1">Brannvernkontroll</p>
-                      <p className="text-white/40 text-[10px]">14. juni 2026</p>
+                      <p className="text-white/60 text-[10px]">14. juni 2026</p>
                     </div>
                   </div>
                 </div>

@@ -1,45 +1,32 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { ViewType } from '../App';
-import Logo from './Logo';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface NavigationProps {
   currentView: ViewType;
   onViewChange: (view: ViewType) => void;
 }
 
-const MENU_DATA = {
-  homeowner: {
-    headline: 'Forstå eiendommen bedre over tid.',
-    description: 'ERA kombinerer bilder, dokumentasjon og eiendomsdata for å hjelpe deg å forstå hva som bør følges opp.',
-    values: ['Vedlikehold', 'Historikk', 'Dokumentasjon', 'Verdi'],
-    links: ['Oversikt', 'Vedlikehold', 'Dokumentasjon', 'Historikk', 'Verdi og innsikt']
-  },
-  brl: {
-    headline: 'Bedre oversikt over bygg og vedlikehold.',
-    description: 'ERA hjelper sameier og borettslag med dokumentasjon, historikk og oppfølging av bygg over tid.',
-    values: ['Vedlikeholdsplan', 'Dokumentasjon', 'Styreportal', 'Historikk'],
-    links: ['Oversikt', 'Vedlikeholdsplan', 'Dokumentasjon', 'Styreportal', 'Historikk']
-  },
-  contractor: {
-    headline: 'Bedre dokumentasjon. Bedre kunder.',
-    description: 'ERA hjelper håndverkere med befaring, dokumentasjon og kundeoppfølging gjennom hele prosjektløpet.',
-    values: ['Befaring', 'Tilbud', 'FDV', 'Kundeoppfølging'],
-    links: ['ERA Pro', 'Befaring', 'Tilbud', 'FDV', 'Partnerprogram']
-  },
-  about: {
-    headline: 'En ny måte å følge opp eiendom.',
-    description: 'ERA kombinerer bilder, dokumentasjon og eiendomsdata i én sammenhengende opplevelse over tid.',
-    values: ['KI og eiendomsdata', 'Datasikkerhet', 'Historikk', 'Kontinuitet'],
-    links: ['Hvordan det fungerer', 'KI og eiendomsdata', 'Datasikkerhet', 'GDPR', 'Om selskapet']
-  }
-};
+const SOLUTIONS = [
+  { id: 'homeowner', label: 'Boligeier' },
+  { id: 'brl', label: 'Sameie & BRL' },
+  { id: 'contractor', label: 'Håndverker' },
+  { id: 'partners', label: 'Partnere' },
+] as const;
+
+const PRODUCT = [
+  { id: 'product-ai', label: 'KI-agenten' },
+] as const;
+
+const COMPANY = [
+  { id: 'about', label: 'Om ERA' }
+] as const;
 
 export default function Navigation({ currentView, onViewChange }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false);
-  const [activeMenu, setActiveMenu] = useState<keyof typeof MENU_DATA | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,54 +36,161 @@ export default function Navigation({ currentView, onViewChange }: NavigationProp
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isHeroDark = currentView === 'brl' || currentView === 'contractor';
-  const isTransparent = !scrolled && !activeMenu;
+  const isHeroDark = currentView === 'brl' || currentView === 'contractor' || currentView === 'partners' || currentView === 'about' || currentView === 'product-ai';
+  const isTransparent = !scrolled && !mobileMenuOpen;
   const textColor = isTransparent && isHeroDark ? 'text-white' : 'text-era-navy';
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 md:p-6 transition-all duration-300">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
+      scrolled || mobileMenuOpen 
+        ? 'bg-white/95 backdrop-blur-md shadow-sm border-era-navy/10'
+        : isHeroDark
+          ? 'bg-transparent border-white/10'
+          : 'bg-transparent border-era-navy/5'
+    }`}>
       <nav 
-        className={`w-full max-w-7xl flex items-center justify-between px-6 py-4 rounded-none transition-all duration-500 ${
-          scrolled || activeMenu
-            ? 'bg-era-ivory/80 backdrop-blur-md shadow-sm border border-era-navy/5'
-            : 'bg-transparent'
-        }`}
-        onMouseLeave={() => setActiveMenu(null)}
+        className="w-full max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
       >
         {/* Left: Logo */}
         <button 
-          onClick={() => onViewChange('homeowner')}
-          className={`font-display font-bold text-2xl tracking-tighter transition-colors ${textColor}`}
+          onClick={() => {
+            onViewChange('homeowner');
+            setMobileMenuOpen(false);
+          }}
+          className={`font-display font-bold text-2xl tracking-tighter transition-colors ${
+            mobileMenuOpen ? 'text-era-navy' : textColor
+          }`}
         >
           era.
         </button>
 
         {/* Center: Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          {(Object.keys(MENU_DATA) as Array<keyof typeof MENU_DATA>).map((key) => (
-            <button 
-              key={key}
-              onMouseEnter={() => setActiveMenu(key)}
-              className={`text-[12px] font-medium uppercase tracking-[0.1em] transition-colors ${
-                textColor === 'text-white' ? 'text-white/80 hover:text-white' : 'text-era-navy/70 hover:text-era-navy'
-              }`}
-            >
-              {key === 'homeowner' ? 'Boligeier' : 
-               key === 'brl' ? 'Sameie & BRL' : 
-               key === 'contractor' ? 'Håndverker' : 
-               'Om ERA'}
+        <div className="hidden md:flex items-center gap-8 lg:gap-12">
+          
+          {/* Løsninger Dropdown */}
+          <div 
+            className="relative group"
+            onMouseEnter={() => setActiveDropdown('solutions')}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <button className={`text-[11px] md:text-[12px] font-bold uppercase tracking-[0.15em] transition-all duration-300 py-4 ${
+                SOLUTIONS.some(s => s.id === currentView)
+                  ? (textColor === 'text-white' ? 'text-white' : 'text-era-navy')
+                  : (textColor === 'text-white' ? 'text-white/60 hover:text-white' : 'text-era-navy/60 hover:text-era-navy')
+              }`}>
+              Løsninger
             </button>
-          ))}
+            <AnimatePresence>
+              {activeDropdown === 'solutions' && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 5 }}
+                  className="absolute top-full left-0 w-48 bg-white border border-era-navy/5 shadow-2xl py-2 flex flex-col z-50"
+                >
+                  {SOLUTIONS.map(item => (
+                    <button 
+                      key={item.id}
+                      onClick={() => {
+                        onViewChange(item.id as ViewType);
+                        setActiveDropdown(null);
+                      }}
+                      className="text-left px-6 py-3 text-[11px] font-bold uppercase tracking-widest text-era-navy/60 hover:text-era-navy hover:bg-era-navy/5 transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Produkt Dropdown */}
+          <div 
+            className="relative group"
+            onMouseEnter={() => setActiveDropdown('product')}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <button className={`text-[11px] md:text-[12px] font-bold uppercase tracking-[0.15em] transition-all duration-300 py-4 ${
+                PRODUCT.some(s => s.id === currentView)
+                  ? (textColor === 'text-white' ? 'text-white' : 'text-era-navy')
+                  : (textColor === 'text-white' ? 'text-white/60 hover:text-white' : 'text-era-navy/60 hover:text-era-navy')
+              }`}>
+              Produkt
+            </button>
+            <AnimatePresence>
+              {activeDropdown === 'product' && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 5 }}
+                  className="absolute top-full left-0 w-48 bg-white border border-era-navy/5 shadow-2xl py-2 flex flex-col z-50"
+                >
+                  {PRODUCT.map(item => (
+                    <button 
+                      key={item.id}
+                      onClick={() => {
+                        onViewChange(item.id as ViewType);
+                        setActiveDropdown(null);
+                      }}
+                      className="text-left px-6 py-3 text-[11px] font-bold uppercase tracking-widest text-era-navy/60 hover:text-era-navy hover:bg-era-navy/5 transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Selskap Dropdown */}
+          <div 
+            className="relative group"
+            onMouseEnter={() => setActiveDropdown('company')}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <button className={`text-[11px] md:text-[12px] font-bold uppercase tracking-[0.15em] transition-all duration-300 py-4 ${
+                COMPANY.some(s => s.id === currentView)
+                  ? (textColor === 'text-white' ? 'text-white' : 'text-era-navy')
+                  : (textColor === 'text-white' ? 'text-white/60 hover:text-white' : 'text-era-navy/60 hover:text-era-navy')
+              }`}>
+              Selskap
+            </button>
+            <AnimatePresence>
+              {activeDropdown === 'company' && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 5 }}
+                  className="absolute top-full left-0 w-48 bg-white border border-era-navy/5 shadow-2xl py-2 flex flex-col z-50"
+                >
+                  {COMPANY.map(item => (
+                    <button 
+                      key={item.id}
+                      onClick={() => {
+                        onViewChange(item.id as ViewType);
+                        setActiveDropdown(null);
+                      }}
+                      className="text-left px-6 py-3 text-[11px] font-bold uppercase tracking-widest text-era-navy/60 hover:text-era-navy hover:bg-era-navy/5 transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
         </div>
 
         {/* Right: Actions */}
         <div className="hidden md:flex items-center gap-6">
-          <button className={`text-[12px] font-medium uppercase tracking-[0.1em] transition-colors ${
+          <button className={`text-[11px] md:text-[12px] font-bold uppercase tracking-[0.15em] transition-colors ${
             textColor === 'text-white' ? 'text-white/80 hover:text-white' : 'text-era-navy/70 hover:text-era-navy'
           }`}>
             Logg inn
           </button>
-          <button className={`px-8 py-3 text-[12px] font-bold uppercase tracking-[0.1em] transition-all duration-300 ${
+          <button className={`px-6 md:px-8 py-3 text-[11px] md:text-[12px] font-bold uppercase tracking-[0.15em] transition-all duration-300 shadow-xl rounded-none ${
             textColor === 'text-white' 
               ? 'bg-white text-era-navy hover:bg-era-ivory' 
               : 'bg-era-navy text-white hover:bg-era-midnight'
@@ -107,54 +201,93 @@ export default function Navigation({ currentView, onViewChange }: NavigationProp
 
         {/* Mobile menu toggle */}
         <button 
-          className={`md:hidden ${textColor}`}
+          className={`md:hidden p-2 -mr-2 transition-colors ${mobileMenuOpen ? 'text-era-navy' : textColor}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? <X /> : <Menu />}
+          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
 
-        {/* Dropdown content */}
+        {/* Mobile Menu Content */}
         <AnimatePresence>
-          {activeMenu && (
+          {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              className="absolute top-full left-0 right-0 w-full bg-era-ivory border-b border-era-navy/10 shadow-xl overflow-hidden"
+              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className="absolute top-full left-0 right-0 bg-white border-b border-era-navy/10 shadow-2xl overflow-hidden md:hidden origin-top"
             >
-              <div className="max-w-7xl mx-auto p-16">
-                <div className="grid grid-cols-12 gap-24">
-                  <div className="col-span-5 flex flex-col justify-between h-full">
-                    <div className="space-y-6">
-                      <h3 className="font-display text-5xl font-semibold text-era-navy leading-[1.1] tracking-tight">
-                        {MENU_DATA[activeMenu].headline}
-                      </h3>
-                      <p className="text-era-navy/60 text-lg font-light leading-relaxed max-w-sm">
-                        {MENU_DATA[activeMenu].description}
-                      </p>
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-3 mt-12">
-                      {MENU_DATA[activeMenu].values.map((val) => (
-                        <span key={val} className="px-3 py-1 bg-era-navy/5 text-era-navy/60 text-[10px] font-bold uppercase tracking-widest rounded-none">
-                          • {val}
-                        </span>
-                      ))}
-                    </div>
+              <div className="flex flex-col p-6 space-y-6 max-h-[80vh] overflow-y-auto">
+                {/* Løsninger Group */}
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-era-navy/60 mb-3 block">Løsninger</span>
+                  <div className="flex flex-col space-y-2">
+                    {SOLUTIONS.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => {
+                          onViewChange(item.id as ViewType);
+                          setMobileMenuOpen(false);
+                        }}
+                        className={`text-left text-lg font-medium tracking-wide p-3 rounded-none transition-colors ${
+                          currentView === item.id ? 'bg-era-gold/10 text-era-navy' : 'text-era-navy/80 hover:bg-era-navy/5'
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
                   </div>
-                  
-                  <div className="col-span-7">
-                    <div className="grid grid-cols-1 gap-1">
-                      {MENU_DATA[activeMenu].links.map((link, idx) => (
-                        <button key={link} className="flex items-center justify-between group py-6 border-b border-era-navy/5 transition-all duration-300">
-                          <span className={`text-lg font-medium text-era-navy transition-all duration-300 ${idx === 0 ? 'text-2xl font-semibold' : 'group-hover:text-era-gold'}`}>
-                            {link}
-                          </span>
-                          <ChevronRight className="w-5 h-5 text-era-navy/10 group-hover:text-era-gold transition-colors opacity-0 group-hover:opacity-100" />
-                        </button>
-                      ))}
-                    </div>
+                </div>
+
+                {/* Produkt Group */}
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-era-navy/60 mb-3 block">Produkt</span>
+                  <div className="flex flex-col space-y-2">
+                    {PRODUCT.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => {
+                          onViewChange(item.id as ViewType);
+                          setMobileMenuOpen(false);
+                        }}
+                        className={`text-left text-lg font-medium tracking-wide p-3 rounded-none transition-colors ${
+                          currentView === item.id ? 'bg-era-gold/10 text-era-navy' : 'text-era-navy/80 hover:bg-era-navy/5'
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
                   </div>
+                </div>
+
+                {/* Selskap Group */}
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-era-navy/60 mb-3 block">Selskap</span>
+                  <div className="flex flex-col space-y-2">
+                    {COMPANY.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => {
+                          onViewChange(item.id as ViewType);
+                          setMobileMenuOpen(false);
+                        }}
+                        className={`text-left text-lg font-medium tracking-wide p-3 rounded-none transition-colors ${
+                          currentView === item.id ? 'bg-era-gold/10 text-era-navy' : 'text-era-navy/80 hover:bg-era-navy/5'
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="pt-6 mt-2 border-t border-era-navy/10 flex flex-col gap-3">
+                  <button className="text-center py-4 text-sm font-bold uppercase tracking-[0.15em] text-era-navy rounded-none hover:bg-era-navy/5 transition-colors">
+                    Logg inn
+                  </button>
+                  <button className="bg-era-navy text-white text-center py-4 text-sm font-bold uppercase tracking-[0.15em] shadow-xl rounded-none hover:bg-era-midnight transition-colors">
+                    Start gratis
+                  </button>
                 </div>
               </div>
             </motion.div>

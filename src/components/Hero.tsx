@@ -2,7 +2,12 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Camera, ArrowRight, ShieldCheck, MapPin, TrendingUp, Sparkles } from 'lucide-react';
 
-export default function Hero() {
+interface HeroProps {
+  onOpenWaitlist?: () => void;
+  onOpenProductAI?: () => void;
+}
+
+export default function Hero({ onOpenWaitlist, onOpenProductAI }: HeroProps) {
   return (
     <section className="relative min-h-[110vh] w-full flex items-center justify-center overflow-hidden bg-era-ivory">
       {/* Background Image with Cinematic Overlay */}
@@ -73,21 +78,26 @@ export default function Hero() {
           className="text-era-navy relative z-10"
         >
           <span className="text-era-gold font-bold uppercase tracking-[0.2em] text-[10px] mb-6 block drop-shadow-sm">
-            Sikre boligens verdi for fremtiden
+            Fremtidens boligoppfølging er her
           </span>
           <h1 className="text-6xl md:text-8xl font-bold mb-8 max-w-2xl leading-[0.95]">
-            ERA hjelper deg å forstå og følge opp eiendom over tid.
+            Boligen din får sin egen KI-agent
           </h1>
           <p className="text-xl md:text-2xl text-era-navy/60 font-light mb-12 max-w-xl leading-relaxed">
-            ERA lærer eiendommen din å kjenne over tid. Ved å kombinere bilder, dokumentasjon og KI gjør vi vedlikehold intelligent og enkelt – <span className="text-era-navy font-medium italic">like enkelt som Vipps.</span>
+            ERA analyserer bilder, dokumentasjon og boligdata for å hjelpe deg å følge opp vedlikehold, oppdage problemer tidligere og bestille håndverkere enkelt.
           </p>
           
           <div className="flex flex-wrap gap-4 items-center">
-            <button className="square-button-navy flex items-center gap-2 pr-8 group">
-              <Camera className="w-5 h-5 transition-transform group-hover:scale-110" />
-              Start gratis
+            <button 
+              onClick={onOpenWaitlist}
+              className="square-button-navy flex items-center gap-2 pr-8 group"
+            >
+              Be om tilgang
             </button>
-            <button className="square-button border border-era-navy/20 text-era-navy hover:bg-white flex items-center gap-2 pr-6 group shadow-sm">
+            <button 
+              onClick={onOpenProductAI}
+              className="square-button border border-era-navy/20 text-era-navy hover:bg-white flex items-center gap-2 pr-6 group shadow-sm"
+            >
               Se hvordan det fungerer
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
@@ -95,7 +105,7 @@ export default function Hero() {
           
           <p className="text-xs text-era-gold font-bold uppercase tracking-widest mt-10 flex items-center gap-2 drop-shadow-sm">
             <span className="w-1.5 h-1.5 bg-era-gold animate-pulse" />
-            Gratis for boligeiere
+            Early Access Alpha
           </p>
         </motion.div>
 
@@ -115,7 +125,7 @@ export default function Hero() {
             <div className="h-full w-full bg-era-ivory p-6 pt-12">
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <h4 className="text-[10px] uppercase tracking-widest text-era-navy/40 font-bold">Oversikt</h4>
+                  <h4 className="text-[10px] uppercase tracking-widest text-era-navy/60 font-bold">Oversikt</h4>
                   <p className="text-lg font-bold">Min Eiendom</p>
                 </div>
                 <div className="w-8 h-8 bg-era-gold/10 flex items-center justify-center text-era-gold">
@@ -124,7 +134,7 @@ export default function Hero() {
               </div>
 
               <div className="bg-white p-5 shadow-sm border border-era-navy/5 mb-6">
-                <p className="text-[10px] uppercase tracking-widest text-era-navy/40 font-semibold mb-1">Estimert verdi</p>
+                <p className="text-[10px] uppercase tracking-widest text-era-navy/60 font-semibold mb-1">Estimert verdi</p>
                 <p className="text-2xl font-bold">11 500 000 kr</p>
                 <div className="mt-4 flex items-center gap-2 text-[10px] text-green-600 font-bold bg-green-50 w-fit px-2 py-1">
                   <TrendingUp className="w-3 h-3" />
@@ -140,7 +150,7 @@ export default function Hero() {
                   </div>
                   <div>
                     <p className="text-[10px] font-bold">Mangler dokumentasjon</p>
-                    <p className="text-[10px] text-era-navy/50 leading-tight mt-1">Sjekk din innboks for bad.</p>
+                    <p className="text-[10px] text-era-navy/70 leading-tight mt-1">Sjekk din innboks for bad.</p>
                   </div>
                 </div>
               </div>
@@ -164,14 +174,14 @@ export default function Hero() {
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-white font-medium text-sm">Myrerveien 46A</h3>
-                <p className="text-white/40 text-[10px]">Oslo, Norge</p>
+                <p className="text-white/60 text-[10px]">Oslo, Norge</p>
               </div>
               <MapPin className="w-4 h-4 text-era-gold" />
             </div>
             
             <div className="space-y-4">
               <div>
-                <p className="text-white/40 text-[9px] uppercase tracking-widest">Estimert verdi</p>
+                <p className="text-white/60 text-[9px] uppercase tracking-widest">Estimert verdi</p>
                 <p className="text-lg font-display font-medium text-white">11 500 000 kr</p>
               </div>
               
@@ -181,7 +191,7 @@ export default function Hero() {
                 </p>
               </div>
               
-              <p className="text-[9px] text-white/30 italic">
+              <p className="text-[9px] text-white/70 italic">
                 ERA har fulgt eiendommen siden mai 2026
               </p>
             </div>

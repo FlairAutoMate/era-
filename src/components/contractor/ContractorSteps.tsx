@@ -50,7 +50,7 @@ export default function ContractorSteps() {
 
                 {/* Label */}
                 <div className="mt-4 text-center">
-                  <span className={`text-[10px] font-mono tracking-widest uppercase block ${step.isAi ? 'text-blue-300 font-bold' : 'text-white/40'}`}>
+                  <span className={`text-[10px] font-mono tracking-widest uppercase block ${step.isAi ? 'text-blue-300 font-bold' : 'text-white/60'}`}>
                     {step.label}
                   </span>
                 </div>

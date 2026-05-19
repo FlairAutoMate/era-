@@ -1,10 +1,13 @@
 import { motion } from 'motion/react';
-import { CONTENT } from '../../content';
+import { ArrowRight } from 'lucide-react';
 
-export default function BRLHero() {
-  const c = CONTENT.brl.hero;
+interface BRLHeroProps {
+  onOpenWaitlist?: () => void;
+}
+
+export default function BRLHero({ onOpenWaitlist }: BRLHeroProps) {
   return (
-    <section className="pt-52 pb-20 px-6 bg-era-midnight text-white relative overflow-hidden">
+    <section className="pt-52 pb-32 px-6 bg-era-midnight text-white relative overflow-hidden">
       {/* Background Image with Cinematic Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -12,42 +15,33 @@ export default function BRLHero() {
           alt="Skandinavisk arkitektur" 
           className="w-full h-full object-cover opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-era-midnight/80 via-era-midnight/40 to-era-midnight" />
+        <div className="absolute inset-0 bg-gradient-to-b from-era-midnight/80 via-era-midnight/60 to-era-midnight" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10 text-center">
+      <div className="max-w-4xl mx-auto relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-era-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-8 block">{c.subLabel}</span>
-          <h1 className="text-5xl md:text-8xl font-bold mb-8 leading-[0.95] tracking-tight">
-            {c.title.split('<br />')[0]}
-            <br />
-            {c.title.split('<br />')[1]}
+          <span className="text-era-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-8 block">
+            ERA for sameier og borettslag
+          </span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium mb-10 leading-[1.0] tracking-tight">
+            KI-agent for drift <br className="hidden md:block" /> og vedlikehold <br className="hidden md:block" /> av eiendom
           </h1>
-          <p className="text-xl md:text-2xl text-white/60 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-            {c.subtitle}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-            <button className="square-button-gold px-12 py-5 text-lg w-full sm:w-auto">{c.cta1}</button>
-            <button className="text-white/80 hover:text-white font-medium flex items-center gap-2 group transition-colors">
-              {c.cta2}
-              <motion.span 
-                animate={{ x: [0, 5, 0] }} 
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                →
-              </motion.span>
-            </button>
+          <div className="text-lg md:text-xl text-white/70 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p>
+              ERA kobler sammen styret, beboerne, håndverkerne og dokumentasjonen i én intelligent vedlikeholdsflyt.
+            </p>
           </div>
-
-          <div className="flex flex-col items-center gap-4">
-            <div className="px-4 py-2 bg-white/5 border border-white/10 text-white/60 text-xs font-bold uppercase tracking-widest">
-              {c.footer}
-            </div>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-16">
+            <button onClick={onOpenWaitlist} className="square-button-gold px-12 py-5 text-lg w-full sm:w-auto shadow-2xl">Meld interesse</button>
+            <button className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs flex items-center gap-2 group transition-colors">
+              Se plattformen
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
         </motion.div>
       </div>

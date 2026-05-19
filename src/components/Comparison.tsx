@@ -64,7 +64,7 @@ export default function Comparison() {
           </motion.div>
         </div>
 
-        <div className="mt-32 flex flex-wrap justify-center gap-x-12 gap-y-4 text-[10px] font-bold uppercase tracking-[0.3em] text-era-navy/20">
+        <div className="mt-32 flex flex-wrap justify-center gap-x-12 gap-y-4 text-[10px] font-bold uppercase tracking-[0.3em] text-era-navy/60">
           <span>Enkel</span>
           <span>Menneskelig</span>
           <span>Emosjonell</span>

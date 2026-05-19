@@ -41,7 +41,7 @@ export default function AmbientFeed() {
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-24">
           <h2 className="text-4xl md:text-5xl font-medium mb-6">ERA oppdaget.</h2>
-          <p className="text-white/40 font-light max-w-sm mx-auto text-lg">
+          <p className="text-white/60 font-light max-w-sm mx-auto text-lg">
             ERA hjelper deg å følge opp eiendommen — uten unødvendig støy.
           </p>
         </div>

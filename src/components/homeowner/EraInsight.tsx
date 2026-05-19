@@ -14,7 +14,7 @@ export default function EraInsight() {
         >
           <div className="flex items-center gap-3 mb-10">
             <Sparkles className="w-5 h-5 text-era-gold" />
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-era-navy/40">ERA observerer</span>
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-era-navy/60">ERA observerer</span>
           </div>
 
           <div className="max-w-xl">

@@ -22,7 +22,7 @@ export default function Timeline() {
           <h2 className="text-5xl md:text-6xl font-medium mb-8 leading-[1.05]">
             Eiendommen får en hukommelse.
           </h2>
-          <p className="text-white/50 max-w-lg text-lg font-light leading-relaxed">
+          <p className="text-white/70 max-w-lg text-lg font-light leading-relaxed">
             ERA bygger historikken til eiendommen over tid. Bilder, dokumentasjon, vedlikehold og tidligere arbeid lagres samlet — slik at du alltid har oversikt.
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function Timeline() {
                     <div className="pr-0 md:pr-12">
                       <span className="text-era-gold font-display text-5xl font-bold block mb-4 tracking-tighter">{event.year}</span>
                       <h3 className="text-3xl font-medium mb-4">{event.title}</h3>
-                      <p className="text-white/40 font-light text-base leading-relaxed">{event.description}</p>
+                      <p className="text-white/60 font-light text-base leading-relaxed">{event.description}</p>
                     </div>
                   ) : null}
                 </div>
@@ -70,7 +70,7 @@ export default function Timeline() {
                     <div className="pl-0 md:pl-12">
                       <span className="text-era-gold font-display text-5xl font-bold block mb-4 tracking-tighter">{event.year}</span>
                       <h3 className="text-3xl font-medium mb-4">{event.title}</h3>
-                      <p className="text-white/40 font-light text-base leading-relaxed">{event.description}</p>
+                      <p className="text-white/60 font-light text-base leading-relaxed">{event.description}</p>
                     </div>
                   ) : null}
                 </div>
@@ -79,7 +79,7 @@ export default function Timeline() {
           </div>
           
           <div className="mt-32 text-center">
-            <p className="text-white/30 text-sm font-light">Alt samlet på ett sted.</p>
+            <p className="text-white/70 text-sm font-light">Alt samlet på ett sted.</p>
             <p className="text-white/60 text-lg font-light mt-2">Over tid blir ERA smartere på eiendommen din.</p>
           </div>
         </div>
