@@ -33,7 +33,7 @@ const TerminalLine = ({ text, delay, onComplete, colorClass = "text-white/60" }:
   return (
     <div className={colorClass}>
       {displayedText}
-      {displayedText.length < text.length && <span className="animate-pulse inline-block w-2 relative top-0.5 h-3 bg-era-gold ml-1" />}
+      {displayedText.length < text.length && <span className="inline-block w-2 relative top-0.5 h-3 bg-era-gold ml-1" />}
     </div>
   );
 };
@@ -62,23 +62,19 @@ export default function AIAgentPage({ onOpenWaitlist }: AIAgentPageProps) {
         </div>
 
         <div className="max-w-5xl mx-auto relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <span className="text-era-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-8 block font-mono flex items-center justify-center gap-2">
-              <Activity className="w-4 h-4 text-era-gold animate-pulse" />
+              <Activity className="w-4 h-4 text-era-gold" />
               ERA Intelligence Layer
             </span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium mb-10 leading-[0.9] tracking-tight">
-              Eiendommens <br className="hidden md:block"/> autonome hjerne
+              Eiendommens <br className="hidden md:block"/> intelligente hjerne
             </h1>
             <p className="text-lg md:text-xl text-white/60 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-              KI-agenten oversetter statisk dokumentasjon til levende vedlikeholdsplaner, oppdager avvik før de blir kostbare feil, og koordinerer tiltak automatisk.
+              KI-agenten oversetter statisk dokumentasjon til levende vedlikeholdsplaner, oppdager avvik, og fjerner alt av administrativt stress — slik at det å vedlikeholde boligen blir like enkelt som Vipps.
             </p>
             <button onClick={onOpenWaitlist} className="square-button-gold px-12 py-5 text-sm shadow-2xl">Meld interesse</button>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -89,14 +85,14 @@ export default function AIAgentPage({ onOpenWaitlist }: AIAgentPageProps) {
              <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">Infrastruktur</span>
              <h2 className="text-4xl md:text-5xl font-medium mb-8">Hvordan fungerer ERA OS?</h2>
              <p className="text-xl text-era-navy/60 font-light leading-relaxed">
-               Agenten opererer i tre kontinuerlige faser: Datafangst, Analyse og Handling. Alt skjer autonomt i bakgrunnen.
+               Agenten opererer i tre kontinuerlige faser: Datafangst, Analyse og Handling — og sparer deg for alt av manuelle papirprosesser i bakgrunnen.
              </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-12 text-left">
             {/* Phase 1 */}
-            <div className="relative group p-10 border border-era-navy/5 bg-era-ivory/30 hover:border-era-navy transition-colors duration-500">
-              <div className="w-12 h-12 bg-era-navy/5 flex items-center justify-center mb-10 text-era-navy">
+            <div className="relative group p-10 border border-era-navy/5 bg-era-ivory/30 hover:border-era-navy transition-colors duration-500 rounded-xl">
+              <div className="w-12 h-12 bg-era-navy/5 flex items-center justify-center mb-10 text-era-navy rounded-xl">
                 <ScanLine className="w-6 h-6" />
               </div>
               <h4 className="text-[10px] uppercase tracking-widest text-era-navy/60 font-bold mb-4">Fase 1</h4>
@@ -107,8 +103,8 @@ export default function AIAgentPage({ onOpenWaitlist }: AIAgentPageProps) {
             </div>
 
             {/* Phase 2 */}
-            <div className="relative group p-10 border border-era-navy/5 bg-era-ivory/30 hover:border-era-navy transition-colors duration-500">
-              <div className="w-12 h-12 bg-era-navy/5 flex items-center justify-center mb-10 text-era-navy">
+            <div className="relative group p-10 border border-era-navy/5 bg-era-ivory/30 hover:border-era-navy transition-colors duration-500 rounded-xl">
+              <div className="w-12 h-12 bg-era-navy/5 flex items-center justify-center mb-10 text-era-navy rounded-xl">
                 <Cpu className="w-6 h-6" />
               </div>
               <h4 className="text-[10px] uppercase tracking-widest text-era-navy/60 font-bold mb-4">Fase 2</h4>
@@ -119,14 +115,14 @@ export default function AIAgentPage({ onOpenWaitlist }: AIAgentPageProps) {
             </div>
 
             {/* Phase 3 */}
-            <div className="relative group p-10 border border-era-navy/5 bg-era-ivory/30 hover:border-era-navy transition-colors duration-500">
-              <div className="w-12 h-12 bg-era-navy/5 flex items-center justify-center mb-10 text-era-navy">
+            <div className="relative group p-10 border border-era-navy/5 bg-era-ivory/30 hover:border-era-navy transition-colors duration-500 rounded-xl">
+              <div className="w-12 h-12 bg-era-navy/5 flex items-center justify-center mb-10 text-era-navy rounded-xl">
                 <Zap className="w-6 h-6" />
               </div>
               <h4 className="text-[10px] uppercase tracking-widest text-era-navy/60 font-bold mb-4">Fase 3</h4>
-              <h3 className="text-2xl font-medium mb-4">Autonome Workflows</h3>
+              <h3 className="text-2xl font-medium mb-4">Vipps-enkel utførelse</h3>
               <p className="text-era-navy/60 font-light leading-relaxed">
-                Ved oppdaget behov kan ERA automatisk opprette oppgaver, innhente tilbud fra godkjente håndverkere og gi eieren et "one-click" godkjenningsvalg.
+                Når ERA oppdager et behov, samles underlaget automatisk. Du får et fiks ferdig tilbud på mobilen og bekrefter det med ett enkelt trykk — akkurat som å betale med Vipps.
               </p>
             </div>
           </div>
@@ -137,7 +133,7 @@ export default function AIAgentPage({ onOpenWaitlist }: AIAgentPageProps) {
       <section className="py-40 px-6 bg-era-ivory border-t border-era-navy/5">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="order-2 lg:order-1 relative h-[600px] bg-era-midnight border-[8px] border-white shadow-2xl overflow-hidden flex items-center justify-center">
+            <div className="order-2 lg:order-1 relative h-[600px] bg-era-midnight border-[8px] border-white shadow-2xl overflow-hidden flex items-center justify-center rounded-2xl">
                <div className="absolute inset-0 bg-white/5" />
                <div className="p-8 w-full max-w-sm space-y-4 font-mono text-[10px]">
                  <div className="flex gap-2 text-white/60 mb-8">
@@ -187,14 +183,14 @@ export default function AIAgentPage({ onOpenWaitlist }: AIAgentPageProps) {
                    <motion.div 
                      initial={{ opacity: 0, y: 10 }}
                      animate={{ opacity: 1, y: 0 }}
-                     className="mt-8 bg-white/10 p-4 border border-white/20 text-white"
+                     className="mt-8 bg-white/10 p-4 border border-white/20 text-white rounded-xl"
                    >
                      <div className="font-sans text-sm font-bold mb-2 flex items-center gap-2">
                        <Zap className="w-4 h-4 text-era-gold" />
                        Forslag: Service på varmeanlegg
                      </div>
                      <div className="font-sans text-xs font-light opacity-60">ERA har innhentet 2 tilbud for service.</div>
-                     <button className="mt-4 w-full bg-white text-era-midnight py-2 font-sans font-bold text-[10px] uppercase tracking-widest hover:bg-era-gold transition-colors">
+                     <button className="mt-4 w-full bg-white text-era-midnight py-2 font-sans font-bold text-[10px] uppercase tracking-widest hover:bg-era-gold transition-colors rounded-xl">
                        Godkjenn forslag
                      </button>
                    </motion.div>

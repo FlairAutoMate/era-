@@ -45,7 +45,7 @@ export default function Footer({ onViewChange }: FooterProps) {
             </button>
             <h3 className="text-white font-medium text-lg mb-4 pr-4">ERA bygger den intelligente infrastrukturen for eiendom</h3>
             <p className="text-white/60 font-light leading-relaxed text-sm mb-12 pr-4">
-              KI-agenter, automatisering og kontinuerlig eiendomsinnsikt — koblet sammen i én plattform for drift, vedlikehold og oppfølging.
+              KI-agenter, automatisering og kontinuerlig eiendomsinnsikt — koblet sammen i én plattform for å ta vare på boligen og beskytte verdiene.
             </p>
             <div className="flex items-center gap-4">
               <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center text-white/60 hover:text-era-gold hover:border-era-gold transition-all duration-300">

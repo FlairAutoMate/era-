@@ -1,6 +1,22 @@
 import React from 'react';
+import { 
+  ArrowRight, 
+  Sparkles, 
+  Smartphone, 
+  Wifi, 
+  Battery, 
+  User, 
+  TrendingUp, 
+  MapPin, 
+  Shield, 
+  FileText, 
+  Clock,
+  Briefcase,
+  AlertTriangle,
+  CheckCircle2,
+  Hammer
+} from 'lucide-react';
 import { motion } from 'motion/react';
-import { Camera, ArrowRight, ShieldCheck, MapPin, TrendingUp, Sparkles } from 'lucide-react';
 
 interface HeroProps {
   onOpenWaitlist?: () => void;
@@ -9,196 +25,224 @@ interface HeroProps {
 
 export default function Hero({ onOpenWaitlist, onOpenProductAI }: HeroProps) {
   return (
-    <section className="relative min-h-[110vh] w-full flex items-center justify-center overflow-hidden bg-era-ivory">
-      {/* Background Image with Cinematic Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop" 
-          alt="Scandinavian Home" 
-          className="w-full h-full object-cover opacity-80"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-era-ivory via-era-ivory/80 to-transparent md:block hidden" />
-        <div className="absolute inset-0 bg-era-ivory/60 md:hidden block" />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center pt-52 pb-32">
-        {/* Subtle KI Infrastructure Lines connecting text to mockup */}
-        <div className="absolute inset-0 z-0 pointer-events-none hidden lg:block overflow-hidden">
-          {/* Main flow line */}
-          <svg className="absolute w-full h-full" style={{ left: 0, top: 0 }}>
-             {/* Data flow from Homeowner to ERA Core */}
-            <motion.path
-              d="M 400 400 C 600 400, 700 500, 900 450"
-              stroke="#081426"
-              strokeWidth="1"
-              strokeOpacity="0.1"
-              fill="none"
-              strokeDasharray="4 4"
-            />
-            {/* Animated particle along path */}
-            <motion.circle
-              r="2"
-              fill="#D4AF37"
-              initial={{ offsetDistance: "0%" }}
-              animate={{ offsetDistance: "100%" }}
-              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-              style={{ offsetPath: 'path("M 400 400 C 600 400, 700 500, 900 450")' } as React.CSSProperties}
-            />
-            
-            {/* ERA Core Node */}
-            <circle cx="900" cy="450" r="4" fill="#081426" opacity="0.3" />
-            <circle cx="900" cy="450" r="16" fill="#081426" opacity="0.05" />
-
-            {/* ERA Core to Contractor */}
-            <motion.path
-              d="M 900 450 C 1100 400, 1200 600, 1400 550"
-              stroke="#081426"
-              strokeWidth="1"
-              strokeOpacity="0.1"
-              fill="none"
-              strokeDasharray="4 4"
-            />
-             <motion.circle
-              r="2"
-              fill="#D4AF37"
-              initial={{ offsetDistance: "0%" }}
-              animate={{ offsetDistance: "100%" }}
-              transition={{ duration: 4, delay: 1, repeat: Infinity, ease: "linear" }}
-              style={{ offsetPath: 'path("M 900 450 C 1100 400, 1200 600, 1400 550")' } as React.CSSProperties}
-            />
-            <circle cx="1400" cy="550" r="4" fill="#081426" opacity="0.3" />
-            <circle cx="1400" cy="550" r="16" fill="#081426" opacity="0.05" />
-          </svg>
-        </div>
-
-        <motion.div 
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-era-navy relative z-10"
-        >
-          <span className="text-era-gold font-bold uppercase tracking-[0.2em] text-[10px] mb-6 block drop-shadow-sm">
-            Fremtidens boligoppfølging er her
+    <section className="relative min-h-[95vh] w-full flex items-center justify-center overflow-hidden bg-era-ivory border-b border-era-navy/5">
+      {/* Background Subtle Graphic Wave Overlays */}
+      <div className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(#0E2341_1.2px,transparent_1.2px)] [background-size:32px_32px]" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16 items-center pt-40 pb-20 w-full">
+        
+        {/* Left Column: Original Elegant Editorial Typography */}
+        <div className="lg:col-span-6 space-y-8 text-era-navy">
+          <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block drop-shadow-sm font-sans">
+            VEDLIKEHOLD & VERDISIKRING
           </span>
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 max-w-2xl leading-[0.95]">
-            Boligen din får sin egen KI-agent
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-[0.95] tracking-tight">
+            KI-agenten som tar vare på boligen din
           </h1>
-          <p className="text-xl md:text-2xl text-era-navy/60 font-light mb-12 max-w-xl leading-relaxed">
-            ERA analyserer bilder, dokumentasjon og boligdata for å hjelpe deg å følge opp vedlikehold, oppdage problemer tidligere og bestille håndverkere enkelt.
+
+          <p className="text-lg text-era-navy/70 font-light leading-relaxed max-w-xl">
+            ERA analyserer boligen, legger en personlig plan for vedlikehold, og beskytter verdiene dine — slik at det å ta vare på hjemmet blir like enkelt som å sende penger med Vipps.
           </p>
-          
-          <div className="flex flex-wrap gap-4 items-center">
+
+          <div className="flex flex-wrap gap-4 items-center pt-2">
             <button 
               onClick={onOpenWaitlist}
-              className="square-button-navy flex items-center gap-2 pr-8 group"
+              className="square-button bg-era-navy text-white hover:bg-era-midnight font-bold px-8 py-4 flex items-center gap-2 shadow-lg tracking-wider text-xs uppercase transition-colors"
             >
-              Be om tilgang
+              Prøv ERA Agent
+              <ArrowRight className="w-4 h-4" />
             </button>
             <button 
               onClick={onOpenProductAI}
-              className="square-button border border-era-navy/20 text-era-navy hover:bg-white flex items-center gap-2 pr-6 group shadow-sm"
+              className="square-button border border-era-navy/20 bg-era-beige/30 text-era-navy hover:bg-era-beige font-bold px-8 py-4 flex items-center gap-2 group transition-all text-xs uppercase tracking-wider"
             >
               Se hvordan det fungerer
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
-          
-          <p className="text-xs text-era-gold font-bold uppercase tracking-widest mt-10 flex items-center gap-2 drop-shadow-sm">
-            <span className="w-1.5 h-1.5 bg-era-gold animate-pulse" />
-            Early Access Alpha
-          </p>
-        </motion.div>
 
-        {/* iPhone Mockup Mock / Hero Product Visual */}
-        <motion.div
-          initial={{ opacity: 0, y: 50, rotateY: -10 }}
-          animate={{ opacity: 1, y: 0, rotateY: -5 }}
-          transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-          className="relative lg:block flex justify-center perspective-[2000px] lg:translate-x-24"
-        >
-          {/* Main Visual: Stylized iPhone Mockup */}
-          <div className="relative w-[260px] h-[520px] bg-era-midnight rounded-[2.5rem] border-[6px] border-era-midnight shadow-[0_50px_100px_-20px_rgba(8,20,38,0.5)] overflow-hidden">
-            {/* iPhone Top Bar Notch */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-era-midnight z-20" />
-            
-            {/* App UI Concept inside Phone */}
-            <div className="h-full w-full bg-era-ivory p-6 pt-12">
-              <div className="flex items-center justify-between mb-8">
-                <div>
-                  <h4 className="text-[10px] uppercase tracking-widest text-era-navy/60 font-bold">Oversikt</h4>
-                  <p className="text-lg font-bold">Min Eiendom</p>
-                </div>
-                <div className="w-8 h-8 bg-era-gold/10 flex items-center justify-center text-era-gold">
-                  <Sparkles className="w-4 h-4" />
-                </div>
-              </div>
-
-              <div className="bg-white p-5 shadow-sm border border-era-navy/5 mb-6">
-                <p className="text-[10px] uppercase tracking-widest text-era-navy/60 font-semibold mb-1">Estimert verdi</p>
-                <p className="text-2xl font-bold">11 500 000 kr</p>
-                <div className="mt-4 flex items-center gap-2 text-[10px] text-era-navy/60 font-bold bg-era-navy/5 w-fit px-2 py-1">
-                  <TrendingUp className="w-3 h-3" />
-                  + POTENSIELL VERDI VED OPPUSSING
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <p className="text-xs font-bold text-era-navy/60">ERA OPPDAGET</p>
-                <div className="bg-white/50 p-4 border border-era-navy/5 flex gap-3">
-                  <div className="w-8 h-8 bg-era-gold/20 flex items-center justify-center flex-shrink-0">
-                    <ShieldCheck className="w-4 h-4 text-era-gold" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold">Mangler dokumentasjon</p>
-                    <p className="text-[10px] text-era-navy/70 leading-tight mt-1">Sjekk din innboks for bad.</p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Camera FAB in App Mockup */}
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-                <div className="w-14 h-14 bg-era-navy shadow-xl flex items-center justify-center text-white">
-                  <Camera className="w-6 h-6" />
-                </div>
-              </div>
-            </div>
+          <div className="text-[10px] text-era-navy/50 font-semibold tracking-widest uppercase flex items-center gap-2 pt-4">
+            <span className="text-era-gold font-bold">✓</span> Norskutviklet for norske boligforhold
           </div>
+        </div>
 
-          {/* Floating Floating Property Card Overlaying the mockup */}
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            animate={{ opacity: 1, x: -100 }}
-            transition={{ delay: 0.8, duration: 1 }}
-            className="absolute top-1/4 left-0 glass-dark p-6 shadow-2xl z-30 w-[240px] hidden md:block"
+        {/* Right Column: Original Smartphone/Phone Mockup showing the Homeowner App */}
+        <div className="lg:col-span-6 flex justify-center items-center relative">
+          
+          {/* Subtle gold blurred aura behind phone to give depth */}
+          <div className="absolute w-72 h-72 rounded-full bg-era-gold/5 blur-3xl -z-10" />
+
+          {/* Interactive Floating Alert Left */}
+          <motion.div 
+            whileHover={{ scale: 1.05, y: -5 }}
+            className="absolute left-[-20px] top-[140px] z-30 hidden sm:flex items-center gap-3 bg-white p-3 shadow-xl border border-era-navy/5 rounded-xl max-w-[200px] transition-all duration-300"
           >
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <h3 className="text-white font-medium text-sm">Myrerveien 46A</h3>
-                <p className="text-white/60 text-[10px]">Oslo, Norge</p>
-              </div>
-              <MapPin className="w-4 h-4 text-era-gold" />
+            <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
             </div>
-            
-            <div className="space-y-4">
-              <div>
-                <p className="text-white/60 text-[9px] uppercase tracking-widest">Eiendomsverdi</p>
-                <p className="text-lg font-display font-medium text-white">11 500 000 kr</p>
-              </div>
-              
-              <div className="bg-white/5 p-4 border border-white/10">
-                <p className="text-[11px] text-white/90 leading-snug">
-                  Verdien kan sikres og potensielt økes gjennom anbefalte utbedringer og komplett historikk.
-                </p>
-              </div>
-              
-              <p className="text-[9px] text-white/70 italic">
-                ERA har fulgt eiendommen siden mai 2026
-              </p>
+            <div>
+              <p className="text-[10px] font-bold text-era-navy">Malt fasade</p>
+              <p className="text-[8px] text-era-navy/50 font-mono">Garanti registrert</p>
             </div>
           </motion.div>
-        </motion.div>
+
+          {/* Interactive Floating Alert Right */}
+          <motion.div 
+            whileHover={{ scale: 1.05, y: -5 }}
+            className="absolute right-[-20px] bottom-[160px] z-30 hidden sm:flex items-center gap-3 bg-white p-3 shadow-xl border border-era-navy/5 rounded-xl max-w-[220px] transition-all duration-300"
+          >
+            <div className="w-8 h-8 rounded-full bg-era-gold/10 flex items-center justify-center shrink-0">
+              <Hammer className="w-4 h-4 text-era-gold" />
+            </div>
+            <div>
+              <p className="text-[10px] font-bold text-era-navy">Håndverker funnet</p>
+              <p className="text-[8px] text-emerald-600 font-bold font-mono uppercase tracking-wider">Service bekreftet</p>
+            </div>
+          </motion.div>
+
+          {/* Realistic iPhone Device Outline Wrapper */}
+          <div className="relative mx-auto w-[310px] h-[640px] bg-era-navy border-[10px] border-era-navy rounded-[44px] shadow-[0_25px_60px_-15px_rgba(8,20,38,0.3)] overflow-hidden flex flex-col">
+            
+            {/* Top Ear Speaker & Camera Notch */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-era-navy rounded-b-xl z-30 flex justify-center items-center">
+              <div className="w-12 h-1 bg-white/20 rounded-full" />
+            </div>
+
+            {/* Simulated Mobile Status Indicators */}
+            <div className="h-10 px-6 bg-era-ivory flex justify-between items-end text-[10px] font-bold text-era-navy/60 select-none z-20 pb-1 shrink-0">
+              <span>12:45</span>
+              <div className="flex items-center gap-1.5">
+                <Wifi className="w-3 h-3" />
+                <span className="text-[9px]">5G</span>
+                <Battery className="w-3.5 h-3.5" />
+              </div>
+            </div>
+
+            {/* Inner Phone Screen Canvas */}
+            <div className="flex-1 bg-era-ivory flex flex-col justify-between overflow-hidden relative text-era-navy">
+              
+              {/* App Status Indicator Header */}
+              <div className="px-5 py-4 border-b border-era-navy/5 flex justify-between items-center bg-white/50 backdrop-blur-md select-none shrink-0">
+                <div className="font-display font-bold text-lg tracking-tight flex items-center gap-0.5">
+                  era<span className="w-1.5 h-1.5 bg-era-gold block shrink-0" />
+                </div>
+                <div className="w-7 h-7 bg-era-beige rounded-full border border-era-navy/10 flex items-center justify-center text-era-navy/60">
+                  <User className="w-3.5 h-3.5" />
+                </div>
+              </div>
+
+              {/* Scrollable Mobile Feed Simulation */}
+              <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
+                
+                {/* Active Property Card with Image & Sweeping scan effect */}
+                <div className="border border-era-navy/10 bg-white shadow-xs overflow-hidden rounded-xl relative">
+                  <div className="h-28 relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600" 
+                      alt="Myrerveien 46A" 
+                      className="w-full h-full object-cover"
+                    />
+                    
+                    <div className="absolute top-3 left-3 bg-era-navy/90 text-white text-[8px] font-bold uppercase tracking-wider px-2 py-0.5">
+                      Min Bolig
+                    </div>
+                  </div>
+                  <div className="p-3.5">
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h4 className="text-[10px] uppercase tracking-widest text-era-navy/60 font-bold">Oversikt</h4>
+                        <p className="text-sm font-semibold">Myrerveien 46A</p>
+                      </div>
+                      <div className="w-7 h-7 bg-era-gold/10 flex items-center justify-center text-era-gold">
+                        <Sparkles className="w-3.5 h-3.5" />
+                      </div>
+                    </div>
+
+                    {/* Subtle live pulse inside phone layout */}
+                    <div className="flex items-center gap-1.5 mt-2.5 pt-2 border-t border-era-navy/5">
+                      <span className="relative flex h-2 w-2">
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                      </span>
+                      <span className="text-[8px] uppercase font-mono tracking-wider text-emerald-600 font-bold block">
+                        ERA system aktivt
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Simulated Notification / Analysis Box */}
+                <div className="p-4 bg-era-beige border border-era-navy/10 text-xs flex flex-col justify-between rounded-xl">
+                  <p className="font-bold text-[8px] tracking-wider text-era-gold uppercase mb-1 flex items-center gap-1.5">
+                    <Clock className="w-3 h-3 text-era-gold shrink-0" /> PROAKTIVT VARSEL
+                  </p>
+                  <p className="font-light leading-snug text-era-navy/80">
+                    Sintef-standard: Røropplegg på badet runder 18 år. Planlegg sjekk for å unngå TG3-anmerkning.
+                  </p>
+                </div>
+
+                {/* Quick Action Item */}
+                <div className="p-3.5 border border-era-navy/10 bg-white flex items-center justify-between hover:bg-era-beige transition-colors duration-200 cursor-pointer rounded-xl">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-era-navy/5 flex items-center justify-center text-era-navy">
+                      <FileText className="w-4 h-4 text-era-gold" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold">Dokumenter</p>
+                      <p className="text-[9px] text-era-navy/50 font-light">Utvid boligens hukommelse</p>
+                    </div>
+                  </div>
+                  <ArrowRight className="w-3.5 h-3.5 text-era-navy/40" />
+                </div>
+
+                {/* Real-time Status Card with continuous synced animation */}
+                <div className="p-3 bg-emerald-500/5 border border-emerald-500/10 flex items-center justify-between rounded-xl">
+                  <span className="text-[9px] font-mono uppercase tracking-widest text-emerald-600 font-bold">
+                    Alt i orden — FDV oppdatert
+                  </span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                </div>
+
+              </div>
+
+              {/* Bottom Phone Bar with AppNav Navigation Links */}
+              <div className="h-16 border-t border-era-navy/5 bg-white flex items-center justify-around px-2 text-era-navy select-none shrink-0">
+                <div className="flex flex-col items-center gap-1 cursor-pointer">
+                  <div className="w-4 h-4 rounded-full bg-era-navy/5 flex items-center justify-center">
+                    <svg className="w-2.5 h-2.5 text-era-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                  </div>
+                  <span className="text-[8px] font-bold uppercase tracking-widest text-era-navy/80 scale-90">HJEM</span>
+                </div>
+                <div className="flex flex-col items-center gap-1 cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
+                  <svg className="w-3.5 h-3.5 text-era-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span className="text-[7px] font-bold uppercase tracking-widest scale-90">PLAN</span>
+                </div>
+                <div className="relative -top-2">
+                  <div className="w-10 h-10 bg-era-navy text-era-gold rounded-lg flex items-center justify-center shadow-md">
+                    <svg className="w-5 h-5 text-era-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center gap-1 cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
+                  <svg className="w-3.5 h-3.5 text-era-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                  <span className="text-[7px] font-bold uppercase tracking-widest scale-90">LOGG</span>
+                </div>
+                <div className="flex flex-col items-center gap-1 cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
+                  <svg className="w-3.5 h-3.5 text-era-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                  <span className="text-[7px] font-bold uppercase tracking-widest scale-90">ASSISTENT</span>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Home indicator bar at bottom */}
+            <div className="h-4 bg-white flex items-center justify-center shrink-0">
+              <div className="w-24 h-1 bg-era-navy/30 rounded-full" />
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
     </section>
   );
 }
-

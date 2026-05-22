@@ -24,7 +24,6 @@ export default function AppNav() {
             className="w-20 h-20 bg-era-midnight text-era-gold shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8)] flex items-center justify-center border-4 border-era-navy rounded-full relative z-10"
           >
             <Camera className="w-8 h-8" />
-            <div className="absolute inset-0 bg-white/5 rounded-full animate-pulse opacity-50" />
           </motion.button>
           
           {/* Glow Effect */}

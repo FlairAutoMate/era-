@@ -41,9 +41,9 @@ export default function Comparison() {
             <div className="text-[120px] font-bold text-era-navy/[0.03] absolute -top-10 -left-4 leading-none select-none">
               02
             </div>
-            <h3 className="text-xl font-medium mb-4 relative z-10">Intelligent oppfølging.</h3>
+            <h3 className="text-xl font-medium mb-4 relative z-10">Intelligent verdisikring.</h3>
             <p className="text-era-navy/60 font-light leading-relaxed text-sm relative z-10">
-              Systemet bruker kunstig intelligens og eiendomsdata for å hjelpe deg å forstå hva som bør følges opp — før små ting blir store problemer.
+              Systemet bruker kunstig intelligens og eiendomsdata for å hjelpe deg å beskytte boligens verdier over tid — før små avvik blir store, dyre skader.
             </p>
           </motion.div>
 
@@ -59,7 +59,7 @@ export default function Comparison() {
             </div>
             <h3 className="text-xl font-medium mb-4 relative z-10">Én sammenhengende flyt.</h3>
             <p className="text-era-navy/60 font-light leading-relaxed text-sm relative z-10">
-              ERA samler historikk, vedlikehold, dokumentasjon og oppfølging i én flyt. Det kjedelige blir viktig, og det kompliserte blir forståelig.
+              ERA samler historikk, vedlikehold, dokumentasjon og verdisikring i én flyt. Det kjedelige blir viktig, og det kompliserte blir enkelt.
             </p>
           </motion.div>
         </div>

@@ -51,17 +51,17 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="relative w-full max-w-xl bg-white shadow-2xl overflow-hidden"
+            className="relative w-full max-w-xl bg-white shadow-2xl overflow-hidden rounded-2xl"
           >
             {/* Top Bar */}
             <div className="flex justify-between items-center p-6 border-b border-era-navy/5 bg-era-ivory/50">
               <div>
-                <p className="text-[10px] uppercase tracking-widest text-era-navy/60 font-bold">Early Access</p>
+                <p className="text-[10px] uppercase tracking-widest text-era-navy/60 font-bold">Tidlig tilgang</p>
                 <h3 className="text-xl font-medium text-era-navy leading-none mt-1">Be om tilgang til ERA</h3>
               </div>
               <button 
                 onClick={onClose}
-                className="w-10 h-10 rounded-none bg-white hover:bg-era-navy hover:text-white flex items-center justify-center text-era-navy border border-era-navy/5 transition-colors"
+                className="w-10 h-10 rounded-xl bg-white hover:bg-era-navy hover:text-white flex items-center justify-center text-era-navy border border-era-navy/5 transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -83,7 +83,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                       <button
                         key={r.id}
                         onClick={() => { setRole(r.id); setStep(2); }}
-                        className="flex flex-col items-center justify-center p-8 border border-era-navy/5 hover:border-era-navy bg-white hover:bg-era-navy hover:text-white transition-all duration-300 group text-era-navy group h-32"
+                        className="flex flex-col items-center justify-center p-8 border border-era-navy/5 hover:border-era-navy bg-white hover:bg-era-navy hover:text-white transition-all duration-300 group text-era-navy group h-32 rounded-xl"
                       >
                         <r.icon className="w-6 h-6 mb-4 text-era-navy/60 group-hover:text-era-gold transition-colors" />
                         <span className="text-sm font-medium">{r.label}</span>
@@ -106,18 +106,18 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                     <input 
                       type="text" 
                       placeholder="Fullt navn" 
-                      className="w-full bg-era-ivory border border-era-navy/5 px-6 py-4 text-sm focus:outline-none focus:border-era-navy focus:bg-white transition-colors"
+                      className="w-full bg-era-ivory border border-era-navy/5 px-6 py-4 text-sm focus:outline-none focus:border-era-navy focus:bg-white transition-colors rounded-xl"
                     />
                     <input 
                       type="email" 
                       placeholder="Jobb- eller privat e-postadresse" 
-                      className="w-full bg-era-ivory border border-era-navy/5 px-6 py-4 text-sm focus:outline-none focus:border-era-navy focus:bg-white transition-colors"
+                      className="w-full bg-era-ivory border border-era-navy/5 px-6 py-4 text-sm focus:outline-none focus:border-era-navy focus:bg-white transition-colors rounded-xl"
                     />
                     {role !== 'homeowner' && (
                       <input 
                         type="text" 
                         placeholder={role === 'board' ? 'Navn på sameie/borettslag' : 'Selskapsnavn'} 
-                        className="w-full bg-era-ivory border border-era-navy/5 px-6 py-4 text-sm focus:outline-none focus:border-era-navy focus:bg-white transition-colors"
+                        className="w-full bg-era-ivory border border-era-navy/5 px-6 py-4 text-sm focus:outline-none focus:border-era-navy focus:bg-white transition-colors rounded-xl"
                       />
                     )}
                   </div>
@@ -125,13 +125,13 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                   <div className="mt-10 flex gap-4">
                     <button 
                       onClick={() => setStep(1)}
-                      className="px-6 py-4 border border-era-navy/5 text-era-navy hover:bg-era-ivory text-xs font-bold uppercase tracking-widest transition-colors flex-shrink-0"
+                      className="px-6 py-4 border border-era-navy/5 text-era-navy hover:bg-era-ivory text-xs font-bold uppercase tracking-widest transition-colors flex-shrink-0 rounded-xl"
                     >
                       Tilbake
                     </button>
                     <button 
                       onClick={() => setStep(3)}
-                      className="flex-1 bg-era-navy text-white text-xs font-bold uppercase tracking-widest hover:bg-era-midnight transition-colors py-4 flex items-center justify-center gap-2"
+                      className="flex-1 bg-era-navy text-white text-xs font-bold uppercase tracking-widest hover:bg-era-midnight transition-colors py-4 flex items-center justify-center gap-2 rounded-xl"
                     >
                       Send forespørsel
                       <ArrowRight className="w-4 h-4 text-era-gold" />

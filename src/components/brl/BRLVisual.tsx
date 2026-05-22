@@ -46,7 +46,7 @@ export default function BRLVisual() {
             {/* Main Content Area */}
             <div className="lg:ml-64 h-full flex flex-col">
               <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/5">
-                <h2 className="text-xl font-medium text-white">Styrets Dashboard</h2>
+                <h2 className="text-xl font-medium text-white">Styrets Oversikt</h2>
                 <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full">
                   <div className="w-2 h-2 bg-green-500 rounded-full" />
                   <span className="text-[10px] text-white/60 font-bold uppercase tracking-widest">Alt i rute</span>

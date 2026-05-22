@@ -8,7 +8,7 @@ export default function ContractorFeatures() {
       <section className="py-32 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
-            <div className="p-12 bg-era-ivory/50 border border-era-navy/5 relative group hover:bg-white transition-colors duration-700">
+            <div className="p-12 bg-era-ivory/50 border border-era-navy/5 relative group hover:bg-white transition-colors duration-700 rounded-xl">
                <Package className="w-8 h-8 text-era-gold mb-8" />
                <h3 className="text-3xl font-medium mb-8">KI-drevet materialsalg</h3>
                <p className="text-era-navy/60 font-light leading-relaxed mb-8">
@@ -22,14 +22,14 @@ export default function ContractorFeatures() {
                </ul>
             </div>
 
-            <div className="p-12 bg-era-navy text-white relative group">
+            <div className="p-12 bg-era-navy text-white relative group rounded-xl">
                <Database className="w-8 h-8 text-era-gold mb-8" />
                <h3 className="text-3xl font-medium mb-8">ERA Core Infrastruktur</h3>
                <p className="text-white/60 font-light leading-relaxed mb-8">
                  ERA Core er hjernen i operativsystemet. Den synkroniserer boligdata, KI-modellering og entreprenørens prosjektstyringssystemer i sanntid.
                </p>
                <div className="space-y-6">
-                 <div className="p-6 bg-white/5 border border-white/10">
+                 <div className="p-6 bg-white/5 border border-white/10 rounded-xl">
                    <p className="text-xs text-era-gold font-bold uppercase tracking-widest mb-2">Integrasjoner</p>
                    <p className="text-white/60 text-sm">Åpne APIer lar deg koble ERA til ditt eksisterende ERP, regnskaps- (Tripletex, PowerOffice) eller prosjektstyringssystem (Kordel, Cordel).</p>
                  </div>
@@ -58,10 +58,10 @@ export default function ContractorFeatures() {
           </h2>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-20">
-            <button className="bg-era-gold text-[#081426] px-12 py-6 text-sm font-bold uppercase tracking-[0.2em] rounded-none hover:bg-white transition-all shadow-xl shadow-era-gold/20 flex items-center gap-3">
+            <button className="bg-era-gold text-[#081426] px-12 py-6 text-sm font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-white transition-all shadow-xl shadow-era-gold/20 flex items-center gap-3">
               Onboard din bedrift <MoveRight className="w-5 h-5" />
             </button>
-            <button className="px-12 py-6 text-sm font-bold uppercase tracking-[0.2em] border border-white/20 hover:bg-white/5 transition-colors rounded-none">
+            <button className="px-12 py-6 text-sm font-bold uppercase tracking-[0.2em] border border-white/20 hover:bg-white/5 transition-colors rounded-xl">
               Last ned dokumentasjon
             </button>
           </div>

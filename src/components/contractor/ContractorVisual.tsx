@@ -22,7 +22,7 @@ export default function ContractorVisual() {
               
               <div className="space-y-2">
                 {[
-                  { icon: <Layout className="w-4 h-4" />, label: 'Dashboard', active: true },
+                  { icon: <Layout className="w-4 h-4" />, label: 'Dashbord', active: true },
                   { icon: <Users className="w-4 h-4" />, label: 'Kunder' },
                   { icon: <ClipboardCheck className="w-4 h-4" />, label: 'Oppdrag' },
                   { icon: <FileText className="w-4 h-4" />, label: 'Dokumentasjon' },
@@ -91,7 +91,7 @@ export default function ContractorVisual() {
                     <Sparkles className="absolute -right-4 -top-4 w-24 h-24 text-emerald-500/10" />
                     <div className="flex items-center gap-2 mb-4">
                       <Sparkles className="w-4 h-4 text-emerald-400" />
-                      <span className="text-emerald-400 text-[10px] font-bold uppercase tracking-widest">Matching Agent</span>
+                      <span className="text-emerald-400 text-[10px] font-bold uppercase tracking-widest">Matchings-Agent</span>
                     </div>
                     <p className="text-white/90 text-sm leading-relaxed font-light mb-4">
                       Nytt oppdrag i ditt dekningsområde: <strong className="font-semibold text-white">Renovering pipe, Thorvald Meiers gate.</strong> KI har generert et utkast til tilbud basert på dine tidligere priser.
@@ -102,7 +102,7 @@ export default function ContractorVisual() {
                   <div className="bg-blue-900/20 border border-blue-500/20 p-6 rounded-xl relative overflow-hidden">
                     <div className="flex items-center gap-2 mb-4">
                       <TrendingUp className="w-4 h-4 text-blue-400" />
-                      <span className="text-blue-400 text-[10px] font-bold uppercase tracking-widest">Pricing Agent</span>
+                      <span className="text-blue-400 text-[10px] font-bold uppercase tracking-widest">Pris-Agent</span>
                     </div>
                     <div className="space-y-4">
                       <div className="flex justify-between text-xs">

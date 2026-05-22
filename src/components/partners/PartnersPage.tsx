@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import { Blocks, Layers, ShieldCheck, Activity } from 'lucide-react';
 
@@ -18,7 +19,7 @@ export default function PartnersPage({ onOpenWaitlist }: PartnersPageProps) {
           >
             <span className="text-era-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-8 block">ERA for partnere</span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium mb-10 leading-[1.0] tracking-tight">
-              Infrastruktur for fremtidens eiendomsoppfølging
+              Infrastruktur for fremtidens vedlikehold og verdisikring
             </h1>
             <p className="text-lg md:text-xl text-white/60 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
               ERA kobler sammen eiendom, vedlikehold, data og utførelse i én intelligent plattform.
@@ -47,7 +48,7 @@ export default function PartnersPage({ onOpenWaitlist }: PartnersPageProps) {
                { title: "Forsikring", desc: "Reduser risiko gjennom forebygging fremfor skadeoppgjør." },
                { title: "Eiendomsmeglere", desc: "Gi boligkjøpere og selgere merverdi ved å tilby en fullverdig boligjournal." }
             ].map((p, i) => (
-              <div key={i} className="bg-white p-8 border border-era-navy/5 text-center">
+              <div key={i} className="bg-white p-8 border border-era-navy/5 text-center rounded-xl">
                 <Blocks className="w-8 h-8 text-era-gold mx-auto mb-6" />
                 <h3 className="font-bold text-lg mb-4">{p.title}</h3>
                 <p className="text-sm text-era-navy/60 font-light leading-relaxed">{p.desc}</p>
@@ -79,7 +80,7 @@ export default function PartnersPage({ onOpenWaitlist }: PartnersPageProps) {
                ))}
              </ul>
            </div>
-           <div className="relative h-[400px] flex items-center justify-center p-10 bg-era-midnight border-8 border-white shadow-xl overflow-hidden">
+           <div className="relative h-[400px] flex items-center justify-center p-10 bg-era-midnight border-8 border-white shadow-xl overflow-hidden rounded-2xl">
              
              {/* Animated Node Diagram Map */}
              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
@@ -127,7 +128,7 @@ export default function PartnersPage({ onOpenWaitlist }: PartnersPageProps) {
 
              {/* ERA OS */}
              <div className="absolute left-[40%] top-1/2 -translate-y-1/2 flex flex-col items-center z-10">
-               <div className="w-24 h-24 bg-era-gold flex items-center justify-center text-era-midnight mb-3 shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+               <div className="w-24 h-24 bg-era-gold flex items-center justify-center text-era-midnight mb-3 shadow-[0_0_30px_rgba(212,175,55,0.3)] rounded-2xl">
                  <Activity className="w-8 h-8" />
                </div>
                <span className="text-[10px] uppercase tracking-widest font-bold text-era-gold">ERA OS</span>

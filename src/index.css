@@ -31,15 +31,15 @@
 }
 
 .square-button {
-  @apply rounded-none px-8 py-3.5 transition-all duration-500 font-medium active:scale-95;
+  @apply rounded-xl px-8 py-3.5 transition-all duration-500 font-medium active:scale-95;
 }
 
 .square-button-navy {
-  @apply rounded-none px-8 py-3.5 transition-all duration-500 font-medium bg-era-navy text-white hover:bg-era-midnight active:scale-95 shadow-lg shadow-era-navy/20;
+  @apply rounded-xl px-8 py-3.5 transition-all duration-500 font-medium bg-era-navy text-white hover:bg-era-midnight active:scale-95 shadow-lg shadow-era-navy/20;
 }
 
 .square-button-gold {
-  @apply rounded-none px-8 py-3.5 transition-all duration-500 font-medium bg-era-gold text-era-navy hover:bg-era-gold/90 active:scale-95 shadow-lg shadow-era-gold/20;
+  @apply rounded-xl px-8 py-3.5 transition-all duration-500 font-medium bg-era-gold text-era-navy hover:bg-era-gold/90 active:scale-95 shadow-lg shadow-era-gold/20;
 }
 
 .timeline-line {

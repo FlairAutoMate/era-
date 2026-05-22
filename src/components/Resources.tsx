@@ -29,17 +29,13 @@ export default function Resources() {
                "Garantier",
                "Produkter brukt"
              ].map((item, i) => (
-               <motion.div
+               <div
                  key={item}
-                 initial={{ opacity: 0, scale: 0.95 }}
-                 whileInView={{ opacity: 1, scale: 1 }}
-                 transition={{ delay: i * 0.1 }}
-                 viewport={{ once: true }}
-                 className="bg-white border border-era-navy/5 p-6 flex items-center justify-between shadow-sm group hover:border-era-gold/20 hover:shadow-md transition-all"
+                 className="bg-era-beige border border-era-navy/10 p-6 flex items-center justify-between group hover:border-era-gold transition-all duration-300 cursor-pointer"
                >
-                 <span className="text-sm font-bold text-era-navy">{item}</span>
-                 <div className="w-2 h-2 rounded-full bg-era-gold/50 group-hover:bg-era-gold transition-colors" />
-               </motion.div>
+                 <span className="text-sm font-bold text-era-navy transition-colors">{item}</span>
+                 <div className="w-2 h-2 rounded-full bg-era-navy/20 group-hover:bg-era-gold transition-colors" />
+               </div>
              ))}
           </div>
         </div>

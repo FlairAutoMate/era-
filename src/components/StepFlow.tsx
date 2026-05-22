@@ -5,25 +5,25 @@ const steps = [
   {
     icon: <Maximize className="w-6 h-6 outline-none" />,
     title: "Vis ERA hva du trenger hjelp med.",
-    description: "Ta bilde av det du lurer på — et rom, en skade eller et prosjekt.",
+    description: "Ta bilde av det du lurer på — et rom, en skade eller et prosjekt — og få direkte kobling til kvalifisert håndverker.",
     step: "01"
   },
   {
     icon: <Sparkles className="w-6 h-6" />,
     title: "ERA analyserer eiendommen.",
-    description: "ERA kombinerer bilder, dokumentasjon og eiendomsdata for å forstå tilstand og behov.",
+    description: "ERA kombinerer bilder, dokumentasjon og eiendomsdata for å forstå tilstand og behov, med automatisk kobling til kvalifisert håndverker.",
     step: "02"
   },
   {
     icon: <Compass className="w-6 h-6" />,
     title: "Forstå hva som bør gjøres.",
-    description: "Få en enkel oversikt over vedlikehold, risiko og ting som kan påvirke verdi over tid.",
+    description: "Få en enkel oversikt over vedlikehold, risiko og verdi over tid, inkludert sikker kobling til kvalifisert håndverker.",
     step: "03"
   },
   {
     icon: <Shield className="w-6 h-6" />,
     title: "Ta neste steg.",
-    description: "Be om tilbud fra kvalifiserte håndverkere og lagre dokumentasjonen samlet i ERA.",
+    description: "Be om tilbud fra kvalifiserte håndverkere og lagre dokumentasjonen samlet i ERA med sømløs kobling til kvalifisert håndverker.",
     step: "04"
   }
 ];
@@ -33,11 +33,11 @@ export default function StepFlow() {
     <section className="py-40 px-6 bg-era-ivory overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-24">
-          <h2 className="text-4xl md:text-5xl font-medium mb-6">
-            Hvordan det fungerer.
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-era-navy mb-6">
+            Hvordan det fungerer
           </h2>
-          <p className="text-era-navy/60 text-lg font-light">
-            Fra behov til gjennomføring — samlet i én intelligent flyt.
+          <p className="text-era-navy/60 text-lg font-light max-w-xl">
+            Fra behov til bekreftelse — like raskt og enkelt som å sende penger med Vipps.
           </p>
         </div>
         

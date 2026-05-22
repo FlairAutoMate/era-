@@ -5,12 +5,12 @@ export default function BRLContent() {
   return (
     <div className="bg-era-ivory text-era-navy">
       
-      {/* Fra reaktiv drift til intelligent oppfølging */}
+      {/* Fra reaktiv drift til intelligent vedlikehold og verdisikring */}
       <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24 max-w-3xl mx-auto">
             <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">Kjernen i systemet</span>
-            <h2 className="text-4xl md:text-6xl font-medium mb-8 leading-[1.05]">Fra reaktiv drift til intelligent oppfølging.</h2>
+            <h2 className="text-4xl md:text-6xl font-medium mb-8 leading-[1.05]">Fra reaktiv drift til intelligent vedlikehold og verdisikring.</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -140,7 +140,7 @@ export default function BRLContent() {
                 Når styret byttes ut, forsvinner ofte historikk og innsikt. ERA bygger en kontinuerlig forståelse av:
               </p>
               <ul className="space-y-4 mb-6">
-                {["byggets tilstand", "tidligere tiltak", "kommende vedlikehold", "dokumentasjon", "risiko og oppfølging"].map((item, i) => (
+                {["byggets tilstand", "tidligere tiltak", "kommende vedlikehold", "dokumentasjon", "risiko og verdisikring"].map((item, i) => (
                   <li key={i} className="flex items-center gap-4">
                     <div className="w-1.5 h-1.5 bg-era-gold" />
                     <span className="text-lg font-medium">{item}</span>
@@ -151,12 +151,12 @@ export default function BRLContent() {
             
             <div className="bg-era-ivory p-12 border border-era-navy/5">
               <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">Faktisk verdi</span>
-              <h3 className="text-4xl md:text-5xl font-medium mb-6">Ikke bare FDV.<br/>Faktisk oppfølging.</h3>
+              <h3 className="text-4xl md:text-5xl font-medium mb-6">Ikke bare FDV.<br/>Faktisk vedlikehold.</h3>
               <p className="text-era-navy/60 font-light leading-relaxed mb-6 text-xl">
                 Tradisjonelle systemer lagrer historikk.
               </p>
               <p className="text-era-navy font-medium leading-relaxed mb-6 text-xl">
-                ERA hjelper eiendommen å bli fulgt opp intelligent over tid.
+                ERA gjør det enkelt å ta vare på eiendommen og beskytte verdiene over tid.
               </p>
             </div>
           </div>

@@ -2,7 +2,7 @@ export const CONTENT = {
   homeowner: {
     hero: {
       subLabel: "ERA for Boligeiere",
-      title: "Boligen din fortjener mer enn tilfeldig oppfølging.",
+      title: "Det skal være enkelt å ta vare på boligen.",
       subtitle: "ERA gjør vedlikehold proaktivt, dokumenterer alt automatisk, og sørger for at verdien av ditt hjem vokser trygt over tid.",
       cta: "Bli ERA-bruker"
     },
@@ -49,7 +49,7 @@ export const CONTENT = {
       items: [
         { title: "Kvalitetsdokumentasjon", desc: "Gjør hver jobb til et salgsverktøy." },
         { title: "Intelligent prosjektflyt", desc: "Befaring og tilbud i én flyt." },
-        { title: "Proaktiv oppfølging", desc: "Når kunden trenger deg, før konkurrenten." }
+        { title: "Proaktivt vedlikehold", desc: "Når kunden trenger deg, før konkurrenten." }
       ]
     }
   },
