@@ -116,38 +116,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Skalering & Visjon - Team Concept */}
-      <section className="py-40 px-6 bg-era-ivory">
-        <div className="max-w-6xl mx-auto">
-           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-             <div className="max-w-2xl">
-               <h2 className="text-4xl md:text-6xl font-medium mb-6">Et team bygget for skala</h2>
-               <p className="text-xl font-light text-era-navy/60 leading-relaxed">
-                 For å bygge den nye infrastrukturen kreves ledende teknologer, bransjeeksperter og maskinlæringsingeniører.
-               </p>
-             </div>
-             <button className="square-button-navy flex items-center gap-2 group flex-shrink-0">
-               Se ledige stillinger <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-             </button>
-           </div>
-           
-           <div className="grid md:grid-cols-3 gap-6">
-             {/* Example placeholders for team concepts */}
-             <div className="bg-white border border-era-navy/5 p-10 flex flex-col justify-end h-[350px]">
-               <h3 className="font-bold text-lg mb-1">Produkt & Tech</h3>
-               <p className="text-sm font-light text-era-navy/60">Utvikler fremtidens KI-drevet platform.</p>
-             </div>
-             <div className="bg-white border border-era-navy/5 p-10 flex flex-col justify-end h-[350px]">
-               <h3 className="font-bold text-lg mb-1">Ledelse & Strategi</h3>
-               <p className="text-sm font-light text-era-navy/60">Forankring og skalerbar B2B-vekst.</p>
-             </div>
-             <div className="bg-white border border-era-navy/5 p-10 flex flex-col justify-end h-[350px]">
-               <h3 className="font-bold text-lg mb-1">Marked & Partnere</h3>
-               <p className="text-sm font-light text-era-navy/60">Sikrer distribusjon via økosystemet.</p>
-             </div>
-           </div>
-        </div>
-      </section>
+
     </div>
   );
 }

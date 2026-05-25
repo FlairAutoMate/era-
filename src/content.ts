@@ -3,15 +3,15 @@ export const CONTENT = {
     hero: {
       subLabel: "ERA for Boligeiere",
       title: "Det skal være enkelt å ta vare på boligen.",
-      subtitle: "ERA gjør vedlikehold proaktivt, dokumenterer alt automatisk, og sørger for at verdien av ditt hjem vokser trygt over tid.",
+      subtitle: "ERA oppdager vedlikeholdsbehov, planlegger neste steg og kobler deg til kvalifiserte håndverkere – like enkelt som Vipps.",
       cta: "Bli ERA-bruker"
     },
     features: {
-      title: "Boligens digitale helsejournal",
+      title: "Eiendomsdata & Boligminne",
       description: "Fra intelligente analyser til automatisk dokumentasjon. Vi tar vare på alt.",
       items: [
         { title: "Intelligent innsikt", desc: "Forstå boligens helse før skadene oppstår." },
-        { title: "Digital eiendomsjournal", desc: "Alt samlet på ett sted, alltid klart." },
+        { title: "Sikkert Boligminne", desc: "Alt samlet på ett sted, alltid klart." },
         { title: "Enklere samarbeid", desc: "Koblet direkte til trygge håndverkere." }
       ]
     }

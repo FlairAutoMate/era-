@@ -38,7 +38,7 @@ export default function ContractorHero({ onOpenWaitlist }: ContractorHeroProps) 
               onClick={onOpenWaitlist}
               className="bg-white text-era-navy px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-era-ivory transition-all shadow-xl shadow-white/5"
             >
-              Meld interesse
+              Søk om partnerskap
             </button>
             <button className="text-white/60 hover:text-white text-xs font-semibold uppercase tracking-widest flex items-center gap-2 group transition-colors">
               Se hvordan det fungerer

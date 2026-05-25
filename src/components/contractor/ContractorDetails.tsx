@@ -103,12 +103,12 @@ export default function ContractorDetails({ onOpenWaitlist }: ContractorDetailsP
               viewport={{ once: true }}
               className="order-1 lg:order-2"
             >
-              <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">FDV / Journal</span>
+              <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">FDV / Boligminne</span>
               <h2 className="text-4xl md:text-6xl font-medium mb-10 leading-[1.05]">
                 Dokumentasjon blir <br/>en del av jobben.
               </h2>
               <p className="text-era-navy/60 text-lg font-light leading-relaxed mb-12">
-                Bilder, produkter, FDV og utført arbeid lagres automatisk der det tilhører: i boligens journal. Slik at verken du eller kunden trenger å lete etter kvitteringer i ettertid.
+                Bilder, produkter, FDV og utført arbeid lagres automatisk der det tilhører: i boligens digitale Boligminne. Slik at verken du eller kunden trenger å lete etter kvitteringer i ettertid.
               </p>
             </motion.div>
           </div>
@@ -127,7 +127,7 @@ export default function ContractorDetails({ onOpenWaitlist }: ContractorDetailsP
             Vedlikehold stopper ikke etter én jobb. ERA hjelper håndverkere å bli en integrert del av eiendommens langsiktige vedlikeholdsreise.
           </p>
           
-          <button onClick={onOpenWaitlist} className="square-button-gold px-12 py-5 text-lg shadow-2xl">Meld interesse</button>
+          <button onClick={onOpenWaitlist} className="square-button-gold px-12 py-5 text-sm uppercase tracking-wider font-bold shadow-2xl">Bli en del av ERA partnernettverk</button>
         </div>
       </section>
     </>

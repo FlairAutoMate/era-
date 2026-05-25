@@ -46,7 +46,7 @@ export default function PartnersPage({ onOpenWaitlist }: PartnersPageProps) {
                { title: "Boligorganisasjoner", desc: "Tilby medlemmene en proaktiv vedlikeholdsagent." },
                { title: "Banker", desc: "Forstå verdien og tilstanden i den pantesikrede porteføljen bedre." },
                { title: "Forsikring", desc: "Reduser risiko gjennom forebygging fremfor skadeoppgjør." },
-               { title: "Eiendomsmeglere", desc: "Gi boligkjøpere og selgere merverdi ved å tilby en fullverdig boligjournal." }
+               { title: "Eiendomsmeglere", desc: "Gi boligkjøpere og selgere merverdi ved å tilby et komplett Boligminne." }
             ].map((p, i) => (
               <div key={i} className="bg-white p-8 border border-era-navy/5 text-center rounded-xl">
                 <Blocks className="w-8 h-8 text-era-gold mx-auto mb-6" />

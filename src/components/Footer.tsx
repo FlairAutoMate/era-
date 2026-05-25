@@ -1,5 +1,4 @@
 import React from 'react';
-import Logo from './Logo';
 import { Instagram, Linkedin, Twitter, ArrowUp } from 'lucide-react';
 import { motion } from 'motion/react';
 import { ViewType } from '../App';
@@ -28,10 +27,10 @@ export default function Footer({ onViewChange }: FooterProps) {
       {/* Huge subtle background text */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none select-none overflow-hidden h-full w-full flex items-end justify-center">
         <motion.span 
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 0.03 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className="text-[35vw] font-display font-bold leading-none -mb-[5vw] whitespace-nowrap tracking-tighter"
+          initial={{ y: 150, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 0.07 }}
+          transition={{ duration: 1.8, ease: "easeOut" }}
+          className="text-[47vw] md:text-[55vw] font-display font-bold leading-none -mb-[12vw] md:-mb-[15vw] whitespace-nowrap tracking-tighter text-white"
         >
           ERA
         </motion.span>
@@ -41,7 +40,9 @@ export default function Footer({ onViewChange }: FooterProps) {
         <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-32">
           <div className="lg:col-span-3">
             <button onClick={(e) => handleLinkClick(e, 'homeowner')} className="text-white mb-10 block group text-left">
-              <Logo className="h-7 md:h-8 transition-opacity" dotColor="#C8A96B" />
+              <span className="font-display font-bold text-2xl md:text-3xl tracking-tighter text-white transition-opacity hover:opacity-90">
+                era<span className="text-era-gold">.</span>
+              </span>
             </button>
             <h3 className="text-white font-medium text-lg mb-4 pr-4">ERA bygger den intelligente infrastrukturen for eiendom</h3>
             <p className="text-white/60 font-light leading-relaxed text-sm mb-12 pr-4">

@@ -56,7 +56,7 @@ export default function Navigation({ currentView, onViewChange, onOpenWaitlist }
             mobileMenuOpen ? 'text-era-navy' : textColor
           }`}
         >
-          era.
+          era<span className="text-era-gold">.</span>
         </button>
 
         {/* Center: Navigation */}

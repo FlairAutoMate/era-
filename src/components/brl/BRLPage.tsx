@@ -22,7 +22,7 @@ export default function BRLPage({ onOpenWaitlist }: BRLPageProps) {
             <h3 className="text-2xl font-bold font-display tracking-tight text-white mb-2">ERA</h3>
             <p className="text-white/60 uppercase tracking-widest text-xs font-bold">KI-agenten for drift <br className="md:hidden" /> og vedlikehold av eiendom.</p>
           </div>
-          <button onClick={onOpenWaitlist} className="square-button-gold px-12 py-5 text-lg shadow-2xl">Meld interesse</button>
+          <button onClick={onOpenWaitlist} className="square-button-gold px-12 py-5 text-sm uppercase tracking-wider font-bold shadow-2xl">Få 10-års vedlikeholdsplan for styret</button>
         </div>
       </section>
     </div>

@@ -29,45 +29,69 @@ export default function Hero({ onOpenWaitlist, onOpenProductAI }: HeroProps) {
       {/* Background Subtle Graphic Wave Overlays */}
       <div className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(#0E2341_1.2px,transparent_1.2px)] [background-size:32px_32px]" />
       
+      {/* Cinematic Luxury Scandinavian ambient glow shifting */}
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-era-gold/[0.04] blur-[140px] pointer-events-none rounded-full animate-pulse [animation-duration:10s]" />
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-emerald-500/[0.015] blur-[120px] pointer-events-none rounded-full animate-pulse [animation-duration:14s]" />
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16 items-center pt-40 pb-20 w-full">
         
-        {/* Left Column: Original Elegant Editorial Typography */}
-        <div className="lg:col-span-6 space-y-8 text-era-navy">
-          <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block drop-shadow-sm font-sans">
+        {/* Left Column: Original Elegant Editorial Typography with Cinematic reveals */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-6 space-y-8 text-era-navy"
+        >
+          <motion.span 
+            initial={{ opacity: 0, letterSpacing: "0.2em" }}
+            animate={{ opacity: 1, letterSpacing: "0.3em" }}
+            transition={{ duration: 1.5, delay: 0.1 }}
+            className="text-era-gold font-bold uppercase text-[10px] mb-6 block drop-shadow-sm font-sans"
+          >
             VEDLIKEHOLD & VERDISIKRING
-          </span>
+          </motion.span>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-[0.95] tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-[0.95] tracking-tight text-balance">
             KI-agenten som tar vare på boligen din
           </h1>
 
           <p className="text-lg text-era-navy/70 font-light leading-relaxed max-w-xl">
-            ERA analyserer boligen, legger en personlig plan for vedlikehold, og beskytter verdiene dine — slik at det å ta vare på hjemmet blir like enkelt som å sende penger med Vipps.
+            ERA oppdager vedlikeholdsbehov, planlegger neste steg og kobler deg til kvalifiserte håndverkere – like enkelt som Vipps.
           </p>
 
           <div className="flex flex-wrap gap-4 items-center pt-2">
             <button 
               onClick={onOpenWaitlist}
-              className="square-button bg-era-navy text-white hover:bg-era-midnight font-bold px-8 py-4 flex items-center gap-2 shadow-lg tracking-wider text-xs uppercase transition-colors"
+              className="square-button bg-era-navy text-white hover:bg-era-midnight font-bold px-8 py-4 flex items-center gap-2 shadow-lg tracking-wider text-xs uppercase transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
             >
-              Prøv ERA Agent
+              Få 10-års vedlikeholdsplan
               <ArrowRight className="w-4 h-4" />
             </button>
             <button 
               onClick={onOpenProductAI}
-              className="square-button border border-era-navy/20 bg-era-beige/30 text-era-navy hover:bg-era-beige font-bold px-8 py-4 flex items-center gap-2 group transition-all text-xs uppercase tracking-wider"
+              className="square-button border border-era-navy/20 bg-era-beige/30 text-era-navy hover:bg-era-beige font-bold px-8 py-4 flex items-center gap-2 group transition-all duration-300 hover:-translate-y-0.5 text-xs uppercase tracking-wider"
             >
-              Se hvordan det fungerer
+              Utforsk Aktiv Boligforvaltning
             </button>
           </div>
 
-          <div className="text-[10px] text-era-navy/50 font-semibold tracking-widest uppercase flex items-center gap-2 pt-4">
-            <span className="text-era-gold font-bold">✓</span> Norskutviklet for norske boligforhold
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-6">
+            <div className="text-[10px] text-era-navy/80 font-bold tracking-widest uppercase flex items-center gap-2">
+              <span className="text-emerald-600 font-bold bg-emerald-500/10 px-2 py-1 rounded text-[9px] border border-emerald-500/20">Alltid 100% gratis</span> for deg som boligeier
+            </div>
+            <div className="text-[10px] text-era-navy/50 font-semibold tracking-widest uppercase flex items-center gap-2">
+              <span className="text-era-gold font-bold">✓</span> Norskutviklet for norske boligforhold
+            </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Column: Original Smartphone/Phone Mockup showing the Homeowner App */}
-        <div className="lg:col-span-6 flex justify-center items-center relative">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.96, x: 20 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 1.4, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-6 flex justify-center items-center relative"
+        >
           
           {/* Subtle gold blurred aura behind phone to give depth */}
           <div className="absolute w-72 h-72 rounded-full bg-era-gold/5 blur-3xl -z-10" />
@@ -214,7 +238,7 @@ export default function Hero({ onOpenWaitlist, onOpenProductAI }: HeroProps) {
                 </div>
                 <div className="flex flex-col items-center gap-1 cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
                   <svg className="w-3.5 h-3.5 text-era-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                  <span className="text-[7px] font-bold uppercase tracking-widest scale-90">PLAN</span>
+                  <span className="text-[7px] font-bold uppercase tracking-widest scale-90">TILTAK</span>
                 </div>
                 <div className="relative -top-2">
                   <div className="w-10 h-10 bg-era-navy text-era-gold rounded-lg flex items-center justify-center shadow-md">
@@ -223,11 +247,11 @@ export default function Hero({ onOpenWaitlist, onOpenProductAI }: HeroProps) {
                 </div>
                 <div className="flex flex-col items-center gap-1 cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
                   <svg className="w-3.5 h-3.5 text-era-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                  <span className="text-[7px] font-bold uppercase tracking-widest scale-90">LOGG</span>
+                  <span className="text-[7px] font-bold uppercase tracking-widest scale-90">BOLIGMINNE</span>
                 </div>
                 <div className="flex flex-col items-center gap-1 cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
                   <svg className="w-3.5 h-3.5 text-era-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-                  <span className="text-[7px] font-bold uppercase tracking-widest scale-90">ASSISTENT</span>
+                  <span className="text-[7px] font-bold uppercase tracking-widest scale-90">AGENT</span>
                 </div>
               </div>
 
@@ -240,7 +264,7 @@ export default function Hero({ onOpenWaitlist, onOpenProductAI }: HeroProps) {
 
           </div>
 
-        </div>
+        </motion.div>
 
       </div>
     </section>

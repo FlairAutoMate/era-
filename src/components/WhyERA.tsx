@@ -1,123 +1,222 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, Clock, Paintbrush, Activity, HardDrive, CheckCircle } from 'lucide-react';
+import { 
+  Sparkles, 
+  Clock, 
+  Paintbrush, 
+  Activity, 
+  HardDrive, 
+  ArrowRight,
+  CheckCircle,
+  FileCheck,
+  Lock,
+  User,
+  Home,
+  Briefcase,
+  Camera,
+  BookOpen,
+  FileText
+} from 'lucide-react';
 
-const memories = [
-  {
-    icon: Activity,
-    title: "Varmepumpe installert",
-    time: "August 2024",
-    detail: "Toshiba Daiseikai 9 • Dokumentasjon og sjekkliste godkjent",
-    status: "Operativ",
-    syncState: "Låst til FDV",
-    statusColor: "text-emerald-500 bg-emerald-500/10",
-  },
-  {
-    icon: Paintbrush,
-    title: "Fasade malt",
-    time: "Juni 2022",
-    detail: "Jotun Drytech • Fargekode: S2500-N (Klassisk hvit)",
-    status: "Bra tilstand",
-    syncState: "Historikk verifisert",
-    statusColor: "text-blue-500 bg-blue-500/10",
-  },
-  {
-    icon: Clock,
-    title: "Tak kontroll anbefalt",
-    time: "Om 11 måneder",
-    detail: "Fremtidig tilstandsvurdering (5-års intervall etter standard)",
-    status: "Planlagt",
-    syncState: "Synkronisert",
-    statusColor: "text-amber-500 bg-amber-500/10",
-  },
-  {
-    icon: HardDrive,
-    title: "Eiendomsdata strukturert",
-    time: "Nylig oppdatert",
-    detail: "12 kvitteringer, FDV, plantegninger og skjøte arkivert",
-    status: "Synkronisert",
-    syncState: "Aktiv kilde",
-    statusColor: "text-emerald-500 bg-emerald-500/10",
-  }
+const boligminneItems = [
+  { name: "Samsvarserklæring", desc: "Dokumenter tilknyttet rør og el låst til adressen." },
+  { name: "Sertifisert FDV-Dokument", desc: "Alt arbeid utført i henhold til byggeforskriftene." },
+  { name: "Verifisert bildearkiv", desc: "Dokumentasjons av membran og skjult røropplegg." }
 ];
 
-export default function WhyERA() {
+interface WhyERAProps {
+  onOpenWaitlist?: () => void;
+}
+
+export default function WhyERA({ onOpenWaitlist }: WhyERAProps) {
   return (
-    <section className="py-32 px-6 bg-era-ivory overflow-hidden border-t border-era-navy/5">
+    <section className="py-32 px-6 bg-era-ivory overflow-hidden border-t border-era-navy/5" id="boligminne-merger">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
-          
-          {/* Left Column: Premium Typography Column */}
-          <div className="lg:col-span-5">
-            <span className="text-era-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-6 block font-sans">
-              AUTOMATISERT MINNE
+        
+        {/* SECTION HEADER: Trygghet, penger spart, lavere risiko */}
+        <div className="max-w-4xl mb-24">
+          <div className="flex items-center gap-2.5 mb-5">
+            <span className="w-2.5 h-2.5 rounded-full bg-era-gold animate-pulse" />
+            <span className="text-era-gold font-bold uppercase tracking-[0.3em] font-sans text-[10px]">
+              VERDISIKRING & TRYGGHET I PRAKSIS
             </span>
-            <h2 className="text-4xl md:text-5xl font-semibold text-era-navy mb-8 leading-tight tracking-tight">
-              ERA husker alt om boligen <br className="hidden md:inline"/> — så du slipper
-            </h2>
-            <p className="text-lg text-era-navy/60 font-light leading-relaxed mb-8">
-              Jo mer informasjon du legger inn, desto enklere blir det å ta vare på boligen. ERA husker fargekoder, levetid på rør, servicer på varmepumpe og alle kvitteringene dine automatisk for å beskytte dens virkelige verdi.
-            </p>
-            
-            <div className="flex items-center gap-3 p-4 bg-white/40 border border-era-navy/5 rounded-xl">
-              <Sparkles className="w-5 h-5 text-era-gold animate-pulse" />
-              <p className="text-xs font-semibold text-era-navy/80">
-                Dataene dine er kryptert og brukes kun til din boligforvaltning.
-              </p>
-            </div>
           </div>
           
-          {/* Right Column: Interactive Living Memory Cards */}
-          <div className="lg:col-span-7 relative">
-            <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-era-gold/20 to-transparent blur-xs pointer-events-none" />
-            <div className="grid sm:grid-cols-2 gap-6 relative z-10">
-              {memories.map((memory, mIdx) => {
-                const Icon = memory.icon;
-                return (
-                  <div
-                    key={mIdx}
-                    className="p-6 bg-white border border-era-navy/10 transition-all duration-300 relative group cursor-pointer hover:border-era-gold shadow-xs hover:shadow-md rounded-xl"
-                  >
-                    {/* Status badge and Live Sync badge */}
-                    <div className="flex justify-between items-center mb-6">
-                      <div className="w-9 h-9 bg-era-navy/5 rounded-lg flex items-center justify-center text-era-navy group-hover:bg-era-navy/10 transition-colors">
-                        <Icon className="w-4 h-4 text-era-gold" />
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="relative flex h-1.5 w-1.5">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-                        </span>
-                        <span className="text-[8px] font-mono tracking-wider font-bold uppercase text-era-navy/50">
-                          {memory.syncState}
-                        </span>
-                      </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-era-navy tracking-tight leading-[1.05] mb-8">
+            Ditt digitale Boligminne. <br />
+            Helt gratis for boligeiere.
+          </h2>
+          
+          <p className="text-lg text-era-navy/70 font-light leading-relaxed max-w-2xl">
+            Det dyreste vedlikeholdet er det som tas for sent. ERA varsler om slitasje tidlig, slik at du unngår unødvendige kostnader, reduserer risikoen for vannskader og sikrer boligens verdi.
+          </p>
+        </div>
+
+        {/* TWO-COLUMN GRID: Left = Boligminne archive grid, Right = Mobile App Mockup */}
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
+          
+          {/* Left Column: Comprehensive data points list */}
+          <div className="lg:col-span-6 space-y-8">
+            <div>
+              <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[9px] mb-3 block font-sans">ALT PÅ ÉN PLASS</span>
+              <h3 className="text-3xl font-semibold text-era-navy tracking-tight mb-4">
+                Alt samlet i ditt Boligminne
+              </h3>
+              <p className="text-sm text-era-navy/60 leading-relaxed font-light mb-8">
+                Glem bortkomne e-poster og falmede kvitteringer. ERA samler og lagrer all dokumentasjon på ett felles, sikkert sted låst til din eiendom.
+              </p>
+            </div>
+
+            <div className="grid gap-4">
+              {boligminneItems.map((item, idx) => (
+                <div 
+                  key={idx}
+                  className="p-5 bg-white border border-era-navy/5 rounded-xl flex items-center justify-between hover:border-era-gold transition-colors duration-200 shadow-3xs"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-8 h-8 rounded-lg bg-era-gold/10 text-era-gold flex items-center justify-center shrink-0">
+                      <Lock className="w-4 h-4" />
                     </div>
-
-                    <h3 className="text-md font-bold text-era-navy mb-1 leading-snug">
-                      {memory.title}
-                    </h3>
-                    
-                    <p className="text-xs text-era-gold font-bold mb-3">
-                      {memory.time}
-                    </p>
-
-                    <p className="text-xs text-era-navy/60 font-light leading-relaxed">
-                      {memory.detail}
-                    </p>
-
-                    <div className="mt-4 pt-3 border-t border-era-navy/5 flex justify-between items-center text-[8px] font-bold font-mono tracking-widest text-[#10b981]">
-                      <span>✓ FDV KLART</span>
-                      <span className="text-[7.5px] uppercase tracking-wider text-era-navy/40">ID: #40{mIdx}A</span>
+                    <div>
+                      <h4 className="text-sm font-semibold text-era-navy">
+                        {item.name}
+                      </h4>
+                      <p className="text-xs text-era-navy/60 font-light mt-0.5">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
-                );
-              })}
+                  <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded font-mono shrink-0">
+                    Sikret
+                  </span>
+                </div>
+              ))}
             </div>
+
+            <div className="p-4 bg-white/50 border border-era-navy/5 rounded-xl flex items-center gap-3">
+              <Lock className="w-5 h-5 text-[#b0a89d]" />
+              <p className="text-xs text-era-navy/60 font-light leading-relaxed">
+                Boligminne er ferdig utarbeidet for å være 100% godkjent for overføring til ny eier ved et eventuelt boligsalg, beskrevet i avhendingsloven.
+              </p>
+            </div>
+
+            <div className="pt-4 flex flex-wrap gap-4">
+              <button 
+                onClick={onOpenWaitlist}
+                className="square-button bg-era-navy text-white hover:bg-era-midnight font-bold px-8 py-4 flex items-center gap-2 shadow-lg tracking-wider text-xs uppercase transition-colors"
+              >
+                Opprett ditt digitale boligminne
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* Right Column: High-fidelity Mobile App Mockup based on the user's reference */}
+          <div className="lg:col-span-6 flex justify-center">
+            
+            {/* Elegant Outer Phone Frame */}
+            <div className="w-full max-w-[340px] bg-[#1a1b1f] p-3 rounded-[40px] shadow-2xl border-4 border-era-navy/10 relative overflow-hidden">
+              
+              {/* Phone Speaker Notch */}
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-4.5 bg-[#1a1b1f] rounded-full z-30 flex items-center justify-center">
+                <span className="w-10 h-1 bg-[#2e3035] rounded-full" />
+              </div>
+
+              {/* Screen Content Wrapper */}
+              <div className="bg-[#F4F3EF] rounded-[32px] overflow-hidden pt-8 pb-4 px-5 relative text-left min-h-[580px] flex flex-col justify-between select-none">
+                
+                {/* Header Navbar inside device */}
+                <div>
+                  <div className="flex justify-between items-center mb-8 pt-1">
+                    <div className="flex items-center gap-1 font-sans font-bold text-xl text-era-navy tracking-tight">
+                      era
+                      <span className="w-1.5 h-1.5 bg-era-gold rounded-full relative top-0.5" />
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-era-navy/5 shadow-3xs cursor-pointer">
+                      <User className="w-4 h-4 text-era-navy" />
+                    </div>
+                  </div>
+
+                  {/* Body Content resembling the provided image */}
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-9 h-[1.5px] bg-era-gold shrink-0" />
+                      <span className="text-[9px] font-sans font-semibold tracking-[0.25em] text-[#a19a90]">
+                        EIENDOMSDATA
+                      </span>
+                    </div>
+
+                    <h3 className="text-3xl font-sans font-medium text-era-navy tracking-tight leading-tight">
+                      Boligens Hukommelse.
+                    </h3>
+
+                    <p className="text-[11.5px] text-era-navy/70 leading-relaxed font-light">
+                      En tidslinje over boligens utvikling og en oppdatert teknisk oversikt. Bilder, dokumenter, og observasjoner flettet sammen i én historie.
+                    </p>
+                  </div>
+
+                  {/* Document analyzer action button block */}
+                  <div className="mt-8">
+                    <div 
+                      onClick={onOpenWaitlist}
+                      className="bg-era-navy text-white rounded-xl p-4 flex items-center justify-center gap-3 shadow-md hover:bg-[#0c223c] cursor-pointer active:scale-98 transition-all"
+                    >
+                      <FileText className="w-4 h-4 text-white shrink-0" />
+                      <span className="text-[10px] font-sans font-bold uppercase tracking-[0.15em]">
+                        Last opp dokument
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom navigation bar mirroring the layout requested and shown */}
+                <div className="border-t border-era-navy/5 pt-3">
+                  <div className="flex items-center justify-between text-center relative">
+                    
+                    {/* Home Item */}
+                    <div className="flex flex-col items-center gap-1 cursor-pointer w-12 text-era-navy/40">
+                      <Home className="w-4 h-4" />
+                      <span className="text-[7.5px] font-sans font-bold uppercase tracking-widest scale-90">HJEM</span>
+                    </div>
+
+                    {/* Tiltak Item (Replacing PLAN) */}
+                    <div className="flex flex-col items-center gap-1 cursor-pointer w-12 text-era-navy/40">
+                      <Briefcase className="w-4 h-4" />
+                      <span className="text-[7.5px] font-sans font-bold uppercase tracking-widest scale-90">TILTAK</span>
+                    </div>
+
+                    {/* Floating main action square button in center */}
+                    <div className="relative -top-3">
+                      <div className="w-10 h-10 bg-[#0B1426] text-white rounded-xl flex items-center justify-center shadow-lg relative cursor-pointer hover:bg-emerald-950 transition-colors">
+                        <Camera className="w-4.5 h-4.5" />
+                        <span className="absolute top-1 right-1 w-2 h-2 bg-era-gold rounded-full" />
+                      </div>
+                    </div>
+
+                    {/* Boligminne Item (Replacing JOURNAL/LOGG) */}
+                    <div className="flex flex-col items-center gap-1 cursor-pointer w-16 text-era-navy">
+                      <BookOpen className="w-4 h-4 text-era-gold" />
+                      <span className="text-[7.5px] font-sans font-bold uppercase tracking-widest scale-90 text-era-navy">BOLIGMINNE</span>
+                    </div>
+
+                    {/* Agent Item (Replacing ASSISTENT/ERA) */}
+                    <div className="flex flex-col items-center gap-1 cursor-pointer w-12 text-era-navy/40">
+                      <Sparkles className="w-4 h-4" />
+                      <span className="text-[7.5px] font-sans font-bold uppercase tracking-widest scale-90">AGENT</span>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
 
         </div>
+
       </div>
     </section>
   );
 }
+

@@ -2,16 +2,16 @@ import { motion } from 'motion/react';
 import { Camera, Bot, Cpu, ArrowDownToLine, Handshake, Smartphone, Wrench, CreditCard, BookOpen } from 'lucide-react';
 
 const flowSteps = [
-  { icon: <Camera />, label: "Boligdata & Bilder" },
-  { icon: <Bot />, label: "Vision Agents", isAi: true },
-  { icon: <Cpu />, label: "Maintenance Engine", isAi: true },
-  { icon: <ArrowDownToLine />, label: "Prioritering" },
-  { icon: <BookOpen />, label: "Generert Tilbud", isAi: true },
-  { icon: <Handshake />, label: "Automatisk Matching", isAi: true },
+  { icon: <Camera />, label: "Boligprofil" },
+  { icon: <Bot />, label: "Bildeanalyse", isAi: true },
+  { icon: <Cpu />, label: "Boliganalyse", isAi: true },
+  { icon: <ArrowDownToLine />, label: "Oppfølging" },
+  { icon: <BookOpen />, label: "Fastpristilbud", isAi: true },
+  { icon: <Handshake />, label: "Fagperson match", isAi: true },
   { icon: <Smartphone />, label: "Håndverker App" },
   { icon: <Wrench />, label: "Utførelse" },
-  { icon: <CreditCard />, label: "Betaling" },
-  { icon: <BookOpen />, label: "Journal Oppdateres" }
+  { icon: <CreditCard />, label: "Betaling (Vipps)" },
+  { icon: <BookOpen />, label: "Boligminne" }
 ];
 
 export default function ContractorSteps() {

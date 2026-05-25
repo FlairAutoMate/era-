@@ -20,7 +20,7 @@ export default function BRL() {
             { icon: <Sparkles className="w-5 h-5" />, title: "Scan Bygg" },
             { icon: <ClipboardCheck className="w-5 h-5" />, title: "Plan" },
             { icon: <Activity className="w-5 h-5" />, title: "Prosjekt" },
-            { icon: <History className="w-5 h-5" />, title: "Journal" },
+            { icon: <History className="w-5 h-5" />, title: "Boligminne" },
             { icon: <ShieldCheck className="w-5 h-5" />, title: "Verdi" },
           ].map((item, i) => (
             <motion.div 

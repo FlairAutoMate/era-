@@ -6,10 +6,10 @@
 import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
-import FeaturesSummary from './components/FeaturesSummary';
+import PartnersSlideshow from './components/PartnersSlideshow';
 import HowItWorksScrolly from './components/HowItWorksScrolly';
 import Contractors from './components/Contractors';
-import Resources from './components/Resources';
+import FutureTimeline from './components/FutureTimeline';
 import Footer from './components/Footer';
 import WhyERA from './components/WhyERA';
 import TrustSection from './components/TrustSection';
@@ -50,10 +50,11 @@ export default function App() {
                 onOpenWaitlist={() => setIsWaitlistOpen(true)} 
                 onOpenProductAI={() => setView('product-ai')}
               />
-              <FeaturesSummary />
-              <HowItWorksScrolly />
-              <Contractors />
-              <WhyERA />
+              <PartnersSlideshow />
+              <HowItWorksScrolly onOpenWaitlist={() => setIsWaitlistOpen(true)} />
+              <Contractors onOpenWaitlist={() => setIsWaitlistOpen(true)} />
+              <FutureTimeline onOpenWaitlist={() => setIsWaitlistOpen(true)} />
+              <WhyERA onOpenWaitlist={() => setIsWaitlistOpen(true)} />
 
               {/* B2B / Professional Exit Banner */}
               <section className="bg-white border-y border-era-navy/5 py-12 px-6">
@@ -85,12 +86,77 @@ export default function App() {
               </section>
 
               <TrustSection />
-              <Resources />
               
               {/* FINAL CTA SECTION */}
               <section className="py-60 px-6 bg-era-navy text-center relative overflow-hidden text-white">
+                {/* Subtle digital intelligence background animations */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+                  {/* Neural Grid Dot Constellation */}
+                  <div 
+                    className="absolute inset-0 opacity-[0.035]" 
+                    style={{
+                      backgroundImage: `radial-gradient(#C8A96B 1.5px, transparent 1.5px)`,
+                      backgroundSize: '40px 40px'
+                    }}
+                  />
+                  
+                  {/* Floating Analytical Waveforms */}
+                  <svg className="absolute inset-0 w-full h-full opacity-15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="none">
+                    <motion.path
+                      d="M -100 300 C 200 150, 400 450, 800 350 C 1200 250, 1300 500, 1600 400"
+                      fill="none"
+                      stroke="#C8A96B"
+                      strokeWidth="1.2"
+                      strokeDasharray="6 8"
+                      animate={{ strokeDashoffset: [0, -120] }}
+                      transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+                    />
+                    <motion.path
+                      d="M -50 500 C 300 400, 500 550, 900 420 C 1300 290, 1400 480, 1650 380"
+                      fill="none"
+                      stroke="#C8A96B"
+                      strokeWidth="1.2"
+                      strokeDasharray="3 5"
+                      animate={{ strokeDashoffset: [0, 90] }}
+                      transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+                    />
+                  </svg>
+
+                  {/* Soft cognitive brain glow areas */}
+                  <div className="absolute top-[20%] left-[12%] w-[380px] h-[380px] bg-era-gold/[0.05] rounded-full blur-[80px]" />
+                  <div className="absolute bottom-[15%] right-[8%] w-[420px] h-[420px] bg-emerald-500/[0.04] rounded-full blur-[90px]" />
+
+                  {/* Pulsing Neural Nodes with Tech-Labels */}
+                  <motion.div 
+                    className="absolute top-[24%] left-[16%] hidden sm:flex items-center gap-2"
+                    animate={{ opacity: [0.15, 0.45, 0.15], y: [0, -6, 0] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <span className="w-2 h-2 bg-era-gold rounded-full shadow-[0_0_10px_#C8A96B]" />
+                    <span className="text-[8px] font-mono tracking-[0.2em] text-[#a19a90] uppercase font-semibold">KI_ANALYSE</span>
+                  </motion.div>
+
+                  <motion.div 
+                    className="absolute bottom-[24%] right-[16%] hidden sm:flex items-center gap-2"
+                    animate={{ opacity: [0.12, 0.4, 0.12], y: [0, 8, 0] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                  >
+                    <span className="w-2 h-2 bg-emerald-500 rounded-full shadow-[0_0_10px_#10b981]" />
+                    <span className="text-[8px] font-mono tracking-[0.2em] text-[#a19a90] uppercase font-semibold">AUTOMATISERING</span>
+                  </motion.div>
+
+                  <motion.div 
+                    className="absolute top-[68%] left-[10%] hidden md:flex items-center gap-2"
+                    animate={{ opacity: [0.1, 0.35, 0.1], y: [0, -4, 0] }}
+                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+                  >
+                    <span className="w-1.5 h-1.5 bg-era-gold rounded-full" />
+                    <span className="text-[7.5px] font-mono tracking-[0.2em] text-[#a19a90] uppercase font-semibold">BOLIGMINNE_CLOUD</span>
+                  </motion.div>
+                </div>
+
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1 }}
                   viewport={{ once: true }}
@@ -114,7 +180,7 @@ export default function App() {
                 </motion.div>
                 
                 {/* Cinematic Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-era-midnight to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-era-midnight to-transparent opacity-60 z-0" />
               </section>
             </motion.div>
           )}

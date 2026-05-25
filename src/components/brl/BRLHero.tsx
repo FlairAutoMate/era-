@@ -37,8 +37,8 @@ export default function BRLHero({ onOpenWaitlist }: BRLHeroProps) {
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-16">
-            <button onClick={onOpenWaitlist} className="square-button-gold px-12 py-5 text-lg w-full sm:w-auto shadow-2xl">Meld interesse</button>
-            <button className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs flex items-center gap-2 group transition-colors">
+            <button onClick={onOpenWaitlist} className="square-button-gold px-12 py-5 text-sm uppercase tracking-wider font-bold w-full sm:w-auto shadow-2xl">Få pristilbud til sameiet</button>
+            <button onClick={onOpenWaitlist} className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs flex items-center gap-2 group transition-colors">
               Se plattformen
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
