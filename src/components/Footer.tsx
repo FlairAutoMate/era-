@@ -25,12 +25,12 @@ export default function Footer({ onViewChange }: FooterProps) {
   return (
     <footer className="bg-era-navy text-white py-32 px-6 relative overflow-hidden">
       {/* Huge subtle background text */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none select-none overflow-hidden h-full w-full flex items-end justify-center">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none select-none h-full w-full flex items-end justify-center">
         <motion.span 
-          initial={{ y: 150, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 0.07 }}
-          transition={{ duration: 1.8, ease: "easeOut" }}
-          className="text-[47vw] md:text-[55vw] font-display font-bold leading-none -mb-[12vw] md:-mb-[15vw] whitespace-nowrap tracking-tighter text-white"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 0.07, scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          className="text-[60vw] md:text-[55vw] font-display font-bold leading-none -mb-[10vw] md:-mb-[15vw] whitespace-nowrap tracking-tighter text-white"
         >
           ERA
         </motion.span>

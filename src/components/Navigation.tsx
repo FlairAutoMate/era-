@@ -11,7 +11,7 @@ interface NavigationProps {
 
 const SOLUTIONS = [
   { id: 'homeowner', label: 'For boligeiere' },
-  { id: 'partners', label: 'For utbyggere & partnere' },
+  { id: 'partners', label: 'Partnere' },
 ] as const;
 
 const COMPANY = [

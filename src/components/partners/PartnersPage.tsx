@@ -1,12 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Blocks, Layers, ShieldCheck, Activity } from 'lucide-react';
+import { Blocks, Layers, ShieldCheck, Activity, Send, Check, Mail, Phone, Building } from 'lucide-react';
 
 interface PartnersPageProps {
   onOpenWaitlist?: () => void;
 }
 
 export default function PartnersPage({ onOpenWaitlist }: PartnersPageProps) {
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    partnerType: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate API submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitted(true);
+      setFormData({
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        partnerType: '',
+        message: ''
+      });
+    }, 1200);
+  };
+
   return (
     <div className="bg-era-ivory text-era-navy min-h-screen">
       {/* Hero */}
@@ -46,7 +76,7 @@ export default function PartnersPage({ onOpenWaitlist }: PartnersPageProps) {
                { title: "Boligorganisasjoner", desc: "Tilby medlemmene en proaktiv vedlikeholdsagent." },
                { title: "Banker", desc: "Forstå verdien og tilstanden i den pantesikrede porteføljen bedre." },
                { title: "Forsikring", desc: "Reduser risiko gjennom forebygging fremfor skadeoppgjør." },
-               { title: "Eiendomsmeglere", desc: "Gi boligkjøpere og selgere merverdi ved å tilby et komplett Boligminne." }
+               { title: "Eiendomsmeglere", desc: "Give boligkjøpere og selgere merverdi ved å tilby et komplett Boligminne." }
             ].map((p, i) => (
               <div key={i} className="bg-white p-8 border border-era-navy/5 text-center rounded-xl">
                 <Blocks className="w-8 h-8 text-era-gold mx-auto mb-6" />
@@ -58,6 +88,7 @@ export default function PartnersPage({ onOpenWaitlist }: PartnersPageProps) {
         </div>
       </section>
 
+      {/* Stats layers */}
       <section className="py-40 px-6 bg-white border-t border-era-navy/5">
          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
            <div>
@@ -151,6 +182,163 @@ export default function PartnersPage({ onOpenWaitlist }: PartnersPageProps) {
 
            </div>
          </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-32 px-6 bg-era-ivory relative overflow-hidden border-t border-era-navy/5">
+        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-era-gold/[0.02] rounded-full blur-[100px] pointer-events-none" />
+        
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-era-gold font-bold uppercase tracking-[0.3em] font-mono text-[10px] mb-4 block">// BLI PARTNER</span>
+            <h2 className="text-4xl md:text-5xl font-medium text-[#0E2341] tracking-tight">La oss bygge fremtiden sammen</h2>
+            <p className="text-era-navy/60 text-sm font-light mt-4">
+              Ønsker du å integrere ERA i din virksomhet, eller starte et samarbeid som sertifisert partner? Fyll ut skjemaet under, så kontakter vi deg innen 24 timer.
+            </p>
+          </div>
+
+          <div className="bg-white border border-era-navy/5 rounded-2xl p-8 md:p-12 shadow-xl shadow-era-navy/[0.01]">
+            {submitted ? (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center py-16 space-y-6"
+              >
+                <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-sm">
+                  <Check className="w-8 h-8" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-semibold text-era-navy">Takk for din henvendelse!</h3>
+                  <p className="text-sm text-era-navy/60 max-w-md mx-auto leading-relaxed">
+                    Vi har mottatt dine opplysninger og vil ta kontakt for en hyggelig og uforpliktende prat innen kort tid.
+                  </p>
+                </div>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="inline-flex items-center gap-2 border border-era-navy/20 hover:border-era-navy/80 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-era-navy transition-colors font-semibold"
+                >
+                  Send en ny melding
+                </button>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Name field */}
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-era-navy/60 tracking-wider uppercase block">Navn *</label>
+                    <input 
+                      type="text" 
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="Ola Nordmann"
+                      className="w-full bg-era-ivory/50 border border-era-navy/10 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-era-gold focus:bg-white transition-all text-era-navy font-medium"
+                    />
+                  </div>
+                  
+                  {/* Company field */}
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-era-navy/60 tracking-wider uppercase block">Selskap / Organisasjon *</label>
+                    <div className="relative">
+                      <input 
+                        type="text" 
+                        required
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        placeholder="Norsk Eiendom AS"
+                        className="w-full bg-era-ivory/50 border border-era-navy/10 rounded-xl px-4 py-3.5 pl-10 text-sm focus:outline-none focus:border-era-gold focus:bg-white transition-all text-era-navy font-medium"
+                      />
+                      <Building className="w-4 h-4 text-era-navy/30 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Email field */}
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-era-navy/60 tracking-wider uppercase block font-mono">E-postadresse *</label>
+                    <div className="relative">
+                      <input 
+                        type="email" 
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="ola@firma.no"
+                        className="w-full bg-era-ivory/50 border border-era-navy/10 rounded-xl px-4 py-3.5 pl-10 text-sm focus:outline-none focus:border-era-gold focus:bg-white transition-all text-era-navy font-medium"
+                      />
+                      <Mail className="w-4 h-4 text-era-navy/30 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    </div>
+                  </div>
+
+                  {/* Phone field */}
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-era-navy/60 tracking-wider uppercase block">Telefonnummer</label>
+                    <div className="relative">
+                      <input 
+                        type="tel" 
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="+47 900 00 000"
+                        className="w-full bg-era-ivory/50 border border-era-navy/10 rounded-xl px-4 py-3.5 pl-10 text-sm focus:outline-none focus:border-era-gold focus:bg-white transition-all text-era-navy font-medium"
+                      />
+                      <Phone className="w-4 h-4 text-era-navy/30 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Partner Type Dropdown */}
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold text-era-navy/60 tracking-wider uppercase block">Jeg representerer *</label>
+                  <select 
+                    required
+                    value={formData.partnerType}
+                    onChange={(e) => setFormData({ ...formData, partnerType: e.target.value })}
+                    className="w-full bg-era-ivory/50 border border-era-navy/10 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-era-gold focus:bg-white transition-all text-era-navy font-medium cursor-pointer"
+                  >
+                    <option value="" disabled>Velg kategori...</option>
+                    <option value="Håndverker / Entreprenør">Håndverkerkjede / Entreprenør</option>
+                    <option value="Utbygger / Selskap">Boligbygger / Utbygger</option>
+                    <option value="Bank / Finansinstitusjon">Bank / Finansinstitusjon</option>
+                    <option value="Forsikringsselskap">Forsikringsselskap</option>
+                    <option value="Eiendomsselskap / Megler">Eiendomsselskap / Meglerforetak</option>
+                    <option value="Styre / Sameie">Styremedlem i BRL / Sameie</option>
+                    <option value="Annet">Annet</option>
+                  </select>
+                </div>
+
+                {/* Message field */}
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold text-era-navy/60 tracking-wider uppercase block">Melding eller spesielle behov</label>
+                  <textarea 
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Fortell oss litt om deres mål eller ønsker for et partnerskap med ERA..."
+                    className="w-full bg-era-ivory/50 border border-era-navy/10 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-era-gold focus:bg-white transition-all text-era-navy font-medium resize-none"
+                  />
+                </div>
+
+                {/* Submit button */}
+                <div className="pt-2">
+                  <button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full bg-era-navy text-white hover:bg-era-midnight border border-transparent font-bold py-4 rounded-xl px-4 text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 shadow-lg disabled:opacity-50"
+                  >
+                    {isSubmitting ? (
+                      <span className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin" />
+                    ) : (
+                      <>
+                        Send partner-henvendelse
+                        <Send className="w-3.5 h-3.5" />
+                      </>
+                    )}
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
       </section>
     </div>
   );

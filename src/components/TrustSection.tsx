@@ -66,7 +66,7 @@ export default function TrustSection() {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             <span>KRYPTERT MED TLS 1.3 & AES-256</span>
           </div>
-          <span>UTVIKLET I NORGE FOR NORSKE HISTORIER</span>
+          <span>GDPR-SAMSVAR & DATASIKKERHET</span>
         </div>
       </div>
     </section>

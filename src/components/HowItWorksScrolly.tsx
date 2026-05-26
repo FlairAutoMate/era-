@@ -35,26 +35,26 @@ const FLOW_STEPS = [
   {
     id: "step-2",
     num: "02",
-    label: "Ta bilde & få KI-vurdering",
-    title: "Ta bilde & få KI-vurdering",
-    sub: "Agentbasert tilstandsanalyse",
-    desc: "Ta bilde av et problem eller et område i boligen. ERA analyserer tilstand, risiko, restlevetid og foreslår forebyggende tiltak automatisk.",
+    label: "Hurtig-estimat på mobilen",
+    title: "Ta bilde & få uforpliktende hurtig-estimat",
+    sub: "Øyeblikkelig indikasjon på sekunder",
+    desc: "Ta et bilde av vedlikeholdsbehovet med mobilen. ERA gjør en umiddelbar KI-analyse og gir deg et uforpliktende hurtig-estimat på sekunder. Dette er ikke et endelig tilbud, men en kjemperask indikasjon slik at du ser omfanget før du gjør noe mer.",
     visualType: "ai_vision",
-    statusBadge: "Tiltak anbefalt",
+    statusBadge: "Hurtig-estimat klart",
     statusColor: "text-amber-500 bg-amber-500/10 border-amber-500/20",
-    signals: ["KI-bildeanalyse", "risikovurdering", "vedlikeholdsstatus"]
+    signals: ["bildeanalyse", "indikativ prisantydning", "uforpliktende sjekk"]
   },
   {
     id: "step-3",
     num: "03",
-    label: "Få prisoverslag",
-    title: "Få raskt prisoverslag",
-    sub: "Algoritmisk prisestimering",
-    desc: "ERA genererer forslag til nøyaktig omfang, estimert kostnad og anbefalt utførelse basert på boligdata, historiske priser og grundig KI-analyse.",
+    label: "Endelig fastpris bygges",
+    title: "Selve fastpristilbudet bygges automatisk",
+    sub: "Fra bilde-estimat til juridisk avtale",
+    desc: "ERA tar hurtig-estimatet og bildeanalysen videre for å bygge det faktiske tilbudet. Systemet regner ut materiellmengde, timeforbruk og kobler det mot ledige lokale fagfolk. Slik mottar du et ferdig kvalitetssikret, 100% bindende fastpristilbud.",
     visualType: "price_estimation",
-    statusBadge: "Kostnadsoverslag klart",
+    statusBadge: "Juridisk fastpris klar",
     statusColor: "text-emerald-500 bg-emerald-500/10 border-emerald-500/20",
-    signals: ["smart prisestimering", "fastpris genereres", "oppdragsbeskrivelse"]
+    signals: ["materialspesifikasjon", "komplett priskalkyle", "fastprisgaranti", "partner-prissynk"]
   },
   {
     id: "step-4",
@@ -84,6 +84,22 @@ const FLOW_STEPS = [
 
 export default function HowItWorksScrolly({ onOpenWaitlist }: HowItWorksScrollyProps) {
   const [activeTab, setActiveTab] = useState(0);
+  const [demoPhotoUploaded, setDemoPhotoUploaded] = useState(false);
+  const [analyzingDemo, setAnalyzingDemo] = useState(false);
+
+  const simulatePhotoUpload = () => {
+    setAnalyzingDemo(true);
+    const timer = setTimeout(() => {
+      setAnalyzingDemo(false);
+      setDemoPhotoUploaded(true);
+    }, 1200);
+    return () => clearTimeout(timer);
+  };
+
+  const resetDemoPhoto = () => {
+    setDemoPhotoUploaded(false);
+    setAnalyzingDemo(false);
+  };
 
   return (
     <section className="py-28 md:py-36 px-6 bg-white text-era-navy relative overflow-hidden border-t border-era-navy/5" id="hvordan-det-fungerer">
@@ -300,30 +316,73 @@ export default function HowItWorksScrolly({ onOpenWaitlist }: HowItWorksScrollyP
                     {/* VISUAL 2: AI image analysis & risk metric */}
                     {FLOW_STEPS[activeTab].visualType === "ai_vision" && (
                       <div className="space-y-4">
-                        <div className="border border-era-navy/10 bg-white overflow-hidden rounded-xl relative shadow-sm">
-                          <div className="h-32 relative overflow-hidden bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400')" }}>
-                            {/* Visual tracking crosshair overlays */}
-                            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                              <div className="w-20 h-20 border-2 border-dashed border-era-gold/60 rounded-full animate-spin [animation-duration:15s]" />
-                              <div className="w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse" />
+                        {!demoPhotoUploaded && !analyzingDemo && (
+                          <div className="border-2 border-dashed border-[#0E2341]/15 rounded-2xl p-6 text-center space-y-4 bg-white relative hover:border-era-gold transition-all duration-300">
+                            <div className="w-12 h-12 rounded-full bg-era-gold/10 text-era-gold flex items-center justify-center mx-auto">
+                              <Camera className="w-6 h-6 animate-pulse" />
                             </div>
-                            <div className="absolute bottom-2 left-2 bg-red-500 text-white text-[8px] font-bold tracking-widest uppercase px-1.5 py-0.5 rounded">
-                              RISIKOSONE ID-44
+                            <div className="space-y-1">
+                              <p className="text-sm font-bold text-era-navy font-sans">Ta et test-bilde nå</p>
+                              <p className="text-xs text-era-navy/60 leading-normal">Simuler bildeopplasting av bad, tak eller yttervegg og opplev farten.</p>
+                            </div>
+                            <button 
+                              onClick={simulatePhotoUpload}
+                              className="text-xs font-bold uppercase tracking-wider bg-era-navy text-white px-5 py-2.5 hover:bg-era-midnight font-sans rounded-lg transition-colors shadow-sm"
+                            >
+                              Ta test-bilde
+                            </button>
+                          </div>
+                        )}
+
+                        {analyzingDemo && (
+                          <div className="bg-white border border-[#0E2341]/5 rounded-2xl p-6 text-center space-y-4 shadow-sm min-h-[160px] flex flex-col justify-center items-center">
+                            <div className="relative w-12 h-12 flex items-center justify-center">
+                              <div className="absolute inset-0 border-2 border-dashed border-era-gold rounded-full animate-spin" />
+                              <Sparkles className="w-5 h-5 text-era-gold animate-bounce" />
+                            </div>
+                            <div className="space-y-1 animate-pulse">
+                              <p className="text-xs font-bold font-mono text-era-gold uppercase tracking-widest">ERA KI Analyse pågår...</p>
+                              <p className="text-xs text-era-navy/60 font-mono">Beregner uforpliktende hurtig-estimat</p>
                             </div>
                           </div>
-                          
-                          <div className="p-3.5 space-y-1">
-                            <h4 className="text-[10px] uppercase font-mono tracking-wider text-era-navy/50 font-bold">ANALYSERAPPORT</h4>
-                            <p className="text-xs text-era-navy font-semibold leading-relaxed">
-                              Overflateslitasje på fuger og hjørnesone registrert. Sprekk i fuge funnet.
-                            </p>
-                            <div className="flex items-center gap-2 pt-1">
-                              <span className="text-[9px] font-bold text-amber-600 bg-amber-500/10 px-2 py-0.5 rounded">
-                                Tiltak: Fugemasse ettersyn
-                              </span>
+                        )}
+
+                        {demoPhotoUploaded && !analyzingDemo && (
+                          <div className="border border-era-navy/10 bg-white overflow-hidden rounded-xl shadow-sm space-y-3">
+                            <div className="h-28 relative overflow-hidden bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400')" }}>
+                              {/* Target focus */}
+                              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <div className="w-16 h-16 border-2 border-dashed border-emerald-500/60 rounded-full" />
+                                <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+                              </div>
+                              <div className="absolute top-2 left-2 bg-amber-500 text-white text-[8px] font-bold tracking-widest uppercase px-1.5 py-0.5 rounded">
+                                INDIKATIV ANALYSE: FUGESLITASJE
+                              </div>
+                            </div>
+                            
+                            <div className="p-3.5 space-y-2">
+                              <div className="flex justify-between items-center pb-2 border-b border-era-navy/5">
+                                <span className="text-[10px] uppercase font-mono tracking-wider text-era-navy/50 font-bold">UFORPLIKTENDE ESTIMAT</span>
+                                <span className="text-[9px] font-bold text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded leading-none border border-amber-200">KUN INDIKASJON</span>
+                              </div>
+                              
+                              <p className="text-base text-era-navy font-bold">
+                                Estimert kostnad: kr 1 500 – 2 500
+                              </p>
+                              
+                              <div className="bg-amber-500/5 p-2.5 rounded-lg border border-amber-500/10 text-[10px] text-amber-800 leading-normal font-sans">
+                                ⚠️ <strong>Merk:</strong> Dette er et hurtig-estimat basert utelukkende på bilde og historikk. Det endelige, bindende tilbudet settes sammen automatisk i neste trinn ved oppdragskobling.
+                              </div>
+                              
+                              <button 
+                                onClick={resetDemoPhoto} 
+                                className="text-[9px] font-mono font-bold uppercase tracking-wider text-era-navy/50 underline block hover:text-era-navy pb-1"
+                              >
+                                Nullstill testbilde og prøv igjen
+                              </button>
                             </div>
                           </div>
-                        </div>
+                        )}
                       </div>
                     )}
 
@@ -331,28 +390,28 @@ export default function HowItWorksScrolly({ onOpenWaitlist }: HowItWorksScrollyP
                     {FLOW_STEPS[activeTab].visualType === "price_estimation" && (
                       <div className="space-y-4">
                         <div className="bg-white border border-[#0E2341]/5 rounded-xl p-4 shadow-sm space-y-3">
-                          <div className="flex justify-between items-center">
-                            <span className="text-[8px] font-mono tracking-widest text-[#a19a90] uppercase font-bold">KONTRAKTSOMFANG</span>
-                            <span className="text-[10px] font-mono text-emerald-600 font-bold bg-emerald-500/5 px-2 py-0.5 rounded">FASTPRISSJEKK</span>
+                          <div className="flex justify-between items-center bg-emerald-500/5 px-2.5 py-1 rounded border border-emerald-500/10">
+                            <span className="text-[8px] font-mono tracking-widest text-emerald-700 uppercase font-bold">REELT FASTPRIS-TILBUD BYGGET</span>
+                            <span className="text-[9px] font-mono text-emerald-600 font-bold">BINDENDE AVTALE</span>
                           </div>
 
                           <div className="space-y-2 text-xs">
-                            <div className="flex justify-between items-center pb-2 border-b border-era-navy/5">
-                              <span className="text-era-navy/60 font-light">Utbedring av fugebad</span>
-                              <span className="font-semibold text-era-navy">kr 1 900,-</span>
+                            <div className="flex justify-between items-center">
+                              <span className="text-era-navy/60 font-light">Utbedring bad (materiell + tørk)</span>
+                              <span className="font-semibold text-era-navy">kr 2 100,-</span>
                             </div>
-                            <div className="flex justify-between items-center pb-2 border-b border-era-navy/5">
-                              <span className="text-era-navy/60 font-light">Spesialmateriell & lakk</span>
-                              <span className="font-semibold text-era-navy">Inkludert</span>
+                            <div className="flex justify-between items-center">
+                              <span className="text-era-navy/60 font-light">Sertifisert kvalitetssikring (Våtromsnormen)</span>
+                              <span className="font-semibold text-emerald-600 font-mono">Inkludert</span>
                             </div>
-                            <div className="flex justify-between items-center text-sm font-bold text-era-navy mt-1">
-                              <span>Totalberegnet kostnad</span>
-                              <span className="text-era-navy">kr 1 900,-</span>
+                            <div className="pt-2 border-t border-era-navy/5 flex justify-between items-center text-sm font-bold text-era-navy">
+                              <span>Total, bindende fastpris</span>
+                              <span className="text-era-navy">kr 2 100,-</span>
                             </div>
                           </div>
 
-                          <div className="bg-emerald-500/5 border border-emerald-500/10 rounded-lg p-2.5 text-center text-[9px] font-mono font-medium text-emerald-700">
-                            🛡️ Garantert mot prisavvik over 10%
+                          <div className="bg-emerald-500/5 border border-emerald-500/10 rounded-lg p-2.5 text-xs text-emerald-800 font-sans leading-normal">
+                            💡 <strong>Garantisikret:</strong> ERA har her kalkulert nøyaktige materialsatser og timeforbruk automatisk fra det opprinnelige bilde-estimatet. Prisen er fast og endrer seg ikke.
                           </div>
                         </div>
                       </div>
