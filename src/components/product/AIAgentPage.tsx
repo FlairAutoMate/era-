@@ -65,16 +65,16 @@ export default function AIAgentPage({ onOpenWaitlist }: AIAgentPageProps) {
           <div>
             <span className="text-era-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-8 block font-sans justify-center flex items-center gap-2">
               <Activity className="w-4 h-4 text-era-gold animate-pulse" />
-              Aktiv Boligforvaltning
+              AI-NATIVE BOLIGOPPFØLGING
             </span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium mb-10 leading-[0.95] tracking-tight">
-              ERA gjør bolig-<br className="hidden md:block"/>dokumentasjon levende.
+              KI-agenten som <br className="hidden md:block"/>følger opp boligen din.
             </h1>
             <p className="text-lg md:text-xl text-white/70 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-              Dokumentasjon skal ikke ligge glemt i permer og mapper. ERA forstår innholdet, følger opp vedlikehold automatisk og kobler deg med riktige fagfolk når noe må gjøres.
+              ERA analyserer boligdata, tolker bilder og dokumentasjon, oppdager vedlikeholdsbehov og kobler deg direkte med kvalifiserte håndverkere — helt gratis for deg som eier.
             </p>
             <button onClick={onOpenWaitlist} className="square-button-gold px-12 py-5 text-sm uppercase tracking-wider font-bold shadow-2xl">
-              Få min 10-års vedlikeholdsplan
+              Prøv ERA Agent
             </button>
           </div>
         </div>
@@ -84,12 +84,12 @@ export default function AIAgentPage({ onOpenWaitlist }: AIAgentPageProps) {
       <section className="py-40 px-6 bg-white overflow-hidden text-center md:text-left">
         <div className="max-w-7xl mx-auto pb-4">
           <div className="mb-24 md:text-center max-w-3xl mx-auto">
-             <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">Kategori</span>
+             <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">OPERATIVSYSTEMET</span>
              <h2 className="text-4xl md:text-5xl font-semibold mb-8 tracking-tight text-era-navy">
-               Et intelligent operativsystem for eiendommen
+               Et intelligent operativsystem for boligen din
              </h2>
              <p className="text-xl text-era-navy/60 font-light leading-relaxed">
-               I stedet for å være et passivt arkiv, hjelper ERA deg aktivt og proaktivt med å passe på boligen over tid.
+               I stedet for å være et passivt arkiv eller et statisk dashboard, tilrettelegger ERA for helautomatisk, kontinuerlig boligoppfølging.
              </p>
           </div>
 
@@ -99,8 +99,8 @@ export default function AIAgentPage({ onOpenWaitlist }: AIAgentPageProps) {
               <div className="w-12 h-12 bg-era-navy/5 flex items-center justify-center mb-10 text-era-navy rounded-xl">
                 <BookOpen className="w-5 h-5 text-era-gold" />
               </div>
-              <h4 className="text-[10px] uppercase tracking-widest text-[#a19a90] font-bold mb-4">FASE 1</h4>
-              <h3 className="text-2xl font-medium mb-4 text-era-navy">Trygg Boligprofil</h3>
+              <h4 className="text-[10px] uppercase tracking-widest text-[#a19a90] font-bold mb-4">LEVENDE DATA</h4>
+              <h3 className="text-2xl font-medium mb-4 text-era-navy">Levende Boligdata</h3>
               <p className="text-era-navy/70 text-sm font-light leading-relaxed">
                 Last opp det du har av FDV-mapper, bilder og vedlikeholdshistorikk. ERA analyserer dokumentene automatisk og samler alt i én levende, oversiktlig boligprofil.
               </p>
@@ -111,8 +111,8 @@ export default function AIAgentPage({ onOpenWaitlist }: AIAgentPageProps) {
               <div className="w-12 h-12 bg-era-navy/5 flex items-center justify-center mb-10 text-era-navy rounded-xl">
                 <Clock className="w-5 h-5 text-era-gold" />
               </div>
-              <h4 className="text-[10px] uppercase tracking-widest text-[#a19a90] font-bold mb-4">FASE 2</h4>
-              <h3 className="text-2xl font-medium mb-4 text-era-navy">Kontinuerlig Analyse</h3>
+              <h4 className="text-[10px] uppercase tracking-widest text-[#a19a90] font-bold mb-4">AI-NATIVE</h4>
+              <h3 className="text-2xl font-medium mb-4 text-era-navy">Autonome Arbeidsflyter</h3>
               <p className="text-era-navy/70 text-sm font-light leading-relaxed">
                 ERA følger opp boligen din over tid. Ved å sammenstille boligens alder, materialer og historikk, beregner vi når deler bør sjekkes for å unngå uforutsette skader.
               </p>
@@ -123,8 +123,8 @@ export default function AIAgentPage({ onOpenWaitlist }: AIAgentPageProps) {
               <div className="w-12 h-12 bg-era-navy/5 flex items-center justify-center mb-10 text-era-navy rounded-xl">
                 <Wrench className="w-5 h-5 text-era-gold" />
               </div>
-              <h4 className="text-[10px] uppercase tracking-widest text-[#a19a90] font-bold mb-4">FASE 3</h4>
-              <h3 className="text-2xl font-medium mb-4 text-era-navy">Kvalifiserte Håndverkere</h3>
+              <h4 className="text-[10px] uppercase tracking-widest text-[#a19a90] font-bold mb-4">UTFØRELSE</h4>
+              <h3 className="text-2xl font-medium mb-4 text-era-navy">Utførelse & Dokumentasjon</h3>
               <p className="text-era-navy/70 text-sm font-light leading-relaxed">
                 Når et tiltak krever fagfolk, presenterer ERA ferdig spesifiserte forslag med godkjente, lokale håndverkere klare til fastpris – bestilt og bekreftet på sekunder.
               </p>

@@ -20,19 +20,20 @@ export default function ContractorDetails({ onOpenWaitlist }: ContractorDetailsP
             >
               <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">Plattform</span>
               <h2 className="text-4xl md:text-6xl font-medium mb-10 leading-[1.05]">
-                Direkte koblet til boligeiere og sameier.
+                Kvalifiserte oppdrag og ferdig grunnlag.
               </h2>
               <p className="text-era-navy/60 text-lg font-light leading-relaxed mb-12">
-                ERA gjør det enklere å styre prosesser, levere arbeid av høy kvalitet, og sikre at alt ligger trygt forvaltet hos kunden fra dag én.
+                Slipp uendelig tilbudsregning, telefonsamtaler og uklare kundeforventninger. ERA matcher deg automatisk med prosjekter som passer din kompetanse og ledige kapasitet.
               </p>
               
               <ul className="space-y-6">
                  {[
-                   "Motta forespørsler automatisk",
-                   "Gi strukturerte tilbud enklere",
-                   "Dokumentere arbeid fortløpende",
-                   "Følge opp kunder profesjonelt",
-                   "Bygge langsiktige relasjoner"
+                   "Ferdig spesifiserte oppdrag og tiltak",
+                   "Mindre tidsbruk på administrasjon og oppmøte",
+                   "Automatisk generert dokumentasjon",
+                   "Nå ut til de riktige kundene i ditt nærområde",
+                   "Oppnå høyere tillit gjennom nøyaktig FDV-leveranse",
+                   "Kontinuerlig oppdragsflyt uten markedsføringskostnader"
                  ].map((item, i) => (
                    <li key={i} className="flex items-center gap-4">
                      <ArrowRight className="w-4 h-4 text-era-gold flex-shrink-0" />
@@ -54,19 +55,19 @@ export default function ContractorDetails({ onOpenWaitlist }: ContractorDetailsP
                   <Inbox className="w-6 h-6" />
                 </div>
               </div>
-              <h3 className="text-2xl font-medium mb-8">Et enklere prosjekt</h3>
+              <h3 className="text-2xl font-medium mb-8">Hvordan det fungerer</h3>
               <div className="space-y-6">
-                <div className="bg-era-navy/5 p-6 border-l-2 border-era-gold">
-                  <p className="text-xs font-bold uppercase tracking-widest text-era-navy/60">Trinn 1</p>
-                  <p className="text-base font-medium mt-1">Motta ferdig analyserte behov</p>
+                <div className="bg-[#0b1426]/5 p-6 border-l-2 border-era-gold rounded-r-xl">
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#0b1426]/60">Trinn 1 — Intelligent Tildeling</p>
+                  <p className="text-base font-medium mt-1">Automatisk matching basert på kompetanse og kapasitet.</p>
                 </div>
-                <div className="bg-era-navy/5 p-6 border-l-2 border-era-gold">
-                  <p className="text-xs font-bold uppercase tracking-widest text-era-navy/60">Trinn 2</p>
-                  <p className="text-base font-medium mt-1">Pristilbud og gjennomføring</p>
+                <div className="bg-[#0b1426]/5 p-6 border-l-2 border-era-gold rounded-r-xl">
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#0b1426]/60">Trinn 2 — Fastpris & Avtale</p>
+                  <p className="text-base font-medium mt-1">Ingen lange forhandlinger. Oppdraget utføres til fastpris basert på reelle underlagsdata.</p>
                 </div>
-                <div className="bg-era-navy/5 p-6 border-l-2 border-era-navy/10">
-                  <p className="text-xs font-bold uppercase tracking-widest text-era-navy/60">Trinn 3</p>
-                  <p className="text-base font-medium mt-1">Dokumentasjon er automatisk sikret</p>
+                <div className="bg-[#0b1426]/5 p-6 border-l-2 border-era-navy/20 rounded-r-xl">
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#0b1426]/60">Trinn 3 — FDV Oppdateres Automatisk</p>
+                  <p className="text-base font-medium mt-1">Samsvarserklæringer, kvitteringer og bilder synkroniseres automatisk til boligens Boligminne.</p>
                 </div>
               </div>
             </motion.div>

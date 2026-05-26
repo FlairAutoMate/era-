@@ -16,7 +16,7 @@ const FUTURE_EVENTS = [
     partnerInfo: {
       brand: "Jotun Drytech • Mesterfarge",
       desc: "Autorisert Mesterfarge-partner klargjort med Jotun optimal beskyttelse.",
-      actionText: "Få fastpris-tilbud til hytte/bolig"
+      actionText: "Be om tilbud"
     },
     badge: "Soleksponering vurdert"
   },
@@ -261,7 +261,7 @@ export default function FutureTimeline({ onOpenWaitlist }: FutureTimelineProps) 
                         ? 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20' 
                         : 'text-era-gold bg-era-gold/10 border-era-gold/20'
                     }`}>
-                      {activeTab === 'future' ? 'KLARGJORT' : 'SMI-LÅST'}
+                      {activeTab === 'future' ? 'KLARGJORT' : 'LÅST (BOLIGMINNET)'}
                     </span>
                   </div>
 
@@ -319,8 +319,8 @@ export default function FutureTimeline({ onOpenWaitlist }: FutureTimelineProps) 
                     
                     <p className="text-center text-[9px] text-white/40 font-mono tracking-widest uppercase">
                       {activeTab === 'future' 
-                        ? '✓ fastpris • mestergaranti • automatisk vips' 
-                        : '✓ koble til hus • fdv godkjent • bank id signering'}
+                        ? '✓ fastpris • mestergaranti • automatisk Vipps' 
+                        : '✓ koble til bolig • FDV-godkjent • BankID-signering'}
                     </p>
                   </div>
 

@@ -13,7 +13,7 @@ export default function AppNav() {
 
         <button className="flex flex-col items-center gap-1.5 group">
           <Calendar className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" />
-          <span className="text-[9px] uppercase font-bold tracking-widest text-white/60 group-hover:text-white transition-colors">Tiltak</span>
+          <span className="text-[9px] uppercase font-bold tracking-widest text-white/60 group-hover:text-white transition-colors">Prosjekt</span>
         </button>
 
         {/* Floating Camera Centerpiece */}

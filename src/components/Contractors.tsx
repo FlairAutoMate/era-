@@ -37,7 +37,7 @@ export default function Contractors({ onOpenWaitlist }: ContractorsProps) {
         </span>
         
         {/* MAIN HEADLINE */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white leading-[1.08] font-sans max-w-3xl mb-8">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-[1.08] font-sans max-w-3xl mb-8">
           Håndverkere du kan stole på.<br />Koblet helt uten anbudskaos.
         </h2>
         

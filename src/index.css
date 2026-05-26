@@ -10,6 +10,11 @@
   --color-era-navy: #0E2341;
   --color-era-midnight: #081426;
   --color-era-gold: #A1824A;
+
+  --text-xs: 0.875rem;   /* Upscaled from 0.75rem (12px) to 14px */
+  --text-sm: 1rem;       /* Upscaled from 0.875rem (14px) to 16px */
+  --text-base: 1.125rem; /* Upscaled from 1rem (16px) to 18px */
+  --text-lg: 1.25rem;    /* Upscaled from 1.125rem (18px) to 20px */
 }
 
 @layer base {

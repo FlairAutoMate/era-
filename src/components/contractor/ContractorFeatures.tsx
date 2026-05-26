@@ -12,10 +12,10 @@ export default function ContractorFeatures() {
                <Package className="w-8 h-8 text-era-gold mb-8" />
                <h3 className="text-3xl font-medium mb-8">KI-drevet materialsalg</h3>
                <p className="text-era-navy/60 font-light leading-relaxed mb-8">
-                 Tjen mer per oppdrag. Når ERA analyserer bilder eller utformer et prosjekt, foreslår Pricing Agenten automatisk premium oppgraderinger (f.eks. integrert belysning, smarthus-moduler, oppgradert listverk) som kunden kan godkjenne med ett klikk.
+                 Tjen mer per oppdrag. Når ERA analyserer bilder eller utformer et prosjekt, foreslår prisingsagenten automatisk premium oppgraderinger (f.eks. integrert belysning, smarthus-moduler, oppgradert listverk) som kunden kan godkjenne med ett klikk.
                </p>
                <ul className="space-y-4 text-sm text-era-navy/80 font-medium">
-                 <li>• Automatisk krysssalg (cross-selling)</li>
+                 <li>• Automatisk kryss- og mersalg</li>
                  <li>• Integrerte produktkataloger</li>
                  <li>• Visuelle forslag til kunden</li>
                  <li>• Økt margin per oppdrag</li>

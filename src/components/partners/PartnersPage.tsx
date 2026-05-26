@@ -131,7 +131,7 @@ export default function PartnersPage({ onOpenWaitlist }: PartnersPageProps) {
                <div className="w-24 h-24 bg-era-gold flex items-center justify-center text-era-midnight mb-3 shadow-[0_0_30px_rgba(212,175,55,0.3)] rounded-2xl">
                  <Activity className="w-8 h-8" />
                </div>
-               <span className="text-[10px] uppercase tracking-widest font-bold text-era-gold">ERA OS</span>
+               <span className="text-[10px] uppercase tracking-widest font-bold text-era-gold">ERA Operativsystem</span>
              </div>
 
              {/* Partnere */}

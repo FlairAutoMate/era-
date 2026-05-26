@@ -28,7 +28,7 @@ export default function BRLHero({ onOpenWaitlist }: BRLHeroProps) {
             ERA for sameier og borettslag
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium mb-10 leading-[1.0] tracking-tight">
-            KI-agent for drift <br className="hidden md:block" /> og vedlikehold <br className="hidden md:block" /> av eiendom
+            Automatisert oppfølging <br className="hidden md:block" /> og levende FDV.
           </h1>
           <div className="text-lg md:text-xl text-white/70 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
             <p>

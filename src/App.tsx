@@ -160,21 +160,48 @@ export default function App() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1 }}
                   viewport={{ once: true }}
-                  className="max-w-4xl mx-auto relative z-10"
+                  className="max-w-5xl mx-auto relative z-10 text-center"
                 >
-                  <span className="text-era-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-8 block font-body">Fremtidsvisjon</span>
-                  <h2 className="text-6xl md:text-8xl font-bold mb-12 leading-[0.9] tracking-tight">
-                    Fremtidens bolig er intelligent
+                  <span className="text-era-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-8 block font-body">STRATEGISK INFRASTRUKTUR</span>
+                  
+                  <h2 className="text-4xl md:text-6xl font-medium mb-12 leading-[1.05] tracking-tight max-w-4xl mx-auto">
+                    Intelligent infrastruktur for automatisk boligforvaltning.
                   </h2>
-                  <p className="text-xl md:text-2xl text-white/60 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-                    ERA gjør boligen enklere å forstå, vedlikeholde og følge opp — med kunstig intelligens som jobber i bakgrunnen.
+                  
+                  <p className="text-lg md:text-xl text-white/70 font-light mb-16 max-w-3xl mx-auto leading-relaxed">
+                    ERA bygger infrastrukturen som kobler sammen rå boligdata, intelligente KI-agenter og fysisk utførelse. Vi oversetter passive dokumenter til kontinuerlig forebygging, verdioptimalisering og sømløs prosesskontroll.
                   </p>
+
+                  {/* Elegant strategic pillar grid (Palantir × Stripe style) */}
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-left mb-16 max-w-4xl mx-auto border-t border-b border-white/10 py-10">
+                    <div className="space-y-2">
+                      <h4 className="text-era-gold font-mono text-[10px] uppercase tracking-wider">// SYSTEM_CORE</h4>
+                      <p className="text-base font-semibold">Kontinuerlig boligintelligens</p>
+                      <p className="text-xs text-white/50 font-light leading-relaxed">Kontinuerlig verdisikring og automatisert overvåking av slitasje og risiko.</p>
+                    </div>
+                    <div className="space-y-2">
+                      <h4 className="text-era-gold font-mono text-[10px] uppercase tracking-wider">// AGENT_LAYER</h4>
+                      <p className="text-base font-semibold">Intelligente arbeidsflyter</p>
+                      <p className="text-xs text-white/50 font-light leading-relaxed">Smarte KI-agenter som oppdager behov, verifiserer løsninger og igangsetter tiltak.</p>
+                    </div>
+                    <div className="space-y-2">
+                      <h4 className="text-era-gold font-mono text-[10px] uppercase tracking-wider">// LIVING_FDV</h4>
+                      <p className="text-base font-semibold">Levende boligminne</p>
+                      <p className="text-xs text-white/50 font-light leading-relaxed">FDV og vedlikeholdshistorikk synkronisert i sanntid, alltid klar for overdragelse.</p>
+                    </div>
+                    <div className="space-y-2">
+                      <h4 className="text-era-gold font-mono text-[10px] uppercase tracking-wider">// TILDELING_API</h4>
+                      <p className="text-base font-semibold">Autonom tildeling</p>
+                      <p className="text-xs text-white/50 font-light leading-relaxed">Direkte tildeling og kobling til sertifiserte partnere uten mellomledd.</p>
+                    </div>
+                  </div>
+
                   <div className="flex flex-wrap justify-center gap-6">
                     <button 
                       onClick={() => setIsWaitlistOpen(true)}
                       className="bg-white text-era-navy py-6 px-14 text-xs font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-era-ivory transition-all shadow-xl shadow-black/10"
                     >
-                      Be om tilgang
+                      Bli enterprise-partner
                     </button>
                   </div>
                 </motion.div>

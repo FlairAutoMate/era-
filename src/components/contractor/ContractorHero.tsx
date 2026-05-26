@@ -24,13 +24,12 @@ export default function ContractorHero({ onOpenWaitlist }: ContractorHeroProps) 
             <span className="text-[10px] text-white/70 uppercase tracking-widest font-mono">ERA for Håndverkere</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.05] tracking-tight">
-            Flere oppdrag. <br />
-            <span className="text-era-gold">Mindre administrasjon.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-8 leading-[1.05] tracking-tight text-white">
+            Kvalifiserte oppdrag <span className="text-era-gold">med ferdig grunnlag.</span>
           </h1>
           
           <p className="text-lg md:text-xl text-white/60 font-light mb-12 max-w-xl leading-relaxed">
-            ERA hjelper håndverkere å motta, håndtere og dokumentere oppdrag enklere.
+            Motta ferdig spesifiserte forespørsler basert på reell boligdata og bilder. Ingen bomturer, mindre administrasjon og automatisk FDV-samsvar.
           </p>
           
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">

@@ -43,12 +43,12 @@ export default function WhyERA({ onOpenWaitlist }: WhyERAProps) {
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-era-navy tracking-tight leading-[1.05] mb-8">
-            Ditt digitale Boligminne. <br />
-            Helt gratis for boligeiere.
+            KI-agenten som <br />
+            følger opp boligen din.
           </h2>
           
           <p className="text-lg text-era-navy/70 font-light leading-relaxed max-w-2xl">
-            Det dyreste vedlikeholdet er det som tas for sent. ERA varsler om slitasje tidlig, slik at du unngår unødvendige kostnader, reduserer risikoen for vannskader og sikrer boligens verdi.
+            Det dyreste vedlikeholdet er det som tas for sent. ERA er en helautomatisk KI-agent som overvåker slitasje, forebygger fuktskader, og samler all historikk og FDV automatisk for deg — helt gratis.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function WhyERA({ onOpenWaitlist }: WhyERAProps) {
                 onClick={onOpenWaitlist}
                 className="square-button bg-era-navy text-white hover:bg-era-midnight font-bold px-8 py-4 flex items-center gap-2 shadow-lg tracking-wider text-xs uppercase transition-colors"
               >
-                Opprett ditt digitale boligminne
+                Opprett boligminne
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -179,10 +179,10 @@ export default function WhyERA({ onOpenWaitlist }: WhyERAProps) {
                       <span className="text-[7.5px] font-sans font-bold uppercase tracking-widest scale-90">HJEM</span>
                     </div>
 
-                    {/* Tiltak Item (Replacing PLAN) */}
+                    {/* Prosjekt Item */}
                     <div className="flex flex-col items-center gap-1 cursor-pointer w-12 text-era-navy/40">
                       <Briefcase className="w-4 h-4" />
-                      <span className="text-[7.5px] font-sans font-bold uppercase tracking-widest scale-90">TILTAK</span>
+                      <span className="text-[7.5px] font-sans font-bold uppercase tracking-widest scale-90">PROSJEKT</span>
                     </div>
 
                     {/* Floating main action square button in center */}

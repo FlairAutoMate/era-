@@ -48,15 +48,15 @@ export default function Hero({ onOpenWaitlist, onOpenProductAI }: HeroProps) {
             transition={{ duration: 1.5, delay: 0.1 }}
             className="text-era-gold font-bold uppercase text-[10px] mb-6 block drop-shadow-sm font-sans"
           >
-            VEDLIKEHOLD & VERDISIKRING
+            KI-BASERT BOLIGOPPFØLGING
           </motion.span>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-[0.95] tracking-tight text-balance">
-            KI-agenten som tar vare på boligen din
+            KI-agenten som gjør vedlikehold like enkelt som Vipps.
           </h1>
 
           <p className="text-lg text-era-navy/70 font-light leading-relaxed max-w-xl">
-            ERA oppdager vedlikeholdsbehov, planlegger neste steg og kobler deg til kvalifiserte håndverkere – like enkelt som Vipps.
+            ERA analyserer boligdata, oppdager vedlikeholdsbehov og kobler deg direkte med kvalifiserte håndverkere — med automatisk dokumentasjon hele veien.
           </p>
 
           <div className="flex flex-wrap gap-4 items-center pt-2">
@@ -64,20 +64,27 @@ export default function Hero({ onOpenWaitlist, onOpenProductAI }: HeroProps) {
               onClick={onOpenWaitlist}
               className="square-button bg-era-navy text-white hover:bg-era-midnight font-bold px-8 py-4 flex items-center gap-2 shadow-lg tracking-wider text-xs uppercase transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
             >
-              Få 10-års vedlikeholdsplan
+              Prøv ERA Agent
               <ArrowRight className="w-4 h-4" />
             </button>
             <button 
-              onClick={onOpenProductAI}
+              onClick={() => {
+                const el = document.getElementById('how-it-works-title');
+                if (el) {
+                  el.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  onOpenProductAI?.();
+                }
+              }}
               className="square-button border border-era-navy/20 bg-era-beige/30 text-era-navy hover:bg-era-beige font-bold px-8 py-4 flex items-center gap-2 group transition-all duration-300 hover:-translate-y-0.5 text-xs uppercase tracking-wider"
             >
-              Utforsk Aktiv Boligforvaltning
+              Se hvordan det fungerer
             </button>
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-6">
             <div className="text-[10px] text-era-navy/80 font-bold tracking-widest uppercase flex items-center gap-2">
-              <span className="text-emerald-600 font-bold bg-emerald-500/10 px-2 py-1 rounded text-[9px] border border-emerald-500/20">Alltid 100% gratis</span> for deg som boligeier
+              <span className="text-emerald-600 font-bold bg-emerald-500/10 px-2 py-1 rounded text-[9px] border border-emerald-500/20">Gratis for boligeiere.</span>
             </div>
             <div className="text-[10px] text-era-navy/50 font-semibold tracking-widest uppercase flex items-center gap-2">
               <span className="text-era-gold font-bold">✓</span> Norskutviklet for norske boligforhold
@@ -238,7 +245,7 @@ export default function Hero({ onOpenWaitlist, onOpenProductAI }: HeroProps) {
                 </div>
                 <div className="flex flex-col items-center gap-1 cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
                   <svg className="w-3.5 h-3.5 text-era-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                  <span className="text-[7px] font-bold uppercase tracking-widest scale-90">TILTAK</span>
+                  <span className="text-[7px] font-bold uppercase tracking-widest scale-90">PROSJEKT</span>
                 </div>
                 <div className="relative -top-2">
                   <div className="w-10 h-10 bg-era-navy text-era-gold rounded-lg flex items-center justify-center shadow-md">

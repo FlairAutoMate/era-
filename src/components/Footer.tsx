@@ -114,9 +114,9 @@ export default function Footer({ onViewChange }: FooterProps) {
 
         <div className="border-t border-white/5 pt-16 flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 text-white/70 text-[10px] font-bold uppercase tracking-[0.2em]">
-            <span>© {currentYear} ERA TECHNOLOGIES AS. MADE IN OSLO.</span>
+            <span>© {currentYear} ERA TECHNOLOGIES AS. PRODUSERT I OSLO.</span>
             <div className="hidden md:block w-px h-4 bg-white/10" />
-            <span>Intelligent Property Management</span>
+            <span>Intelligent boligforvaltning</span>
           </div>
           
           <button 

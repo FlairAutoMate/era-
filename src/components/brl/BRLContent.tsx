@@ -10,32 +10,44 @@ export default function BRLContent() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24 max-w-3xl mx-auto">
             <span className="text-era-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">Kjernen i systemet</span>
-            <h2 className="text-4xl md:text-6xl font-medium mb-8 leading-[1.05]">Fra reaktiv drift til intelligent vedlikehold og verdisikring.</h2>
+            <h2 className="text-4xl md:text-6xl font-medium mb-8 leading-[1.05]">Levende eiendomsminne og AI-oppfølging.</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white border border-era-navy/5 p-12">
-              <h3 className="text-xl font-medium mb-6 text-era-navy/60">De fleste sameier jobber fortsatt:</h3>
+            <div className="bg-white border border-era-navy/5 p-12 rounded-xl">
+              <h3 className="text-xl font-medium mb-6 text-[#0E2341]">Dagens utfordring i styret:</h3>
               <ul className="space-y-4">
-                {["manuelt", "fragmentert", "personavhengig", "reaktivt"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4">
-                    <div className="w-1.5 h-1.5 bg-era-navy/20" />
-                    <span className="text-lg font-light text-era-navy/60">{item}</span>
+                {[
+                  "Mye manuelt arbeid med e-poster og henvendelser",
+                  "Mangler strukturert historikk når styremedlemmer byttes ut",
+                  "Fragmentert og personavhengig oppfølging",
+                  "Reaktivt vedlikehold som blir unødvendig dyrt"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-red-500 font-bold shrink-0 mt-0.5">✕</span>
+                    <span className="text-base font-light text-era-navy/70">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             
-            <div className="bg-era-navy text-white p-12 shadow-2xl relative overflow-hidden">
+            <div className="bg-[#0E2341] text-white p-12 shadow-2xl relative overflow-hidden rounded-xl">
               <div className="absolute top-0 right-0 p-8 opacity-20">
                 <Sparkles className="w-16 h-16 text-era-gold" />
               </div>
-              <h3 className="text-xl font-medium mb-6 text-era-gold relative z-10">ERA gjør drift og vedlikehold:</h3>
-              <ul className="space-y-6 relative z-10">
-                {["proaktivt", "intelligent", "automatisert", "dokumentert"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4">
-                    <div className="w-1.5 h-1.5 bg-era-gold" />
-                    <span className="text-xl font-medium">{item}</span>
+              <h3 className="text-xl font-medium mb-6 text-era-gold relative z-10">ERA operativ flyt:</h3>
+              <ul className="space-y-4 relative z-10">
+                {[
+                  "Mindre manuelt arbeid og automatiserte henvendelser",
+                  "Strukturert historikk låst til eiendommen",
+                  "Kontinuerlig oppfølging av slitasje og behov",
+                  "Automatiske arbeidsflyter fra behov til utførelse",
+                  "Mye enklere og mer oversiktlig styrearbeid",
+                  "Fullstendig kontroll over fellesareal og drift"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-emerald-400 font-bold shrink-0 mt-0.5">✓</span>
+                    <span className="text-base font-medium">{item}</span>
                   </li>
                 ))}
               </ul>

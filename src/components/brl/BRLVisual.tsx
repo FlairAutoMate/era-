@@ -19,7 +19,7 @@ export default function BRLVisual() {
                 <div className="w-8 h-8 border border-era-gold flex items-center justify-center" >
                   <div className="w-4 h-4 bg-era-gold" />
                 </div>
-                <span className="font-display font-medium text-white text-lg tracking-tight">ERA BOARD</span>
+                <span className="font-display font-medium text-white text-lg tracking-tight">ERA STYRE</span>
               </div>
               
               <div className="space-y-2">
